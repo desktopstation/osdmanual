@@ -8,7 +8,7 @@
 <br/>
 <br/>
 <br/>
-<img src="./fig/loclogo2_big_logo.png" align="center">
+<img src="./logo/loclogo2_big_logo.png" align="center">
 <br/>
 <br/>
 <br/>
@@ -24,7 +24,7 @@
 <span style="font-size: 300%">
 OPEN SOUND DATA<br/>MANUAL</span><br/>
 ~オープンサウンドデータの活用法~<br/>
-rev.3 (Aug 9, 2020)
+rev.4 (Sep 22, 2020)
 <br/>
 <br/>
 <br/>
@@ -32,7 +32,7 @@ rev.3 (Aug 9, 2020)
 </div>
 
 <p align="center">
-<img src="./fig/logo.png" align="center" width="200">
+<img src="./logo/logo.png" align="center" width="200">
 </p>
 
 <div style="page-break-before:always"></div>
@@ -305,11 +305,11 @@ ESU社の製品は、ドイツ企業らしく安定性に定評があります�
 
 LokSound V3.5は、日本国内でも雑誌や書籍などで紹介されたことから、輸入販売の模型店や、個人輸入で手に入れる方がおり、サウンドデータをブロック図で作成できるということで、DCCサウンドのユーザーに普及が進みました。
 
-<img border="0" src="./fig/lok/lok35_5.jpg" width="400" >
+<img border="0" src="./lok/lok35_5.jpg" width="400" >
 
 LokSound V4は2011年に登場しました。V4では、メモリやサウンドプログラミングの制約が大幅に緩和され、現在の形に近いレベルのサウンドデータの作成ができるようになりました。V3.5から、あまりにも大きな更新だったため、多くのユーザーはデータを作り直したり勉強をし直すなどが求められました。しかし、その代わりに高音質で様々なシーンの再現が可能となりました。
 
-<img border="0" src="./fig/lok/lok35_6.jpg" width="400" >
+<img border="0" src="./lok/lok35_6.jpg" width="400" >
 
 そして、満を持して、現行版であるLokSound 5が2019年に登場しました。
 
@@ -348,7 +348,7 @@ LokSound5デコーダでのmicro(N)と無印(HO)のサイズの違いを以下�
 
 |micro|無印|
 |:--- |:----|
-|<img border="0" src="./fig/dec/LS5_micro.jpg" width="400" >|<img border="0" src="./fig/dec/LS5_normal.jpg" width="400" >|
+|<img border="0" src="./dec/LS5_micro.jpg" width="400" >|<img border="0" src="./dec/LS5_normal.jpg" width="400" >|
 
 ## 2.4. LokSoundをなぜ使うのか
 
@@ -384,30 +384,30 @@ LokProgrammerソフト(フリーソフト、無償)をESUのページからダ�
 
 なお、書込みや試運転をしないのであれば、ハードウェアのLokProgrammer(ESU 53451または53452)は不要です。パソコンだけでOKです。繋ぐ必要もありません。
 
-<img border="0" alt="LokProgrammer_ESUSite.png" src="./fig/img/LokProgrammer_ESUSite-thumbnail2.png" width="400" height="211">
+<img border="0" alt="LokProgrammer_ESUSite.png" src="./lok/LokProgrammer_ESUSite-thumbnail2.png" width="400" height="211">
 
 ## 3.2. LokProgrammerの起動
 
 起動直後は、以下のような画面です。オープンサウンドデータのファイルを開くと色々な機能にアクセスできるようになります。新規作成しても良いですが、難易度が高いので、既存のファイルを使うのが良いでしょう。
 
-<img border="0" alt="LokProgrammer_New_1.png" src="./fig/img/LokProgrammer_New_1-thumbnail2.png" width="400" height="273">
+<img border="0" alt="LokProgrammer_New_1.png" src="./lok/LokProgrammer_New_1-thumbnail2.png" width="400" height="273">
 
 たとえば、キハ110のサウンドを開くと以下のようになります。
 
 >オープンサウンドデータ キハ110 <br/>
 >https://desktopstation.net/sounds/osd25.html
 
-<img border="0" alt="LokProgrammer_New_2.png" src="./fig/img/LokProgrammer_New_2-thumbnail2.png" width="400" height="212">
+<img border="0" alt="LokProgrammer_New_2.png" src="./lok/LokProgrammer_New_2-thumbnail2.png" width="400" height="212">
 
 左側のタブにいろいろ増えましたが、説明すると以下のような感じです。画面が切り替わって編集したり設定できるようになります。
 
-<img border="0" alt="LokProgrammer_New_3.png" src="./fig/img/LokProgrammer_New_3-thumbnail2.png" width="400" height="292">
+<img border="0" alt="LokProgrammer_New_3.png" src="./lok/LokProgrammer_New_3-thumbnail2.png" width="400" height="292">
 
 ## 3.3. 書込み装置の接続
 
 LokProgrammer書込み装置は、LokSoundデコーダにサウンドや設定を書き込むときに使用する装置です。パソコンと、デコーダの間に繋いで使用する物です。LokSoundデコーダとは線路経由でサウンドデータ等を書込みできるため、車両の中に組み込んで問題ありません。Windowsにのみ対応しています。
 
-![](./fig/TomixHO/image003.jpg "")
+![](./TomixHO/image003.jpg "")
 
 USBケーブルで接続するLokProgrammer書込み装置は、FTDI社のUSBシリアルドライバをインストールする必要があります。通常はUSBケーブルを差し込むと自動でインストールされ、特に操作は不要なのですが、環境によっては自動でインストールされない場合があります。
 
@@ -420,7 +420,7 @@ USBケーブルを繋げただけでは動作しません。ACアダプタを接
 
 ACアダプタの付け忘れ、USBケーブルの差し込み忘れ、またはその両方をした場合、LokProgrammerでサウンドデータの書込みを行うと、以下のメッセージが表示されます。
 
-<img src="./fig/lok/lokprogrammer_error.png" width=200 align="center">
+<img src="./lok/lokprogrammer_error.png" width=200 align="center">
 
 ACアダプタは、Φ2.5mmのDCジャックに対応した、12V～16Vのものであれば問題ありません。以下に、秋月電子で販売されている、LokProgrammerでも動作を確認したアダプタを示します。なお、ESU社が推奨しているわけではありませんので、自己責任の下でご利用ください。
 
@@ -441,11 +441,11 @@ ACアダプタは、Φ2.5mmのDCジャックに対応した、12V～16Vのもの
 LokProgrammerの画面で、オープンサウンドデータの事前にダウンロードし、ZIPファイルを解凍した上で、esuxファイルを開きます。
 LokProgrammer書込み装置をUSBケーブルで接続し、ACアダプタを繋げて電源供給ができた状況で、以下の音符のアイコンを押すと、書込みになります。
 
-![](./fig/lok/lokprogrammer_soundwrite.png "")
+![](./lok/lokprogrammer_soundwrite.png "")
 
 ドキュメントのアイコンの書込みボタンは、Decoderタブで設定したデータを書き込めます。
 
-![](./fig/lok/lokprogrammer_CVwrite.png "")
+![](./lok/lokprogrammer_CVwrite.png "")
 
 デコーダとの接続がうまくいかない場合、エラーメッセージが表示されます。フィーダ線が繋がっているか、配線が切れていないか、車両に搭載した場合には配線ミスや、車輪とレールとの接触不良が無いかを確認しましょう。
 
@@ -457,13 +457,13 @@ LokProgrammer書込み装置をUSBケーブルで接続し、ACアダプタを�
 
 Soundのタブをクリックすると、以下のような画面になります。この画面が、サウンド編集で一番よく使うものになります。
 
-<a href="./fig/img/LokProgrammer_Sound_1.png" target="_blank"><img border="0" alt="LokProgrammer_Sound_1.png" src="./fig/img/LokProgrammer_Sound_1-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_Sound_1.png" target="_blank"><img border="0" alt="LokProgrammer_Sound_1.png" src="./lok/LokProgrammer_Sound_1-thumbnail2.png" width="400" height="212"></a>
 
 ## 3.6. サウンドスロットって？
 
 サウンドスロットとは、サウンドデータを鳴らすためのチャンネルと思ってください。LokSound5は10のサウンドスロットを同時に再生できます。サウンドスロットに、様々な音を個別に登録して、条件に応じて鳴らしたりすることで、車両の動きを表現します。以下は、VVVFのサウンドスロットの例です。
 
-<img border="0" alt="Audacity_VVVF0.png" src="./fig/img/Audacity_VVVF0-thumbnail2.png" width="258" height="400">
+<img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400">
 
 なお、*１つのサウンドスロットで同時に再生できる音は１つだけ*です。ならし終わったら、違う音を鳴らすことができます。よって、同時に複数の音を鳴らしたいときは、他のサウンドスロットを関連づける機能が一つ一つのブロックで設定できるので、それを使用して、他のサウンドスロットを呼び出して鳴らすこととなります。
 
@@ -475,7 +475,7 @@ Soundのタブをクリックすると、以下のような画面になります
 
 Decoderタブから、Function Mappingをクリックすると、ファンクションの一覧が出てきます。この画面は、ファンクション番号に、サウンドの機能や、AUXの出力、内部の特殊機能を自由に割り当てられる、重要な設定箇所となります。
 
-<img src="./fig/lok/functionmap_1.png" width="400">
+<img src="./lok/functionmap_1.png" width="400">
 
 変更したいファンクション番号のプルダウンを押すと、DrivingやDirectionなど、色々出てくると思います。以下説明の表で示します。
 
@@ -489,7 +489,7 @@ Decoderタブから、Function Mappingをクリックすると、ファンクシ
 
 実際の画面は以下の通りです。
 
-<img src="./fig/lok/functionmap_2.png" width="400">
+<img src="./lok/functionmap_2.png" width="400">
 
 それぞれのファンクション番号に、有効無効の設定が可能です。複数のファンクションを紐付けて、条件を分けることも可能です。さらに走行中かどうか、進行方向がどちらか、というように条件を分けることもできます。
 
@@ -508,11 +508,11 @@ Decoderタブから、Function Mappingをクリックすると、ファンクシ
 通常は、Onのみ設定すれば良いですが、たとえば、電機機関車の入換表示灯などを再現する場合には、複数のAUX信号を操作しつつ、進行方向やその他のファンクション状態を加味して条件を設定する必要があります。
 自分で作りたいファンクションの動きに合わせて、様々な条件を設定する事ができます。
 
-<img src="./fig/lok/functionmap_3.png" width="400">
+<img src="./lok/functionmap_3.png" width="400">
 
 ファンクションマッピングの設定が終わったら、以下の設定データのみの書込みボタンで、デコーダに書込みを行います。サウンドデータは書き込まれません（変更されません）ので、すぐに書込みは終了します。サウンドデータと一緒に書き込みたい場合は、右隣の音符のアイコンを選択すると、ファンクションマッピングの変更済みデータと、サウンドデータの両方を書き込みます。10分以上掛かりますので、ゆっくりお待ちください。
 
-<img src="./fig/lok/functionmap_4.png" width="400">
+<img src="./lok/functionmap_4.png" width="400">
 
 <div style="page-break-before:always"></div>
 
@@ -531,7 +531,7 @@ Decoderタブから、Function Mappingをクリックすると、ファンクシ
 * <a href="https://www.audacityteam.org/" target="_blank">Audacity</a>(音編集ソフト、無料、好みがあれば他でも可）
 * SpectraLayers 音編集ソフト。特定の音をピンポイントに消せる。
 
-<a href="./fig/img/LokProgrammer_DecoderTester.jpg" target="_blank"><img border="0" alt="LokProgrammer_DecoderTester.jpg" src="./fig/img/LokProgrammer_DecoderTester-thumbnail2.jpg" width="400" height="359"></a>
+<a href="./lok/LokProgrammer_DecoderTester.jpg" target="_blank"><img border="0" alt="LokProgrammer_DecoderTester.jpg" src="./lok/LokProgrammer_DecoderTester-thumbnail2.jpg" width="400" height="359"></a>
 
 LokProgrammerとLokSound、デコーダテスタを入手しないと始まりません。たぶん、<a href="https://desktopstation.net/sounds/" target="_blank">オープンサウンドデータ</a>を使ってる人達は、全て持っているケースが多いと思いますが、持っていない方は、輸入をお勧めします。
 
@@ -547,7 +547,7 @@ LokProgrammerとLokSound、デコーダテスタを入手しないと始まり�
 
 なお、録音設定は必ず、最高音質としてください。低い音質で録音すると、ほとんど使い物になりません。
 
-<img border="0" alt="recording2.jpg" src="./fig/img/recording2-thumbnail2.jpg" width="400" height="113">
+<img border="0" alt="recording2.jpg" src="./img/recording2-thumbnail2.jpg" width="400" height="113">
 
 ただ、良いレコーダがあればそれに越したことはありません。周りを見ると、TASCAMを使われる方が多い印象です。レコーダよりも、風防（ウィンドジャマー）の付いたマイクが一番重要に思ってます。
 
@@ -582,7 +582,7 @@ LokProgrammerとLokSound、デコーダテスタを入手しないと始まり�
 
 SIVやコンプレッサーの音は、駅のホームでは無く、そばに道路があればそこから収録する方がより近づけて品質が良くなります。
 
-<a href="./fig/img/recording.jpg" target="_blank"><img border="0" alt="recording.jpg" src="./fig/img/recording-thumbnail2.jpg" width="400" height="266"></a>
+<a href="./img/recording.jpg" target="_blank"><img border="0" alt="recording.jpg" src="./img/recording-thumbnail2.jpg" width="400" height="266"></a>
 
 * 何度も何度も堪え忍ぶ
 
@@ -611,7 +611,7 @@ SIVやコンプレッサーの音は、駅のホームでは無く、そばに�
 * パンタ上げ、下げ
 * 起動音、電源オフ音
 
-<img border="0" alt="rokuon2020_1.jpg" src="./fig/img/rokuon2020_1-thumbnail2.jpg" width="400" height="266">
+<img border="0" alt="rokuon2020_1.jpg" src="./img/rokuon2020_1-thumbnail2.jpg" width="400" height="266">
 
 この次は、音の編集のコツです。ノイズを消したり、小さかった音を大きめに直す作業です。主に使うのは、Audacityです。その他に、SoundEngineなど、別のソフトもありますが、お好みのソフトをご利用ください。DCCサウンドユーザーのほとんどがAudacityを使用しているということは事実です。
 
@@ -631,45 +631,45 @@ SIVやコンプレッサーの音は、駅のホームでは無く、そばに�
 
 基本的な操作は、入門サイトなど自分で調べて頂ければ幸いです。私がよく使うフィルタは以下です。
 
-<a href="./fig/img/Audacity_Filter.png" target="_blank"><img border="0" alt="Audacity_Filter.png" src="./fig/img/Audacity_Filter-thumbnail2.png" width="387" height="400"></a>
+<a href="./audacity/Audacity_Filter.png" target="_blank"><img border="0" alt="Audacity_Filter.png" src="./audacity/Audacity_Filter-thumbnail2.png" width="387" height="400"></a>
 
 特に使うのが”ノイズ低減”です。たとえば、以下のように、ドア開閉音があるとします。
 
-<a href="./fig/img/Audacity_door1.png" target="_blank"><img border="0" alt="Audacity_door1.png" src="./fig/img/Audacity_door1-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_door1.png" target="_blank"><img border="0" alt="Audacity_door1.png" src="./audacity/Audacity_door1-thumbnail2.png" width="400" height="212"></a>
 
 ホワイトノイズやバックの音を消したい時、以下のようにバックグラウンドの音が入り込んだエリアを選択します。
 
-<a href="./fig/img/Audacity_door2.png" target="_blank"><img border="0" alt="Audacity_door2.png" src="./fig/img/Audacity_door2-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_door2.png" target="_blank"><img border="0" alt="Audacity_door2.png" src="./audacity/Audacity_door2-thumbnail2.png" width="400" height="212"></a>
 
 ノイズ低減を選択して、選択エリアをノイズとして登録します。
 
-<a href="./fig/img/Audacity_door3.png" target="_blank"><img border="0" alt="Audacity_door3.png" src="./fig/img/Audacity_door3-thumbnail2.png" width="400" height="363"></a>
+<a href="./audacity/Audacity_door3.png" target="_blank"><img border="0" alt="Audacity_door3.png" src="./audacity/Audacity_door3-thumbnail2.png" width="400" height="363"></a>
 
 次に、ノイズを低減したいエリアを選択します。ここでは全部です。バックグラウンドの音は、ドア開の音全体に入り込んでいます。この音を消すことで、ドア開の音だけを抽出できるのです。
 
-<a href="./fig/img/Audacity_door4.png" target="_blank"><img border="0" alt="Audacity_door4.png" src="./fig/img/Audacity_door4-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_door4.png" target="_blank"><img border="0" alt="Audacity_door4.png" src="./audacity/Audacity_door4-thumbnail2.png" width="400" height="212"></a>
 
 再度、ノイズ低減を呼び出して、調整します。除去のレベルはさじ加減をプレビューで確認しながら行います。かけ過ぎると、キンキンな変な音になるので、ギリギリを狙って再調整を繰り返します。
 
-<a href="./fig/img/Audacity_door5.png" target="_blank"><img border="0" alt="Audacity_door5.png" src="./fig/img/Audacity_door5-thumbnail2.png" width="400" height="363"></a>
+<a href="./audacity/Audacity_door5.png" target="_blank"><img border="0" alt="Audacity_door5.png" src="./audacity/Audacity_door5-thumbnail2.png" width="400" height="363"></a>
 
 ノイズ低減処理でOKを押すと以下のように低減されます。バックグラウンドの音が小さくなって、キレイになっているのが分かります。
 
-<a href="./fig/img/Audacity_door6.png" target="_blank"><img border="0" alt="Audacity_door6.png" src="./fig/img/Audacity_door6-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_door6.png" target="_blank"><img border="0" alt="Audacity_door6.png" src="./audacity/Audacity_door6-thumbnail2.png" width="400" height="212"></a>
 
 前後を切り落として、ドア開だけの音になるように長さを調整します。
 
-<a href="./fig/img/Audacity_door7.png" target="_blank"><img border="0" alt="Audacity_door7.png" src="./fig/img/Audacity_door7-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_door7.png" target="_blank"><img border="0" alt="Audacity_door7.png" src="./audacity/Audacity_door7-thumbnail2.png" width="400" height="212"></a>
 
 あとは、音の大きさを調整するために増幅したりするなどして、微調整すれば完了です。WAV形式で保存すれば、LokProgrammerに登録して、DCCデコーダから音を出すことができます。
 
 ## 4.6. 走行音の加工・編集
 
 まず、走行音。以下はYOMIXさんのディーゼル音(キハ261)の例。
-<a href="./fig/img/Audacity_DIESEL_K261_1.png" target="_blank"><img border="0" alt="Audacity_DIESEL_K261_1.png" src="./fig/img/Audacity_DIESEL_K261_1-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_DIESEL_K261_1.png" target="_blank"><img border="0" alt="Audacity_DIESEL_K261_1.png" src="./audacity/Audacity_DIESEL_K261_1-thumbnail2.png" width="400" height="212"></a>
 
 次は、かわけいさんにもらった、東急50x0電車の例。
-<a href="./fig/img/Audacity_VVVF_TQ_1.png" target="_blank"><img border="0" alt="Audacity_VVVF_TQ_1.png" src="./fig/img/Audacity_VVVF_TQ_1-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF_TQ_1.png" target="_blank"><img border="0" alt="Audacity_VVVF_TQ_1.png" src="./audacity/Audacity_VVVF_TQ_1-thumbnail2.png" width="400" height="212"></a>
 
 ディーゼルと電車では、作成のアプローチがまったく異なります。
 
@@ -690,25 +690,25 @@ SIVやコンプレッサーの音は、駅のホームでは無く、そばに�
 
 まずは、適当に、start、loop、endという３つのラベルで発車ベルの中身を区切っていきます。
 
-<a href="./fig/img/LokProgrammer_loop_1.png" target="_blank"><img border="0" alt="LokProgrammer_loop_1.png" src="./fig/img/LokProgrammer_loop_1-thumbnail2.png" width="400" height="257"></a>
+<a href="./lok/LokProgrammer_loop_1.png" target="_blank"><img border="0" alt="LokProgrammer_loop_1.png" src="./lok/LokProgrammer_loop_1-thumbnail2.png" width="400" height="257"></a>
 
 ここから、ループ音(繰り返し流す音の範囲）を探索して、切り出していきます。
 
 まず、波形をよーく見ると、似たような形が何度も繰り返しているのが見えると思います。つまり、似たような所の範囲をうまく決めてあげれば、同じ音を鳴らし続けることができるわけです。
 
-<a href="./fig/img/LokProgrammer_loop_2.png" target="_blank"><img border="0" alt="LokProgrammer_loop_2.png" src="./fig/img/LokProgrammer_loop_2-thumbnail2.png" width="400" height="117"></a>
+<a href="./lok/LokProgrammer_loop_2.png" target="_blank"><img border="0" alt="LokProgrammer_loop_2.png" src="./lok/LokProgrammer_loop_2-thumbnail2.png" width="400" height="117"></a>
 
 まず、startとloopの間を調べていきます。一番、音の振幅が小さくなるところを調べて、そこを拡大します。すると、以下のような部分が見つかりました。ここのゼロクロス部分をstartラベルとloopラベルの境目になるように位置をずらして調整します。○の部分をD&Dするとずらせます。
 
-<a href="./fig/img/LokProgrammer_loop_3.png" target="_blank"><img border="0" alt="LokProgrammer_loop_3.png" src="./fig/img/LokProgrammer_loop_3-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_loop_3.png" target="_blank"><img border="0" alt="LokProgrammer_loop_3.png" src="./lok/LokProgrammer_loop_3-thumbnail2.png" width="400" height="212"></a>
 
 同じように、loopとendのラベルの境目も探します。ちゃんと、先ほど決めたstartとloopの間の境目とキレイに繋がるように、波の上なのか下なのかをきちんと決めておいてください。ここでは、上側の振幅がゼロになる部分で切ります。
 
-<a href="./fig/img/LokProgrammer_loop_4.png" target="_blank"><img border="0" alt="LokProgrammer_loop_4.png" src="./fig/img/LokProgrammer_loop_4-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_loop_4.png" target="_blank"><img border="0" alt="LokProgrammer_loop_4.png" src="./lok/LokProgrammer_loop_4-thumbnail2.png" width="400" height="212"></a>
 
 音を鳴らして確認しましょう。loopの範囲を選択して、Shift+Spaceを押すと、ループ再生してくれます。
 
-<a href="./fig/img/LokProgrammer_loop_5.png" target="_blank"><img border="0" alt="LokProgrammer_loop_5.png" src="./fig/img/LokProgrammer_loop_5-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_loop_5.png" target="_blank"><img border="0" alt="LokProgrammer_loop_5.png" src="./lok/LokProgrammer_loop_5-thumbnail2.png" width="400" height="212"></a>
 
 狙ったとおりにできたら、複数ラベルの書き出しで、保存します。私は以下のようなファイルを書き出せました。
 
@@ -725,7 +725,7 @@ SIVやコンプレッサーの音は、駅のホームでは無く、そばに�
 
 オープンサウンドデータのVVVF系のデータは、MBさん、かわけいさんの作ったデータをベースにしているので、ほとんど同じテンプレートになっています。以下の図の赤矢印で書かれたスロット（音が出るチャンネル）が該当します。
 
-<a href="./fig/img/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./fig/img/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a>
+<a href="./audacity/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a>
 
 ここで紹介するのは、走行風の音では無く、加速と減速の独特の音をLokSoundから出すための音の編集作業になります。収録する際は、レコーダ（スマホでもOK）で、車内で録音すると思いますが、停車～加速～惰行～減速～停車の流れになるはずです。この中から、加速と減速の部分だけを切り出していきます。
 
@@ -734,101 +734,101 @@ SIVやコンプレッサーの音は、駅のホームでは無く、そばに�
 LokProgrammerでの、VVVFの実際のサウンドプログラムは以下の通りです。見ての通り、６つの黄色のブロックに、加速の６つの分割した音、減速の６つの分割した音をはめ込んで、速度に応じて音を鳴らしているだけなのです。
 
 加速：
-<a href="./fig/img/Audacity_VVVF14.png" target="_blank"><img border="0" alt="Audacity_VVVF14.png" src="./fig/img/Audacity_VVVF14-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF14.png" target="_blank"><img border="0" alt="Audacity_VVVF14.png" src="./audacity/Audacity_VVVF14-thumbnail2.png" width="400" height="212"></a>
 
 減速：
-<a href="./fig/img/Audacity_VVVF15.png" target="_blank"><img border="0" alt="Audacity_VVVF15.png" src="./fig/img/Audacity_VVVF15-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF15.png" target="_blank"><img border="0" alt="Audacity_VVVF15.png" src="./audacity/Audacity_VVVF15-thumbnail2.png" width="400" height="212"></a>
 
 それでは、東急50X0系の加速～惰行～減速の音から、走行音の切り出しを行っていきます。なお、切り出す前には、音の修正などいろいろ弄らないといけないのですが、既に修正は終わった物として、理想的な加速・減速サウンドになっている前提で進めます。
 
 発車～惰行までの範囲を、予め聞きながら把握しておきます。この範囲を６つに分割します。分割の仕方は様々ですが、なるべく低速を短くするのがコツです。まず、発車直後の部分をラベル付けしていきます。
 
-<a href="./fig/img/Audacity_VVVF1.png" target="_blank"><img border="0" alt="Audacity_VVVF1.png" src="./fig/img/Audacity_VVVF1-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF1.png" target="_blank"><img border="0" alt="Audacity_VVVF1.png" src="./audacity/Audacity_VVVF1-thumbnail2.png" width="400" height="212"></a>
 
 選択範囲にラベルを付けます。ラベルを付けた後からでも位置の調整はできます。
 
-<a href="./fig/img/Audacity_VVVF2.png" target="_blank"><img border="0" alt="Audacity_VVVF2.png" src="./fig/img/Audacity_VVVF2-thumbnail2.png" width="400" height="225"></a>
+<a href="./audacity/Audacity_VVVF2.png" target="_blank"><img border="0" alt="Audacity_VVVF2.png" src="./audacity/Audacity_VVVF2-thumbnail2.png" width="400" height="225"></a>
 
 Audacityでは、ラベルを付けることで、いつでもラベルに沿ってWAVファイルを書き出すことができ、非常に楽ができます。DCCサウンド作成には必須の機能と思います。これは、VVVFだけではなく、他でも使用できます。今後紹介する、ディーゼル走行音の切り出しでも同じです。
 
-<a href="./fig/img/Audacity_VVVF3.png" target="_blank"><img border="0" alt="Audacity_VVVF3.png" src="./fig/img/Audacity_VVVF3-thumbnail2.png" width="400" height="225"></a>
+<a href="./audacity/Audacity_VVVF3.png" target="_blank"><img border="0" alt="Audacity_VVVF3.png" src="./audacity/Audacity_VVVF3-thumbnail2.png" width="400" height="225"></a>
 
 これを繰り返して、加速完了まで６つのブロックを作っていきます。
 
-<a href="./fig/img/Audacity_VVVF4.png" target="_blank"><img border="0" alt="Audacity_VVVF4.png" src="./fig/img/Audacity_VVVF4-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF4.png" target="_blank"><img border="0" alt="Audacity_VVVF4.png" src="./audacity/Audacity_VVVF4-thumbnail2.png" width="400" height="212"></a>
 
 加速部分のブロックを作り終えました。
 
-<a href="./fig/img/Audacity_VVVF5.png" target="_blank"><img border="0" alt="Audacity_VVVF5.png" src="./fig/img/Audacity_VVVF5-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF5.png" target="_blank"><img border="0" alt="Audacity_VVVF5.png" src="./audacity/Audacity_VVVF5-thumbnail2.png" width="400" height="212"></a>
 
 なお、ブロックの間は、ゼロクロスする部分（値がゼロのところ）にするのがコツです。と言うのも、ゼロ以外で切ると、ブツ音がする場合があるためです。このちょっとした編集で、確実にブツ音を消せます。また、さらに調整できるのであれば、VVVFの音の区切りの部分のゼロクロスで切るのが一番良いです。
 
 このテクニックは、ループ音（同じ音を繰り返し再生する）の作り方にも使用します。特にディーゼルでは必須のテクニックなので、絶対に覚えておきましょう。ループの場合は、ループ前後の似た波形とゼロクロスを探すという追加の根気の要る作業も加わります。
 
-<a href="./fig/img/Audacity_VVVF6.png" target="_blank"><img border="0" alt="Audacity_VVVF6.png" src="./fig/img/Audacity_VVVF6-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF6.png" target="_blank"><img border="0" alt="Audacity_VVVF6.png" src="./audacity/Audacity_VVVF6-thumbnail2.png" width="400" height="212"></a>
 
 次に減速のブロックを作っていきます。同じように減速の始まりの所を選択してラベルを付けていきます。
 
-<a href="./fig/img/Audacity_VVVF7.png" target="_blank"><img border="0" alt="Audacity_VVVF7.png" src="./fig/img/Audacity_VVVF7-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF7.png" target="_blank"><img border="0" alt="Audacity_VVVF7.png" src="./audacity/Audacity_VVVF7-thumbnail2.png" width="400" height="212"></a>
 
 減速の始まりの所のラベル付けをしました。これを繰り返していきます。
 
-<a href="./fig/img/Audacity_VVVF8.png" target="_blank"><img border="0" alt="Audacity_VVVF8.png" src="./fig/img/Audacity_VVVF8-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF8.png" target="_blank"><img border="0" alt="Audacity_VVVF8.png" src="./audacity/Audacity_VVVF8-thumbnail2.png" width="400" height="212"></a>
 
 停車までの区間を、ほどよく調整して、ラベル付けを完了しました。
 
-<a href="./fig/img/Audacity_VVVF9.png" target="_blank"><img border="0" alt="Audacity_VVVF9.png" src="./fig/img/Audacity_VVVF9-thumbnail2.png" width="400" height="212"></a>
+<a href="./audacity/Audacity_VVVF9.png" target="_blank"><img border="0" alt="Audacity_VVVF9.png" src="./audacity/Audacity_VVVF9-thumbnail2.png" width="400" height="212"></a>
 
 ファイルメニューから、複数のファイルの書き出しを選択して、実際にWAVファイルを書き出していきます。
 
-<a href="./fig/img/Audacity_VVVF10.png" target="_blank"><img border="0" alt="Audacity_VVVF10.png" src="./fig/img/Audacity_VVVF10-thumbnail2.png" width="400" height="295"></a>
+<a href="./audacity/Audacity_VVVF10.png" target="_blank"><img border="0" alt="Audacity_VVVF10.png" src="./audacity/Audacity_VVVF10-thumbnail2.png" width="400" height="295"></a>
 
 出力先フォルダを指定します。走行音だけのフォルダを作ると良いでしょう。
 
-<a href="./fig/img/Audacity_VVVF11.png" target="_blank"><img border="0" alt="Audacity_VVVF11.png" src="./fig/img/Audacity_VVVF11-thumbnail2.png" width="400" height="255"></a>
+<a href="./audacity/Audacity_VVVF11.png" target="_blank"><img border="0" alt="Audacity_VVVF11.png" src="./audacity/Audacity_VVVF11-thumbnail2.png" width="400" height="255"></a>
 
 以下のように、ラベル付けした範囲が個別にWAVファイルに書き出されます。
 
-<a href="./fig/img/Audacity_VVVF12.png" target="_blank"><img border="0" alt="Audacity_VVVF12.png" src="./fig/img/Audacity_VVVF12-thumbnail2.png" width="400" height="211"></a>
+<a href="./audacity/Audacity_VVVF12.png" target="_blank"><img border="0" alt="Audacity_VVVF12.png" src="./audacity/Audacity_VVVF12-thumbnail2.png" width="400" height="211"></a>
 
 書き出したWAVファイルは、LokProgrammerのサウンドファイルリストを上書きする（エクスプローラー等からドラッグアンドドロップ）ことで、データに反映させることができます。このファイルは、上で説明した加速・減速のプログラムに紐付いているサウンドファイルです。差し替えれば、自動的に音が差し替えた物に切り替わります。
 
-<a href="./fig/img/Audacity_VVVF13.png" target="_blank"><img border="0" alt="Audacity_VVVF13.png" src="./fig/img/Audacity_VVVF13-thumbnail2.png" width="400" height="261"></a>
+<a href="./audacity/Audacity_VVVF13.png" target="_blank"><img border="0" alt="Audacity_VVVF13.png" src="./audacity/Audacity_VVVF13-thumbnail2.png" width="400" height="261"></a>
 
 今回は、説明が足りてなかったVVVFの惰行、加速、減速についてブロック図を説明します。とは言っても、ディーゼルよりはシンプルな動きです。
 
 VVVF走行音は、サウンドスロットを以下のように３つを使う事になります。それ以外にもドア開閉音やブレーキ緩解・緩め音などいろいろありますが、タイミングに応じてマッピングで設定しておき、同時に鳴らすという動作だけなので、走行音とは別に作っておくこととなります。
 
-<a href="./fig/img/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./fig/img/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a>
+<a href="./audacity/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a>
 
 まず惰行音。ファンクションオフ、停車、走行の３つのブロックに大まかに分かれます。走行の部分が一番大きいですが、やってることは、走行風や台車のうなりを速度に応じて高くしたり低くしたり、大きくしたり小さくしたりしているだけ。
 
-<a href="./fig/img/LokProgrammer_VVVF_1.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_1.png" src="./fig/img/LokProgrammer_VVVF_1-thumbnail2.png" width="400" height="106"></a>
+<a href="./lok/LokProgrammer_VVVF_1.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_1.png" src="./lok/LokProgrammer_VVVF_1-thumbnail2.png" width="400" height="106"></a>
 
 ブロックに分けて示すと以下のような感じです。一番重要なのは、加速と減速の部分が分かれてるところです。つまり、加速しているとき（スピードが上がる）は、上の方のブロックが使われて、減速しているとき（スピードが下がる）ときは、下の方のブロックが使われます。
 
-<a href="./fig/img/LokProgrammer_VVVF_4.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_4.png" src="./fig/img/LokProgrammer_VVVF_4-thumbnail2.png" width="400" height="116"></a>
+<a href="./lok/LokProgrammer_VVVF_4.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_4.png" src="./lok/LokProgrammer_VVVF_4-thumbnail2.png" width="400" height="116"></a>
 
 加速の赤枠の中に入っている物には、以下のようにMappingに加速のサウンドスロットを割り付けます。
 そうすることで、加速中は必ず、加速のサウンドが鳴るようになります。
 
-<a href="./fig/img/LokProgrammer_VVVF_5.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_5.png" src="./fig/img/LokProgrammer_VVVF_5-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_VVVF_5.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_5.png" src="./lok/LokProgrammer_VVVF_5-thumbnail2.png" width="400" height="212"></a>
 
 加速のサウンドスロットは以下のブロックです。各スロットに、分割した加速の音を当てはめていきます。減速のサウンドスロットは別となります。加速の範囲に居る場合のみ、速度に応じて加速のサウンドが惰行音と同時に鳴ります。
 
-<a href="./fig/img/LokProgrammer_VVVF_2.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_2.png" src="./fig/img/LokProgrammer_VVVF_2-thumbnail2.png" width="400" height="156"></a>
+<a href="./lok/LokProgrammer_VVVF_2.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_2.png" src="./lok/LokProgrammer_VVVF_2-thumbnail2.png" width="400" height="156"></a>
 
 減速は、減速の赤枠のブロックのMappingで、以下のように減速のサウンドスロットを割り付けておきます。
 
-<a href="./fig/img/LokProgrammer_VVVF_6.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_6.png" src="./fig/img/LokProgrammer_VVVF_6-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_VVVF_6.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_6.png" src="./lok/LokProgrammer_VVVF_6-thumbnail2.png" width="400" height="212"></a>
 
 割り付ける減速のサウンドスロットの中身は以下の通りです。
 
-<a href="./fig/img/LokProgrammer_VVVF_3.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_3.png" src="./fig/img/LokProgrammer_VVVF_3-thumbnail2.png" width="400" height="150"></a>
+<a href="./lok/LokProgrammer_VVVF_3.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_3.png" src="./lok/LokProgrammer_VVVF_3-thumbnail2.png" width="400" height="150"></a>
 
 なお、停車の時にキキーとかプシューとか音を出すのは、以下のようにD-Sブロックで実装しています。このブロックで、他のサウンドスロットで作り込んである音を鳴らすわけですが、鳴らすタイミングは矢印にあるreq=0 & spd <= 5とあるように、速度が5/255以下になったら鳴るようにしてます。この数値は、音の長さとか車両の癖とかもあると思うので、ケースバイケースで決めていきます。
 
-<a href="./fig/img/LokProgrammer_VVVF_7.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_7.png" src="./fig/img/LokProgrammer_VVVF_7-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_VVVF_7.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_7.png" src="./lok/LokProgrammer_VVVF_7-thumbnail2.png" width="400" height="212"></a>
 
 という感じで、VVVFのサウンドを鳴らすことができます。電車は全般的に、上記の作り方となるかと思います。
 
@@ -848,7 +848,7 @@ VVVFの場合は単純なので、説明するまでも無いですが、ディ�
 
 ファンクションオフ→停車→加速→アイドル→加速→・・・・→アイドル→停車→ファンクションオフ、のようにこのブロック図の中で動いていくことで、走行音を実現しているのです。
 
-<a href="./fig/img/LokProgrammer_kiha261_1.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_1.png" src="./fig/img/LokProgrammer_kiha261_1-thumbnail2.png" width="400" height="103"></a>
+<a href="./lok/LokProgrammer_kiha261_1.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_1.png" src="./lok/LokProgrammer_kiha261_1-thumbnail2.png" width="400" height="103"></a>
 
 オレンジ色の矢印は、速度が上がるとブロックをどんどん移動していく流れを示しています。速度は最高速度が255、停車が0という数値の範囲になってます。プログラミングをされる方はすんなり理解されると思いますが、慣れていない方は最大値が100ではないことに、ご注意を。
 
@@ -856,20 +856,20 @@ VVVFの場合は単純なので、説明するまでも無いですが、ディ�
 
 加速が終わると、一番下の”アイドル”ブロックに移動します。このとき、DCxというブロックを通過しますが、加速が終わった音をすぐにアイドルに切り替えると不自然なので、吹き上がる良いタイミングでアイドルになるように、音をクロスフェード加工したり、キリの良いところで切るように作り込んでおきます。CDxはその逆で、アイドルから加速音に移行するときの音を作って配置するために置いています。
 
-<a href="./fig/img/LokProgrammer_kiha261_4.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_4.png" src="./fig/img/LokProgrammer_kiha261_4-thumbnail2.png" width="400" height="187"></a>
+<a href="./lok/LokProgrammer_kiha261_4.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_4.png" src="./lok/LokProgrammer_kiha261_4-thumbnail2.png" width="400" height="187"></a>
 
 分かりにくいと思うので、キハ261の走行音データとブロック図の対応付けをしてみました。
 囲った部分の音波形を切り刻んで、ブロックに音を割り付けて鳴らす形です。完全にこれらのブロックにセットする音データをこの生波形から全て作れる訳では無いですが、イメージとしてはこの通りです。
 
-<a href="./fig/img/LokProgrammer_kiha261_5.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_5.png" src="./fig/img/LokProgrammer_kiha261_5-thumbnail2.png" width="400" height="207"></a>
+<a href="./lok/LokProgrammer_kiha261_5.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_5.png" src="./lok/LokProgrammer_kiha261_5-thumbnail2.png" width="400" height="207"></a>
 
 それでは、各ブロックはどのように設定されているのかを説明します。
 
-<a href="./fig/img/LokProgrammer_kiha261_2.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_2.png" src="./fig/img/LokProgrammer_kiha261_2-thumbnail2.png" width="400" height="212"></a>
+<a href="./lok/LokProgrammer_kiha261_2.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_2.png" src="./lok/LokProgrammer_kiha261_2-thumbnail2.png" width="400" height="212"></a>
 
 ブロック内部のプロパティの説明をします。
 
-<a href="./fig/img/LokProgrammer_kiha261_3.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_3.png" src="./fig/img/LokProgrammer_kiha261_3-thumbnail2.png" width="400" height="335"></a>
+<a href="./lok/LokProgrammer_kiha261_3.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_3.png" src="./lok/LokProgrammer_kiha261_3-thumbnail2.png" width="400" height="335"></a>
 
 >・Restore<br/>
 >チェックを入れると、優先順位が高いサウンドが割り込んで再生された後、再生を終えるときに、中断されていたこのサウンドが再開されるという機能です。類似の機能で、Unlimitedのチェックボックスがサウンドスロットに用意されています。こちらは、このブロックではなく、スロット単位で動くものです。
@@ -892,7 +892,7 @@ VVVFの場合は単純なので、説明するまでも無いですが、ディ�
 まず、Sという所に居る（＝F1をONして、停車している。音はガラガラとアイドル音がしているが走行中では無い。）とします。赤い矢印に注目してください。
 最初のSから出て行く矢印に「2 :[share1 != 200 & S1 = false & req > 0]」と書かれているはずです。
 
-<a href="./fig/img/LokProgrammer_kiha261_6.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_6.png" src="./fig/img/LokProgrammer_kiha261_6-thumbnail2.png" width="400" height="154"></a>
+<a href="./lok/LokProgrammer_kiha261_6.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_6.png" src="./lok/LokProgrammer_kiha261_6-thumbnail2.png" width="400" height="154"></a>
 
 最初の数字は優先番号で、小さい数字ほど優先されます。一つのブロックから複数の矢印を出すときに、この番号で、どの矢印を優先するかを決めてあげます。その後、share1 != 200 & S1 = false & req > 0という謎の文字列がありますが、ややこしいので、最後のreq>0だけ見てください。
 
@@ -904,7 +904,7 @@ reqは、「速度のリクエスト」という意味になります。つま�
 話を戻すと、そのあと、SDというブロックに入ります。実は、このブロックは「コンテナ」というブロックで、中にブロックが入っています。ブロックをまとめる箱と思ってください。中では、ブレーキ緩解・緩め音を出すブロックが配置してあるだけです。プシューとかヒューーーンとかの音を出してるだけです。
 
 SDブロック（コンテナ）の中身：
-<a href="./fig/img/LokProgrammer_kiha261_7.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_7.png" src="./fig/img/LokProgrammer_kiha261_7-thumbnail2.png" width="400" height="48"></a>
+<a href="./lok/LokProgrammer_kiha261_7.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_7.png" src="./lok/LokProgrammer_kiha261_7-thumbnail2.png" width="400" height="48"></a>
 
 その後、1:[true] という矢印がスロットルアップA_02というブロックに繋がっています。これは、「どんな条件であっても」という意味になります。つまり、特に条件は無いけど動いて良いよ、と理解してください。
 
@@ -912,24 +912,24 @@ SDブロックの中で、ブレーキ緩解・緩め音が再生終わったら
 
 スロットルアップA_02に注目しましょう。矢印が２本でているはずです。赤矢印はD1のブロックに、青矢印は下の方を向いてます。D1に向かう矢印は、2:[true]となってます。一方下に向かう矢印は1:[acc<0]となってます。
 
-<a href="./fig/img/LokProgrammer_kiha261_8.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_8.png" src="./fig/img/LokProgrammer_kiha261_8-thumbnail2.png" width="290" height="301"></a>
+<a href="./lok/LokProgrammer_kiha261_8.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_8.png" src="./lok/LokProgrammer_kiha261_8-thumbnail2.png" width="290" height="301"></a>
 
 どういうことかというと、<strong>acc<0 というのは、「加速がマイナスだったら」という意味</strong>です。つまり減速していたら、ということです。発車直後に、飛び乗ろうとしたお客さんがいたんでしょうか、急停車ってことです。減速が始まったのに音を加速させるD1のブロックに移動したら不自然なので、アイドルの方に行く青い矢印を作っているのです。
 
 矢印の条件は、以下の左側のところに記述します。
 
-<a href="./fig/img/LokProgrammer_kiha261_9.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_9.png" src="./fig/img/LokProgrammer_kiha261_9-thumbnail2.png" width="400" height="327"></a>
+<a href="./lok/LokProgrammer_kiha261_9.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_9.png" src="./lok/LokProgrammer_kiha261_9-thumbnail2.png" width="400" height="327"></a>
 
 条件のところをダブルクリックすると、内容を編集できます。
 
-<a href="./fig/img/LokProgrammer_kiha261_10.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_10.png" src="./fig/img/LokProgrammer_kiha261_10-thumbnail2.png" width="400" height="353"></a>
+<a href="./lok/LokProgrammer_kiha261_10.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_10.png" src="./lok/LokProgrammer_kiha261_10-thumbnail2.png" width="400" height="353"></a>
 
 とりあえず、D1ブロックまで説明できました。
 
 ご参考までに、S～D1までに割り当てている音データを以下に置いておきます。
 
 >データ協力： YOMIX様、yusa様<br/>
->./fig/img/kiha261_A.zip
+>./img/kiha261_A.zip
 
 ブロックの割付は以下の通りです。
 
@@ -955,7 +955,7 @@ SDブロックの中で、ブレーキ緩解・緩め音が再生終わったら
 
 まず、起動直後は以下のような画面が表示されます。
 
-<a href="./fig/img/SpectraLayers_inst_1.png" target="_blank"><img border="0" alt="SpectraLayers_inst_1.png" src="./fig/img/SpectraLayers_inst_1-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_1.png" target="_blank"><img border="0" alt="SpectraLayers_inst_1.png" src="./slayer/SpectraLayers_inst_1-thumbnail2.png" width="400" height="212"></a>
 
 ここに、収録したMP3ファイルやWAVファイル(レコーダーで録音したナマのサウンドデータ）をD&Dか、メニューから開きます。E5系の走行音から、ちょうど連結部の音が入り込んだモノを用意しました。
 
@@ -964,43 +964,43 @@ SDブロックの中で、ブレーキ緩解・緩め音が再生終わったら
 
 Audacityで開くとこんな感じです。
 
-<a href="./fig/img/SpectraLayers_inst_2.png" target="_blank"><img border="0" alt="SpectraLayers_inst_2.png" src="./fig/img/SpectraLayers_inst_2-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_2.png" target="_blank"><img border="0" alt="SpectraLayers_inst_2.png" src="./slayer/SpectraLayers_inst_2-thumbnail2.png" width="400" height="212"></a>
 
 開くと、モヤモヤしたものが出てくると思います。これが、サウンドデータを周波数別に表示したデータになります。音がなんで周波数別にできるのかは、小学校や中学や高校の理科の授業を思い出して頂ければ。
 
-<img border="0" alt="SpectraLayers_inst_3.png" src="./fig/img/SpectraLayers_inst_3-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_3.png" src="./slayer/SpectraLayers_inst_3-thumbnail2.png" width="400" height="212">
 
 ここで、音を再生してください。雑音がいくつかあるのが分かると思います。
 
-<img border="0" alt="SpectraLayers_inst_4.png" src="./fig/img/SpectraLayers_inst_4-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_4.png" src="./slayer/SpectraLayers_inst_4-thumbnail2.png" width="400" height="212">
 
 見ると、怪しい縦の筋がいくつか見えると思います。このソフトは、特定の範囲だけを再生することができます。範囲選択ツールを使って、縦の筋を囲んで再生ボタンを押してください。縦の筋の音付近が聞こえるはずです。
 
-<a href="./fig/img/SpectraLayers_inst_5.png" target="_blank"><img border="0" alt="SpectraLayers_inst_5.png" src="./fig/img/SpectraLayers_inst_5-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_5.png" target="_blank"><img border="0" alt="SpectraLayers_inst_5.png" src="./slayer/SpectraLayers_inst_5-thumbnail2.png" width="400" height="212"></a>
 
 この縦の筋が雑音で、消した方が良いことは見えてきました。どう消せば良いか、悩みます。いくつか方法はあるのですが、一番良いのはスタンプと思いますので、スタンプツールで消していきましょう。
 まず、PickSourceボタンを押してからスタンプする元の場所を選びます。スタンプのサイズや縦横の比率は、上のツールメニュー(Size, Aspect Ratio)で選べます。
 
-<a href="./fig/img/SpectraLayers_inst_6.png" target="_blank"><img border="0" alt="SpectraLayers_inst_6.png" src="./fig/img/SpectraLayers_inst_6-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_6.png" target="_blank"><img border="0" alt="SpectraLayers_inst_6.png" src="./slayer/SpectraLayers_inst_6-thumbnail2.png" width="400" height="212"></a>
 
-<a href="./fig/img/SpectraLayers_inst_7.png" target="_blank"><img border="0" alt="SpectraLayers_inst_7.png" src="./fig/img/SpectraLayers_inst_7-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_7.png" target="_blank"><img border="0" alt="SpectraLayers_inst_7.png" src="./slayer/SpectraLayers_inst_7-thumbnail2.png" width="400" height="212"></a>
 
-<a href="./fig/img/SpectraLayers_inst_8.png" target="_blank"><img border="0" alt="SpectraLayers_inst_8.png" src="./fig/img/SpectraLayers_inst_8-thumbnail2.png" width="400" height="212"></a>
+<a href="./slayer/SpectraLayers_inst_8.png" target="_blank"><img border="0" alt="SpectraLayers_inst_8.png" src="./slayer/SpectraLayers_inst_8-thumbnail2.png" width="400" height="212"></a>
 
-<img border="0" alt="SpectraLayers_inst_9.png" src="./fig/img/SpectraLayers_inst_9-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_9.png" src="./slayer/SpectraLayers_inst_9-thumbnail2.png" width="400" height="212">
 
 まずはスタンプで綺麗に消せました。
 スタンプ以外には、縦の選択ツールと、マジック選択ツールが使えます。選択後に、Deleteキーを押せば、その範囲を除去できます。
 
-<img border="0" alt="SpectraLayers_inst_10.png" src="./fig/img/SpectraLayers_inst_10-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_10.png" src="./slayer/SpectraLayers_inst_10-thumbnail2.png" width="400" height="212">
 
 マジック選択ツールは、混ざり込んだ雑音を消すのにちょうど良いです。
 
-<img border="0" alt="SpectraLayers_inst_11.png" src="./fig/img/SpectraLayers_inst_11-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_11.png" src="./slayer/SpectraLayers_inst_11-thumbnail2.png" width="400" height="212">
 
 とりあえず、これを駆使すれば、データの作成ができます。最終的に綺麗にしたモノが以下です。縦の筋を全て除去しました。
 
-<img border="0" alt="SpectraLayers_inst_12.png" src="./fig/img/SpectraLayers_inst_12-thumbnail2.png" width="400" height="212">
+<img border="0" alt="SpectraLayers_inst_12.png" src="./slayer/SpectraLayers_inst_12-thumbnail2.png" width="400" height="212">
 
 >完成したサウンドデータ<br/>
 >http://buin2gou.sakura.ne.jp/sblo_files/powerele/image/E5_testAfter.wav
@@ -1009,7 +1009,7 @@ Audacityで開くとこんな感じです。
 
 また、Spectra Layers Proだけでは、前後のカットなど、使いにくいので、Audacityで音量などを含めて最終的な仕上げをする事になると思います。
 
-<img border="0" alt="SpectraLayers_inst_13.png" src="./fig/img/SpectraLayers_inst_13-thumbnail2.png" width="400" height="216">
+<img border="0" alt="SpectraLayers_inst_13.png" src="./slayer/SpectraLayers_inst_13-thumbnail2.png" width="400" height="216">
 
 <div style="page-break-before:always"></div>
 
@@ -1067,7 +1067,7 @@ DCCデコーダを車両に搭載する場合、コネクタを使用するこ�
 
 Next18のコネクタのピン配置は以下の通りです。なお、このピン配置はNext18-Sというサウンド向けの配置となっています。Next18のコネクタは、海外のメーカーが製造しているものであり、日本国内では入手の難しい状況となっています。
 
-<img border="0" src="./fig/dec/Next18.jpg" width="150" align="right">
+<img border="0" src="./dec/Next18.jpg" width="150" align="right">
 
 | |Pin | Pin | |
 |:-|:-|:-|:-|		
@@ -1108,53 +1108,53 @@ KATOのキハ80のM車に、LokSound5 microを搭載していきます。
 * ExpBoard Next18 for KATO HO<br/>https://desktopstation.net/wiki/doku.php/expboardnext18
 * KATO HO キハ80(M) 1-611<br/>https://www.katomodels.com/product/ho/kiha82
 
-<a href="./fig/img/KATO_kiha80M_Next18_15.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_15.jpg" src="./fig/img/KATO_kiha80M_Next18_15-thumbnail2.jpg" width="400" height="258"></a>
+<a href="./img/KATO_kiha80M_Next18_15.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_15.jpg" src="./img/KATO_kiha80M_Next18_15-thumbnail2.jpg" width="400" height="258"></a>
 
 搭載作業をしていきます。
 
-<a href="./fig/img/KATO_kiha80M_Next18_1.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_1.jpg" src="./fig/img/KATO_kiha80M_Next18_1-thumbnail2.jpg" width="400" height="66"></a>
+<a href="./img/KATO_kiha80M_Next18_1.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_1.jpg" src="./img/KATO_kiha80M_Next18_1-thumbnail2.jpg" width="400" height="66"></a>
 
-<a href="./fig/img/KATO_kiha80M_Next18_2.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_2.jpg" src="./fig/img/KATO_kiha80M_Next18_2-thumbnail2.jpg" width="400" height="68"></a>
+<a href="./img/KATO_kiha80M_Next18_2.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_2.jpg" src="./img/KATO_kiha80M_Next18_2-thumbnail2.jpg" width="400" height="68"></a>
 
-<a href="./fig/img/KATO_kiha80M_Next18_3.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_3.jpg" src="./fig/img/KATO_kiha80M_Next18_3-thumbnail2.jpg" width="400" height="100"></a>
+<a href="./img/KATO_kiha80M_Next18_3.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_3.jpg" src="./img/KATO_kiha80M_Next18_3-thumbnail2.jpg" width="400" height="100"></a>
 
-<a href="./fig/img/KATO_kiha80M_Next18_4.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_4.jpg" src="./fig/img/KATO_kiha80M_Next18_4-thumbnail2.jpg" width="400" height="108"></a>
+<a href="./img/KATO_kiha80M_Next18_4.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_4.jpg" src="./img/KATO_kiha80M_Next18_4-thumbnail2.jpg" width="400" height="108"></a>
 
-<a href="./fig/img/KATO_kiha80M_Next18_5.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_5.jpg" src="./fig/img/KATO_kiha80M_Next18_5-thumbnail2.jpg" width="400" height="67"></a>
+<a href="./img/KATO_kiha80M_Next18_5.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_5.jpg" src="./img/KATO_kiha80M_Next18_5-thumbnail2.jpg" width="400" height="67"></a>
 
 リン青銅の銅板を半田付けします。変に曲げすぎると、しっかりと下の金属ウェイトに当たらず、接触不良の原因となるので、写真と同じように半田付けします。
 
-<a href="./fig/img/KATO_kiha80M_Next18_6.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_6.jpg" src="./fig/img/KATO_kiha80M_Next18_6-thumbnail2.jpg" width="400" height="97"></a>
+<a href="./img/KATO_kiha80M_Next18_6.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_6.jpg" src="./img/KATO_kiha80M_Next18_6-thumbnail2.jpg" width="400" height="97"></a>
 
 板バネのように、下の金属ウェイトに接触していることを確認してください。
 
-<a href="./fig/img/KATO_kiha80M_Next18_7.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_7.jpg" src="./fig/img/KATO_kiha80M_Next18_7-thumbnail2.jpg" width="400" height="149"></a>
+<a href="./img/KATO_kiha80M_Next18_7.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_7.jpg" src="./img/KATO_kiha80M_Next18_7-thumbnail2.jpg" width="400" height="149"></a>
 
 ハンダ付して取り付けます。
 
-<a href="./fig/img/KATO_kiha80M_Next18_8.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_8.jpg" src="./fig/img/KATO_kiha80M_Next18_8-thumbnail2.jpg" width="400" height="60"></a>
+<a href="./img/KATO_kiha80M_Next18_8.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_8.jpg" src="./img/KATO_kiha80M_Next18_8-thumbnail2.jpg" width="400" height="60"></a>
 
 赤線部分を切り取ります。座席部分もカッターなどでカットします。ここをカットしないと、Next18のデコーダが搭載できません。
 
-<a href="./fig/img/KATO_kiha80M_Next18_9.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_9.jpg" src="./fig/img/KATO_kiha80M_Next18_9-thumbnail2.jpg" width="400" height="103"></a>
+<a href="./img/KATO_kiha80M_Next18_9.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_9.jpg" src="./img/KATO_kiha80M_Next18_9-thumbnail2.jpg" width="400" height="103"></a>
 
-<a href="./fig/img/KATO_kiha80M_Next18_10.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_10.jpg" src="./fig/img/KATO_kiha80M_Next18_10-thumbnail2.jpg" width="400" height="58"></a>
+<a href="./img/KATO_kiha80M_Next18_10.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_10.jpg" src="./img/KATO_kiha80M_Next18_10-thumbnail2.jpg" width="400" height="58"></a>
 
 デコーダが入るか確認します。
 
-<a href="./fig/img/KATO_kiha80M_Next18_11.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_11.jpg" src="./fig/img/KATO_kiha80M_Next18_11-thumbnail2.jpg" width="400" height="72"></a>
+<a href="./img/KATO_kiha80M_Next18_11.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_11.jpg" src="./img/KATO_kiha80M_Next18_11-thumbnail2.jpg" width="400" height="72"></a>
 
 問題無さそう。
 
-<a href="./fig/img/KATO_kiha80M_Next18_12.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_12.jpg" src="./fig/img/KATO_kiha80M_Next18_12-thumbnail2.jpg" width="400" height="66"></a>
+<a href="./img/KATO_kiha80M_Next18_12.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_12.jpg" src="./img/KATO_kiha80M_Next18_12-thumbnail2.jpg" width="400" height="66"></a>
 
 スピーカーの音を下に抜かすための穴をピンバイスで開けます。
 
-<a href="./fig/img/KATO_kiha80M_Next18_13.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_13.jpg" src="./fig/img/KATO_kiha80M_Next18_13-thumbnail2.jpg" width="400" height="139"></a>
+<a href="./img/KATO_kiha80M_Next18_13.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_13.jpg" src="./img/KATO_kiha80M_Next18_13-thumbnail2.jpg" width="400" height="139"></a>
 
 トイレなどの部分にスピーカーを隠せるので、ここにピンバイスで穴を開けてスピーカー配線をして半田付けします。隠し方は、スピーカーのサイズに依ると思うので、皆様の工夫が出てくるかと思います。
 
-<a href="./fig/img/KATO_kiha80M_Next18_14.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_14.jpg" src="./fig/img/KATO_kiha80M_Next18_14-thumbnail2.jpg" width="400" height="307"></a>
+<a href="./img/KATO_kiha80M_Next18_14.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_14.jpg" src="./img/KATO_kiha80M_Next18_14-thumbnail2.jpg" width="400" height="307"></a>
 
 あとは車両を被せて、動作確認して完成です！
 
@@ -1164,46 +1164,46 @@ KATOのキハ80のM車に、LokSound5 microを搭載していきます。
 
 This chapter describes how to assemble ESU LokSound5 micro decoder to Tomix’s HO 1/80 scale 16.5mm gauge kiha 261.
 
-![](./fig/TomixHO/image007.jpg "")
-![](./fig/TomixHO/image008.jpg "")
-![](./fig/TomixHO/image009.jpg "")
-![](./fig/TomixHO/image010.jpg "")
+![](./TomixHO/image007.jpg "")
+![](./TomixHO/image008.jpg "")
+![](./TomixHO/image009.jpg "")
+![](./TomixHO/image010.jpg "")
 
 Remove cupper board using soldering iron.
 
-![](./fig/TomixHO/image011.jpg "")
+![](./TomixHO/image011.jpg "")
 
 Solder wires and motor pins. Then set motor and floor parts.
 
-![](./fig/TomixHO/image012.jpg "")
-![](./fig/TomixHO/image013.jpg "")
-![](./fig/TomixHO/image014.jpg "")
-![](./fig/TomixHO/image015.jpg "")
-![](./fig/TomixHO/image016.jpg "")
+![](./TomixHO/image012.jpg "")
+![](./TomixHO/image013.jpg "")
+![](./TomixHO/image014.jpg "")
+![](./TomixHO/image015.jpg "")
+![](./TomixHO/image016.jpg "")
 
 Check wire position and seat parts. After that, make a hole.
 
-![](./fig/TomixHO/image017.jpg "")
+![](./TomixHO/image017.jpg "")
 
 Pull up motor wires from bottom side.
 
-![](./fig/TomixHO/image018.jpg "")
+![](./TomixHO/image018.jpg "")
 
 Solder ExpBoard Next18 for General HO(https://desktopstation.net/wiki/doku.php/expboardgeneral) and PUI Audio’s ASE02506MS-LW90-DSM-R Speaker in this example.
  
-![](./fig/TomixHO/image019.jpg "")
+![](./TomixHO/image019.jpg "")
 
 LokSound5 micro is assembled.
 
-![](./fig/TomixHO/image020.jpg "")
+![](./TomixHO/image020.jpg "")
 
 Please place the decoder boards to hidden space.
  
-![](./fig/TomixHO/image021.jpg "")
+![](./TomixHO/image021.jpg "")
 
 That’s all!
 
-![](./fig/TomixHO/image022.jpg "")
+![](./TomixHO/image022.jpg "")
 
 <div style="page-break-before:always"></div>
 
@@ -1211,83 +1211,83 @@ That’s all!
 
 トラムウェイのキハ40-500のDCCサウンド化にチャレンジしてきます。それでは箱から、取り出すまでを以下に並べます。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_1.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_1.jpg" src="./fig/img/Tramway_HO_Kiha40_500_1-thumbnail2.jpg" width="400" height="151"></a>
+<a href="./img/Tramway_HO_Kiha40_500_1.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_1.jpg" src="./img/Tramway_HO_Kiha40_500_1-thumbnail2.jpg" width="400" height="151"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_2.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_2.jpg" src="./fig/img/Tramway_HO_Kiha40_500_2-thumbnail2.jpg" width="400" height="135"></a>
+<a href="./img/Tramway_HO_Kiha40_500_2.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_2.jpg" src="./img/Tramway_HO_Kiha40_500_2-thumbnail2.jpg" width="400" height="135"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_3.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_3.jpg" src="./fig/img/Tramway_HO_Kiha40_500_3-thumbnail2.jpg" width="400" height="132"></a>
+<a href="./img/Tramway_HO_Kiha40_500_3.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_3.jpg" src="./img/Tramway_HO_Kiha40_500_3-thumbnail2.jpg" width="400" height="132"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_4.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_4.jpg" src="./fig/img/Tramway_HO_Kiha40_500_4-thumbnail2.jpg" width="400" height="65"></a>
+<a href="./img/Tramway_HO_Kiha40_500_4.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_4.jpg" src="./img/Tramway_HO_Kiha40_500_4-thumbnail2.jpg" width="400" height="65"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_5.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_5.jpg" src="./fig/img/Tramway_HO_Kiha40_500_5-thumbnail2.jpg" width="400" height="113"></a>
+<a href="./img/Tramway_HO_Kiha40_500_5.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_5.jpg" src="./img/Tramway_HO_Kiha40_500_5-thumbnail2.jpg" width="400" height="113"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_6.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_6.jpg" src="./fig/img/Tramway_HO_Kiha40_500_6-thumbnail2.jpg" width="400" height="213"></a>
+<a href="./img/Tramway_HO_Kiha40_500_6.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_6.jpg" src="./img/Tramway_HO_Kiha40_500_6-thumbnail2.jpg" width="400" height="213"></a>
 
 DCC化するための調査で、バラバラにします。残念ながらNEM652の8ピンなどのコネクタは装着されていませんでした。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_7.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_7.jpg" src="./fig/img/Tramway_HO_Kiha40_500_7-thumbnail2.jpg" width="400" height="155"></a>
+<a href="./img/Tramway_HO_Kiha40_500_7.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_7.jpg" src="./img/Tramway_HO_Kiha40_500_7-thumbnail2.jpg" width="400" height="155"></a>
 
 トラムウェイの車両を買うのは初めてですが、外側筐体に重りの鉄板があります。おかげで、床下部分についてはプラ部品のみのため車内工作しやすいです。代わりに剛性が犠牲になっていますが・・・。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_8.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_8.jpg" src="./fig/img/Tramway_HO_Kiha40_500_8-thumbnail2.jpg" width="400" height="82"></a>
+<a href="./img/Tramway_HO_Kiha40_500_8.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_8.jpg" src="./img/Tramway_HO_Kiha40_500_8-thumbnail2.jpg" width="400" height="82"></a>
 
 上部の照明基板との接続はポゴピンです。こういう使い方も有りと言えば有りですが・・・。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_10.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_10.jpg" src="./fig/img/Tramway_HO_Kiha40_500_10-thumbnail2.jpg" width="400" height="362"></a>
+<a href="./img/Tramway_HO_Kiha40_500_10.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_10.jpg" src="./img/Tramway_HO_Kiha40_500_10-thumbnail2.jpg" width="400" height="362"></a>
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_9.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_9.jpg" src="./fig/img/Tramway_HO_Kiha40_500_9-thumbnail2.jpg" width="400" height="140"></a>
+<a href="./img/Tramway_HO_Kiha40_500_9.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_9.jpg" src="./img/Tramway_HO_Kiha40_500_9-thumbnail2.jpg" width="400" height="140"></a>
 
 ライト基板（下）。線路からの配線、モータ、反対側基板への配線がしてあります。
 最終的には、コモンとF0出力、室内灯制御の信号だけ配線することになります。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_11.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_11.jpg" src="./fig/img/Tramway_HO_Kiha40_500_11-thumbnail2.jpg" width="400" height="310"></a>
+<a href="./img/Tramway_HO_Kiha40_500_11.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_11.jpg" src="./img/Tramway_HO_Kiha40_500_11-thumbnail2.jpg" width="400" height="310"></a>
 
 <a href="https://www.mmjp.or.jp/tramway/goods/pg350.html" target="_blank">照明基板の回路図がトラムウェイにあった</a>ので、BSChで書き直して、DCCに割り付けるとこうかな？というのを書いてみました。まだ検証していないので、間違っている可能性があります！要注意です。
 
 >注：この回路図通りに改造して動作を確認しましたが、動作を保証するものではありません。
 
-<a href="./fig/img/LightPCB_DCCInstall.PNG" target="_blank"><img border="0" alt="LightPCB_DCCInstall.PNG" src="./fig/img/LightPCB_DCCInstall-thumbnail2.PNG" width="400" height="300"></a>
+<a href="./img/LightPCB_DCCInstall.PNG" target="_blank"><img border="0" alt="LightPCB_DCCInstall.PNG" src="./img/LightPCB_DCCInstall-thumbnail2.PNG" width="400" height="300"></a>
 
 基板に図示してみました。赤線はパターンカットです。カッターなどを使って、基板上の銅パターンを削って除去してください。両極性タイプから、オープンコレクタ出力のNMRA 8ピンに対応させるための作業となります。
 
 >なお、NMRAピンの色とピン番号を図示していますが、ライト系ではFWD/REVで意味が変わるため、そのまま配線する意味ではないので注意してください！
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_12.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_12.jpg" src="./fig/img/Tramway_HO_Kiha40_500_12-thumbnail2.jpg" width="400" height="240"></a>
+<a href="./img/Tramway_HO_Kiha40_500_12.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_12.jpg" src="./img/Tramway_HO_Kiha40_500_12-thumbnail2.jpg" width="400" height="240"></a>
 
 ここでは、よくあるFL12やワンコインデコーダFL等のライトデコーダを２個追加するのではなく、ESU LokSoundのピンをそのまま使うようにするため、基板にパターンカットや配線追加を行って、対応しています。複雑な車内の配線工事必須で、上級者向けなので、難しそうと思ったら、FLデコーダを使う方が良いと思います。
 
 それでは作業していきます。まず、線路と直結されている配線を半田ごてで取り外します。テールライト配線で、LEDに配線を追加しています。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_14.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_14.jpg" src="./fig/img/Tramway_HO_Kiha40_500_14-thumbnail2.jpg" width="400" height="290"></a>
+<a href="./img/Tramway_HO_Kiha40_500_14.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_14.jpg" src="./img/Tramway_HO_Kiha40_500_14-thumbnail2.jpg" width="400" height="290"></a>
 
 基板に配線を足しました。ヘッドライト、テールライト、室内灯用です。なお、筐体側の基板は一切改造しなくても良いように工夫しています。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_15.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_15.jpg" src="./fig/img/Tramway_HO_Kiha40_500_15-thumbnail2.jpg" width="400" height="275"></a>
+<a href="./img/Tramway_HO_Kiha40_500_15.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_15.jpg" src="./img/Tramway_HO_Kiha40_500_15-thumbnail2.jpg" width="400" height="275"></a>
 
 配線を半田付けしたら、配線を固定していきます。もともとある、粘着テープをそのまま使用しました。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_16.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_16.jpg" src="./fig/img/Tramway_HO_Kiha40_500_16-thumbnail2.jpg" width="400" height="258"></a>
+<a href="./img/Tramway_HO_Kiha40_500_16.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_16.jpg" src="./img/Tramway_HO_Kiha40_500_16-thumbnail2.jpg" width="400" height="258"></a>
 
 カバーを取り付けました。配線引き出し用に、一部、穴を開けて配線を取り出しています。配線は、ExpBoard Next18 for General HOのパッドに繋げていきました。
 
-<a href="./fig/img/kiha40_next18_4.jpg" target="_blank"><img border="0" alt="kiha40_next18_4.jpg" src="./fig/img/kiha40_next18_4-thumbnail2.jpg" width="400" height="213"></a>
+<a href="./img/kiha40_next18_4.jpg" target="_blank"><img border="0" alt="kiha40_next18_4.jpg" src="./img/kiha40_next18_4-thumbnail2.jpg" width="400" height="213"></a>
 
 振動で動いても困るので、アセテート粘着テープ(絶縁性があり施工性抜群！)で固定。スピーカーも黒に塗りました。
 
-<a href="./fig/img/kiha40_next18_5.jpg" target="_blank"><img border="0" alt="kiha40_next18_5.jpg" src="./fig/img/kiha40_next18_5-thumbnail2.jpg" width="400" height="189"></a>
+<a href="./img/kiha40_next18_5.jpg" target="_blank"><img border="0" alt="kiha40_next18_5.jpg" src="./img/kiha40_next18_5-thumbnail2.jpg" width="400" height="189"></a>
 
 Next18を使う事で、車体を被せても、配線の山が大きく目立つことはありません。
 
-<a href="./fig/img/kiha40_next18_6.jpg" target="_blank"><img border="0" alt="kiha40_next18_6.jpg" src="./fig/img/kiha40_next18_6-thumbnail2.jpg" width="400" height="171"></a>
+<a href="./img/kiha40_next18_6.jpg" target="_blank"><img border="0" alt="kiha40_next18_6.jpg" src="./img/kiha40_next18_6-thumbnail2.jpg" width="400" height="171"></a>
 
 次に、室内灯の取り付けを検討しました。キハ40の天井側には、室内灯の端子が出ています。テスタで測定したところ、回路図は4.7kΩとなってましたが実際は2.2kΩでした。あの回路図の定数は信用しない方が良さそうですね・・・。配線は合っているようです。
 あと気になった点としては、どちらがプラス側か一切書いてません。みなさん、テスタであたって調べてるんでしょうか？基板裏側にシルクで書いてくれれば良かったのですが。一応、写真の中にあるようにマスキングテープで印を付けました。ご参考ください。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_21.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_21.jpg" src="./fig/img/Tramway_HO_Kiha40_500_21-thumbnail2.jpg" width="400" height="61"></a>
+<a href="./img/Tramway_HO_Kiha40_500_21.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_21.jpg" src="./img/Tramway_HO_Kiha40_500_21-thumbnail2.jpg" width="400" height="61"></a>
 
 高い照明を買うのも大変ですし、手配も面倒でしたので、社内に落ちていたテープLEDを使用しました。３直列LEDで電流制限抵抗は150Ωです。電線とタブ端子を付けました。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_22.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_22.jpg" src="./fig/img/Tramway_HO_Kiha40_500_22-thumbnail2.jpg" width="400" height="71"></a>
+<a href="./img/Tramway_HO_Kiha40_500_22.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_22.jpg" src="./img/Tramway_HO_Kiha40_500_22-thumbnail2.jpg" width="400" height="71"></a>
 
 一応、計算して多少は光るか確認します。
 
@@ -1299,11 +1299,11 @@ LED 3直列なので、Vf=2.5*3=7.5V (白色LEDのVfは2.5Vくらいと仮定)
 
 LEDテープを装着した後は以下のような感じです。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_23.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_23.jpg" src="./fig/img/Tramway_HO_Kiha40_500_23-thumbnail2.jpg" width="400" height="113"></a>
+<a href="./img/Tramway_HO_Kiha40_500_23.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_23.jpg" src="./img/Tramway_HO_Kiha40_500_23-thumbnail2.jpg" width="400" height="113"></a>
 
 光らせてみました。計算通り、微妙に光っていますが、模型の室内灯としては結構良い感じと思います。DCCなので、ヘッドライト・テールライトとは別に、室内灯をファンクションでちゃんとON/OFFできるので、使い勝手も良い感じです。車庫への回送なのに光り続ける間抜けな運用は避けられそうです。
 
-<a href="./fig/img/Tramway_HO_Kiha40_500_24.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_24.jpg" src="./fig/img/Tramway_HO_Kiha40_500_24-thumbnail2.jpg" width="400" height="157"></a>
+<a href="./img/Tramway_HO_Kiha40_500_24.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_24.jpg" src="./img/Tramway_HO_Kiha40_500_24-thumbnail2.jpg" width="400" height="157"></a>
 
 <div style="page-break-before:always"></div>
 
@@ -1316,33 +1316,33 @@ ExpBoard YPを使って、近鉄22000系塗装済みキットのDCCサウンド�
 
 まず、ExpBoard YPの半田付けをしました。細かい部品ばかりなので、難易度は高いです。電子工作上級者なことが前提になります。MTC21コネクタは、1.27mmのピンヘッダですが、インデックスピンという黒い■のあるところは、ピンをあらかじめ抜いておきます。誤挿入防止用のようです。
 
-<a href="./fig/img/EypBoardYP_9.jpg" target="_blank"><img border="0" alt="EypBoardYP_9.jpg" src="./fig/img/EypBoardYP_9-thumbnail2.jpg" width="400" height="53"></a>
+<a href="./img/EypBoardYP_9.jpg" target="_blank"><img border="0" alt="EypBoardYP_9.jpg" src="./img/EypBoardYP_9-thumbnail2.jpg" width="400" height="53"></a>
 
 IC1とIC2は同じ形状ですが、部品は違うので用意注意です。IC1には<strong>A1</strong>というマークが書いてあります。IC2には<strong>G3</strong>というマークが書かれてます。そこで判断してください。D1とD2には、ショットキーダイオードと定電流ダイオードを付けますが、万が一間違えて逆にしても普通に動きます。ただし、アノード・カソードの位置は間違えないようにしてくださいね。
 
-<a href="./fig/img/EypBoardYP_10.jpg" target="_blank"><img border="0" alt="EypBoardYP_10.jpg" src="./fig/img/EypBoardYP_10-thumbnail2.jpg" width="400" height="286"></a>
+<a href="./img/EypBoardYP_10.jpg" target="_blank"><img border="0" alt="EypBoardYP_10.jpg" src="./img/EypBoardYP_10-thumbnail2.jpg" width="400" height="286"></a>
 
-<a href="./fig/img/EypBoardYP_11.jpg" target="_blank"><img border="0" alt="EypBoardYP_11.jpg" src="./fig/img/EypBoardYP_11-thumbnail2.jpg" width="400" height="364"></a>
+<a href="./img/EypBoardYP_11.jpg" target="_blank"><img border="0" alt="EypBoardYP_11.jpg" src="./img/EypBoardYP_11-thumbnail2.jpg" width="400" height="364"></a>
 
 半田付け後、スピーカーも付けてみました。
 
-<a href="./fig/img/EypBoardYP_4.jpg" target="_blank"><img border="0" alt="EypBoardYP_4.jpg" src="./fig/img/EypBoardYP_4-thumbnail2.jpg" width="400" height="88"></a>
+<a href="./img/EypBoardYP_4.jpg" target="_blank"><img border="0" alt="EypBoardYP_4.jpg" src="./img/EypBoardYP_4-thumbnail2.jpg" width="400" height="88"></a>
 
 実際に組み込んでいくので、その準備工事。
 
-<a href="./fig/img/EypBoardYP_7.jpg" target="_blank"><img border="0" alt="EypBoardYP_7.jpg" src="./fig/img/EypBoardYP_7-thumbnail2.jpg" width="400" height="123"></a>
+<a href="./img/EypBoardYP_7.jpg" target="_blank"><img border="0" alt="EypBoardYP_7.jpg" src="./img/EypBoardYP_7-thumbnail2.jpg" width="400" height="123"></a>
 
 はんだ付けした基板を天井に搭載して位置チェック。
 
-<a href="./fig/img/EypBoardYP_8.jpg" target="_blank"><img border="0" alt="EypBoardYP_8.jpg" src="./fig/img/EypBoardYP_8-thumbnail2.jpg" width="400" height="129"></a>
+<a href="./img/EypBoardYP_8.jpg" target="_blank"><img border="0" alt="EypBoardYP_8.jpg" src="./img/EypBoardYP_8-thumbnail2.jpg" width="400" height="129"></a>
 
 ExpBoard YPのおかげで、ヘッドライト・テールライト、室内灯、サウンドなどなどは凄く楽なのですが、床下部分は全く考慮されていないので、コネクタの取り付けなどに意外と時間を費やしました。
 
-<a href="./fig/img/EypBoardYP_12.jpg" target="_blank"><img border="0" alt="EypBoardYP_12.jpg" src="./fig/img/EypBoardYP_12-thumbnail2.jpg" width="400" height="172"></a>
+<a href="./img/EypBoardYP_12.jpg" target="_blank"><img border="0" alt="EypBoardYP_12.jpg" src="./img/EypBoardYP_12-thumbnail2.jpg" width="400" height="172"></a>
 
 両極性機能の動作チェック。ExpBoard  YPは、両極性基板の機能を搭載しているので、通常DCCで使用されるオープンコレクタ出力ではなく、両極性出力を使えます。という事は、アナログ車両のヘッドライト・テールライトのユニットは通常、両極性専用なので、日本型車両に搭載がしやすくなるわけです。
 
-<a href="./fig/img/EypBoardYP_5.jpg" target="_blank"><img border="0" alt="EypBoardYP_5.jpg" src="./fig/img/EypBoardYP_5-thumbnail2.jpg" width="400" height="268"></a>
+<a href="./img/EypBoardYP_5.jpg" target="_blank"><img border="0" alt="EypBoardYP_5.jpg" src="./img/EypBoardYP_5-thumbnail2.jpg" width="400" height="268"></a>
 
 こんな感じで、とりあず動きました。
 
@@ -1356,7 +1356,7 @@ ExpBoard YPのおかげで、ヘッドライト・テールライト、室内灯
 
 まずは、M車モハ113のDCC化です。
 
-<img border="0" src="./fig/henoheno/n113_1.jpg" width="400" >
+<img border="0" src="./henoheno/n113_1.jpg" width="400" >
 
 ExpBoard EC-Slimは、スタンダードセット相当で、さらに室内灯を付けたものを利用します。
 
@@ -1365,43 +1365,43 @@ ExpBoard EC-Slimは、スタンダードセット相当で、さらに室内灯�
 
 モハ113の ボディと床下カバーを外して、どのように取り付けるか検討します。画面左側の室内灯ユニットが取り付く側にサウンドデコーダを配置します。
  
-<img border="0" src="./fig/henoheno/n113_2.jpg" width="400" >
+<img border="0" src="./henoheno/n113_2.jpg" width="400" >
 
 また、スピーカーは右側に取り付けることにしました。タカチのケース(SW-15B)とaliで購入したスピーカーを使います。
  
-<img border="0" src="./fig/henoheno/n113_3.jpg" width="400" >
+<img border="0" src="./henoheno/n113_3.jpg" width="400" >
 
 タカチのケースは半分くらいに薄く削っています。組み立てる前はこのような形です。
 
-<img border="0" src="./fig/henoheno/n113_4.jpg" width="400" >
+<img border="0" src="./henoheno/n113_4.jpg" width="400" >
 
 ユニットとケースは透明ゴム系接着剤で固定しています。また、今回両側についている金属端子を上向きにしてボディに当てることで、床下に押し付けて固定する効果も狙ってます。
 
-<img border="0" src="./fig/henoheno/n113_5.jpg" width="400" >
+<img border="0" src="./henoheno/n113_5.jpg" width="400" >
 
 さて組み立てです。EC-Slimはいつものとおり、EM13装着部に差し込みます。今回は室内が青いので青いケーブルを使います。ケーブルが同色ですと接続先を間違る可能性があるので、信号名を書いたシールを貼るとよいでしょう。
 
-<img border="0" src="./fig/henoheno/n113_6.jpg" width="400" >
+<img border="0" src="./henoheno/n113_6.jpg" width="400" >
 
 ケーブルを床下パーツの隙間から出して、床下パーツがしっかり取り付いてることを確認します。（実は今回、いつものグレーのケーブルで製作を初めて、途中で青ケーブルに付け直してます）。
 
-<img border="0" src="./fig/henoheno/n113_7.jpg" width="400" >
+<img border="0" src="./henoheno/n113_7.jpg" width="400" >
 
 この姿にして、一度走行試験をするとよいでしょう。
 
-<img border="0" src="./fig/henoheno/n113_8.jpg" width="400" >
+<img border="0" src="./henoheno/n113_8.jpg" width="400" >
 
 動力ユニットの上に、EC-Slimとスピーカーを載せて位置決めして配線の長さを決めます。
 
-<img border="0" src="./fig/henoheno/n113_9.jpg" width="400" >
+<img border="0" src="./henoheno/n113_9.jpg" width="400" >
 
 配線をカットして、先端の被覆をむきハンダメッキしておきます。
 
-<img border="0" src="./fig/henoheno/n113_10.jpg" width="400" >
+<img border="0" src="./henoheno/n113_10.jpg" width="400" >
 
 基板を載せてTLK1,2 MT1,2を配線します。レール側とモーター側の配線が間違いないことを再確認してください。さらにスピーカーにも配線します。
 
-<img border="0" src="./fig/henoheno/n113_11.jpg" width="400" >
+<img border="0" src="./henoheno/n113_11.jpg" width="400" >
 
 試走して問題ないことを確認した後に、ボディをかぶせてサウンドをテストします。今回、いつものプラバンエンクロージャよりちょっと大きいので、気持ち音が大きくなったかもしれません。
 
@@ -1411,17 +1411,17 @@ ExpBoard EC-Slimは、スタンダードセット相当で、さらに室内灯�
 
 C59(KATO製品)のDCCサウンド加工のご紹介です。
 
-<img border="0" src="./fig/henoheno/nc59_1.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_1.jpg" width="400" >
 
 利用するExpBoardはこちらです。C57用とちょっと似ていますが、端子の位置などが異なります。
  
 C57用はデコーダの下側に取り付けていましたが、こちらはデコーダやスピーカーの上側に取り付けることを想定し、配線パッドが両面についています。
 
-<img border="0" src="./fig/henoheno/nc59_2.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_2.jpg" width="400" >
 
 さて加工を始めます。C59のテンダーは長いのですがこの部分にＲがついていてスピーカーの角と当たるのでリューターで少し彫り込みます。
 
-<img border="0" src="./fig/henoheno/nc59_3.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_3.jpg" width="400" >
 
 スピーカーユニットはいつものNagodenさん頒布品です。
 
@@ -1429,51 +1429,51 @@ C57用はデコーダの下側に取り付けていましたが、こちらは�
 
 端子はレールからの電流が流れるウエイトに接触しないよう短くカットし、配線しやすいようハンダメッキをしておきます。
 
-<img border="0" src="./fig/henoheno/nc59_4.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_4.jpg" width="400" >
 
 エンクロージャは以前ご紹介したプラ板・プラ棒の組み合わせです。角を落とし、またスピーカー配線を通すためのミゾをやすりで掘っておきます。
 
-<img border="0" src="./fig/henoheno/nc59_5.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_5.jpg" width="400" >
 
 スピーカーとエンクロージャをダイキャストパーツの中に、仮置きしてみます。ダイキャストが広がるときは当たっている部分を再度削ります。
 
-<img border="0" src="./fig/henoheno/nc59_6.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_6.jpg" width="400" >
 
 それぞれのパーツをウエイトの中に納まるか確認します。特に、プリント基板がウエイトより上部に飛びさすときは、スピーカーの当たっているところをわずかに削ります。
 
-<img border="0" src="./fig/henoheno/nc59_7.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_7.jpg" width="400" >
 
 ExpBoardからモーターとスピーカーの配線を取り出します。今回は、すべて下側から配線を取り出しました。また、レールからの給電は洋白線（0.2mm)を左右のウエイトに押し当てて行います。
 
-<img border="0" src="./fig/henoheno/nc59_8.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_8.jpg" width="400" >
 
 なお、ヘッドライト配線は使いません。開発中のこのヘッドライト用デコーダ(PetitDecoder-SL)に取り換えました（詳しくは別途説明します）。C57は、はずすのが大変そうだったのですが、C59の場合はこの状態で基板交換ができました。
 
-<img border="0" src="./fig/henoheno/nc59_9.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_9.jpg" width="400" >
 
 作ったパーツをくみ上げます。プリント基板とスピーカーは少量のゴム系接着剤で止めています。また、LokSoundの基板もダイキャストでショートしないようテープで絶縁しておきます。
 
-<img border="0" src="./fig/henoheno/nc59_10.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_10.jpg" width="400" >
 
 このようにぴったりはまりました。モーターへの配線がからまないように注意して引き出します。
 
-<img border="0" src="./fig/henoheno/nc59_11.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_11.jpg" width="400" >
 
 テンダー上面パーツで蓋をします。このときに、床下などが中に押されて盛り上がっていないことを確認してください。
 
-<img border="0" src="./fig/henoheno/nc59_12.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_12.jpg" width="400" >
 
 スピーカーの配線を通してテンダーを組み立てます。
 
-<img border="0" src="./fig/henoheno/nc59_13.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_13.jpg" width="400" >
 
 エンジン側の分解や改造はC57と同じです。モーター配線はダイキャストにはめ込んである金属板を外し、テンダーからの配線につなぎ替えます。ボディ（ダイキャスト）に配線が接触しないようにカプトンテープなどできちんと絶縁してください。
 
-<img border="0" src="./fig/henoheno/nc59_14.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_14.jpg" width="400" >
 
 このように外部から配線などは一切見えません。
 
-<img border="0" src="./fig/henoheno/nc59_15.jpg" width="400" >
+<img border="0" src="./henoheno/nc59_15.jpg" width="400" >
 
 この後、開発中のオープンサウンドデータに書き換えて２両目が完成です。
 
@@ -1540,36 +1540,36 @@ LokSoundV4では異なる場合がありますので、詳細はESUのマニュ�
 
 2007年当時、HornbyのHSTをディーゼルサウンドを模型化したく調べているうちに、英国のSouth West Digital社がHSTのサウンドをプログラムしたLoksound V3.5を取り扱っていることを知り、メールオーダーで取り寄せたのが始まりでした。
 
-<img border="0" src="./fig/lok/lok35_1.jpg" width="400" >
+<img border="0" src="./lok/lok35_1.jpg" width="400" >
 
 今でもSouth West Digital社はメールオーダーのみの取り扱いですが、当時、下手な英文を駆使して注文メールを送り「在庫あり」の返事が来たらクレジットカードの番号を送り（セキュリティーの為、先方のアドバイスによりカード番号は半分ずつ2回に分けて）到着を指折り数えて待っていた思い出があります。 
 
- <img border="0" src="./fig/lok/lok35_2.jpg" width="400" >
+ <img border="0" src="./lok/lok35_2.jpg" width="400" >
 
 　LokSoundデコーダが自分の手でサウンドが書き換えられることができてオリジナルサウンドデコーダが容易に作れるのを知ったのはその後でした。2008年に自作サウンド制作の為にLokProgrammerも取り寄せてキハ40自作サウンド（初代）の制作に取り掛かりました。パソコンが上手くない自分に制作出来る自信はなかったのですがとりあえずやってみようと･･･。
 
-<img border="0" src="./fig/lok/lok35_3.jpg" width="400" >
+<img border="0" src="./lok/lok35_3.jpg" width="400" >
 
 Mはエンジン停止、Sはアイドル音、Dは惰行音、Aは加速音、CXには減速音、その他にそれぞれ移行音が組めるひな形になっており、移行する条件としてスロットルの開度数値を入力する単純なもので分かりやすく、私はLokSound 5となった現在も全ての基幹サウンドスケジュールの基本にしております。
 
-<img border="0" src="./fig/lok/lok35_4.jpg" width="400" >
+<img border="0" src="./lok/lok35_4.jpg" width="400" >
 
 v3.5のスペックは8Mbit（約69秒のサウンド）しか記憶されないので如何に同じ音を繰り返す「LOOP再生」を多用させて容量以下に押し込むのには苦労させられました。それでもv2だった頃の1M Bit（約11秒）と比べれば充分満足でした。
 
 その後2008年頃のマイナーチェンジで16M Bit（約138秒のサウンド）まで記憶できるようになり、サウンドデータ編集の幅に余裕が出来ました。
 
 　キハ40サウンド（初代）のサウンドスケジュール例です。
-<img border="0" src="./fig/lok/lok35_5.jpg" width="400" >
+<img border="0" src="./lok/lok35_5.jpg" width="400" >
 
 A段は未使用、D段を加速音、CXをアイドル音（惰行）としております。当時、ディーゼル車には申し分無いスペックだったのですが、今思えばImmediate（再生途中の音をその場で切り上げて次のサウンドに強制移行させる）機能が全く無いのでレスポンスが悪く、克服する為には短くキレイなLOOPサウンドを作るしか方法しかありませんでしたし走行サウンドにシンクロさせて断流器等の音も出す機能も無かったのでサウンドプログラムとしては少々物足りないかもしれません。
 
 2011年にフルモデルチェンジを果たしてLokSound V4となり、サウンド容量も32M Bit（約267秒）まで増大しました。プログラムが全くの別モノに変わり複雑な動きにもサウンドが対応し飛躍的に進化します。中身も一新されて一気に複雑になり私も最初はプログラムの仕方が全く分からず、LokProgrammerの変換機能を使ってLokSound V3.5のデータをV4にコンバートして解析しました。
 
-<img border="0" src="./fig/lok/lok35_6.jpg" width="400" >
+<img border="0" src="./lok/lok35_6.jpg" width="400" >
 
 このLokSound V3.5から LokSound V4への進化は衝撃的で、今のLokSound 5の基本が確立されたサウンドデコーダーと言えます。
  
- <img border="0" src="./fig/lok/lok35_7.jpg" width="400" >
+ <img border="0" src="./lok/lok35_7.jpg" width="400" >
 
 特にサウンドスケジュールの移行にはImmediate（再生途中の音をその場で切り上げて次のサウンドに強制移行させる）機能が付いて移行レスポンスが格段に上がり、電気車の駆動音サウンド向けとしても申し分無いデコーダとなり、以後サウンドデータを多数手がけることとなります。
 
@@ -1594,7 +1594,7 @@ A段は未使用、D段を加速音、CXをアイドル音（惰行）として�
 
 >http://www.esu.eu/forum/forenuebersicht/
 
-![](./fig/lok/ESU_support.png "")
+![](./lok/ESU_support.png "")
 
 <div style="page-break-before:always"></div>
 
