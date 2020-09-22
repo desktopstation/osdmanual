@@ -5,6 +5,10 @@ ESU LokSoundデコーダで日本型のDCCサウンドを楽しむプロジェ�
 オープンサウンドデータのサイト
 https://desktopstation.net/sounds/
 
+# 過去のリリースPDF
+
+- https://desktopstation.net/sounds/pdf/OSDManual_r3.pdf (rev.3)
+
 # 開発に必要なもの
 
 - Visual Studio code
