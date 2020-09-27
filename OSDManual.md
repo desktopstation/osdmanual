@@ -84,11 +84,12 @@ INDEX</span>
 - [5. 搭載方法](#5-搭載方法)
   - [5.1. 搭載するにあたり注意事項](#51-搭載するにあたり注意事項)
   - [5.2. DCCコネクタ](#52-dccコネクタ)
-  - [5.3. KATO HO(クモハ40, キハ110等)](#53-kato-hoクモハ40-キハ110等)
-  - [5.4. Tomix HO](#54-tomix-ho)
-  - [5.5. トラムウェイ HO](#55-トラムウェイ-ho)
-  - [5.6. エンドウ HO](#56-エンドウ-ho)
-  - [5.7. Nゲージ](#57-nゲージ)
+  - [5.3. KATO HO(単行車クモハ40, キハ110等)](#53-kato-ho単行車クモハ40-キハ110等)
+  - [5.5. KATO HO(動力車,キハ80等)](#55-kato-ho動力車キハ80等)
+  - [5.6. Tomix HO](#56-tomix-ho)
+  - [5.7. トラムウェイ HO](#57-トラムウェイ-ho)
+  - [5.8. エンドウ HO](#58-エンドウ-ho)
+  - [5.9. Nゲージ](#59-nゲージ)
     - [KATO 113系](#kato-113系)
     - [KATO C59 DCCサウンド加工](#kato-c59-dccサウンド加工)
 - [6. よく使う設定](#6-よく使う設定)
@@ -194,13 +195,18 @@ GmbH & Co KG社の商標です。
 
 ### 機関車
 
+- JNR 8620 蒸気機関車
+- JNR 9600 蒸気機関車
 - JNR C56,C12  蒸気機関車
 - JNR C58 蒸気機関車
 - JNR C57,C59 蒸気機関車
 - JNR D51 蒸気機関車
+- JNR C61 蒸気機関車
 - JNR C62 蒸気機関車
 - JNR DE10 ディーゼル機関車
 - JNR EF81形 交流直流両用電気機関車
+- JRF EH200形 直流電気機関車
+- 大井川鐡道 DD20 ディーゼル機関車
 
 ### 国鉄・JR 特急型
 
@@ -213,8 +219,9 @@ GmbH & Co KG社の商標です。
 - JRW 683系・289系 特急電車
 - JRW 285系 特急電車 サンライズエクスプレス (東芝IGBT/三菱IGBT)
 - JRC 373系,383系(東芝GTO VVVF) ※開発中
-- JRE E5系新幹線 ※開発中
-- JRW 500系新幹線 ※開発中
+- JRE E5系新幹線
+- JRW 500系新幹線
+- JRW/JRC N700A系新幹線
 
 ### 国鉄・JR 通勤型他
 
@@ -1045,7 +1052,8 @@ Next18やMTC21といった、デコーダを差し替え可能な構造になっ
 |DesktopStation|ExpBoard for General HO| Next18 | HO |10023 |[URL](https://desktopstation.net/wiki/doku.php/expboardgeneral)|
 |DesktopStation|ExpBoard for YP| MTC21 | HO | 10026 |[URL](https://desktopstation.net/wiki/doku.php/expboardendo)|
 |DesktopStation|EF81 Light Board| - | HO |10031 |[URL](https://desktopstation.net/wiki/doku.php/ef81lightpcb)|
-|DesktopStation|ExpBoard EH200| MTC21 | HO | 10030 ||
+|DesktopStation|ExpBoard EH200| MTC21 | HO | 10030 |[URL](https://desktopstation.net/shop/products/detail/55)|
+|Fujigaya2|ExpBoard for KATO HO DE10| Next18 | HO | 10033 |[URL](https://desktopstation.net/shop/products/detail/65)|
 
 ## 5.2. DCCコネクタ
 
@@ -1060,10 +1068,14 @@ DCCデコーダを車両に搭載する場合、コネクタを使用するこ�
 |コネクタ |ピン数 | スケール | Notes  |
 |:-|:-|:-|:-|:-|	
 |NEM651 | 6 | N | 後継はNext18 |
-|NEM652 | 8 | HO | 公開はPluXまたはMTC21 |
+|NEM652 | 8 | HO | 後継はPluXまたはMTC21 |
 |NEM662 Next18 | 18 | N | Nゲージでは普及が進  |
 |NEM660 MTC21 | 21 | HO | PluXと規格争い中 |
 |NEM658 PluX22 | 21 | HO | PluX8, 16はフェードアウトの模様 |
+
+KATO HO標準動力や、10年以上前に設計されたHO車両では、NEM652(NMRA 8ピン)が多く使われています。ピン配置は以下の通りです。
+
+<img border="0" src="./dec/exp_nem652_pinassign.png">
 
 Next18のコネクタのピン配置は以下の通りです。なお、このピン配置はNext18-Sというサウンド向けの配置となっています。Next18のコネクタは、海外のメーカーが製造しているものであり、日本国内では入手の難しい状況となっています。
 
@@ -1097,9 +1109,61 @@ MTC21のコネクタの仕様は以下の通りです。1.27mmピッチのピン
 |スピーカー1|	10	|13	|AUX3(L)|
 |ピンなし	|×|	12	|VCC +5V|
 
-## 5.3. KATO HO(クモハ40, キハ110等)
+<div style="page-break-before:always"></div>
 
-KATOのキハ80のM車に、LokSound5 microを搭載していきます。
+## 5.3. KATO HO(単行車クモハ40, キハ110等)
+
+KATOのHO キハ110 200番台(1-615)は、NMRAコネクタが搭載されていますが、完全なDCC readyではありません。
+
+ただし、基板上は、一部パターンカットして改造すれば、完全なDCCreadyにできることが分かってるので、説明書に１文字もDCC対応とは書いてませんが、DCCサウンドへの改造を行いました。
+
+<img border="0" src="./kato/kiha110_1.jpg">
+
+床板の下は以下のようになっています。ウェイトとなっている鉄板が入っていますが、これをExpBoard Next18 for KATO HOで置き換える事となります。
+
+<img border="0" src="./kato/kiha110_4.jpg">
+
+改造前の基板は以下の通りです。
+
+<img border="0" src="./kato/kiha110_2.jpg">
+
+カットしろ、ジャンパしろ、と指示をしているパターンがありますので、基板が言うとおりにパターンカットとジャンパをしました。
+
+<img border="0" src="./kato/kiha110_3.jpg">
+
+一応、箇所を明示すると以下の通りです。
+
+<img border="0" src="./kato/kiha110_3b.jpg">
+
+> 重要！
+> C,T,Hと、LED照明基板に書かれてますが、そのまんま配線すると、おかしなことになります。全く同じ基板を使っているので、筐体というか、車両の照明の位置関係が反対なので配線を入れ替えないと進行方向と合いません。
+> 
+> FWD側（→の先）
+> C：同じ配線でOK
+> T：H(Rear,NMRA Pin2)を繋げる
+> H：T(Head,NMRA Pin6)を繋げる
+> 
+> REV側(→のおしり側)
+> C：同じ配線でOK
+> T：T(Head,NMRA Pin6)を繋げる
+> H：H(Rear,NMRA Pin2)を繋げる
+
+
+<img border="0" src="./kato/kiha110_next18_5.jpg">
+
+床板の開口部は、Next18コネクタのサイズ分しか空いていません。よって、デコーダをこのままでは入れることができません。
+
+<img border="0" src="./kato/kiha110_next18_3.jpg">
+
+そこで、開口部をくりぬいて、デコーダを搭載できるようにします。
+
+<img border="0" src="./kato/kiha110_next18_4.jpg">
+
+
+
+## 5.5. KATO HO(動力車,キハ80等)
+
+KATOのHO キハ80のM車に、LokSound5 microを搭載していきます。
 
 * 半田ごて等、ハンダ付道具一式
 * ピンバイス,ピンセット
@@ -1160,7 +1224,7 @@ KATOのキハ80のM車に、LokSound5 microを搭載していきます。
 
 <div style="page-break-before:always"></div>
 
-## 5.4. Tomix HO
+## 5.6. Tomix HO
 
 This chapter describes how to assemble ESU LokSound5 micro decoder to Tomix’s HO 1/80 scale 16.5mm gauge kiha 261.
 
@@ -1207,7 +1271,7 @@ That’s all!
 
 <div style="page-break-before:always"></div>
 
-## 5.5. トラムウェイ HO
+## 5.7. トラムウェイ HO
 
 トラムウェイのキハ40-500のDCCサウンド化にチャレンジしてきます。それでは箱から、取り出すまでを以下に並べます。
 
@@ -1307,7 +1371,7 @@ LEDテープを装着した後は以下のような感じです。
 
 <div style="page-break-before:always"></div>
 
-## 5.6. エンドウ HO
+## 5.8. エンドウ HO
 
 ExpBoard YPを使って、近鉄22000系塗装済みキットのDCCサウンド化を行っていきます。
 
@@ -1348,7 +1412,7 @@ ExpBoard YPのおかげで、ヘッドライト・テールライト、室内灯
 
 <div style="page-break-before:always"></div>
 
-## 5.7. Nゲージ
+## 5.9. Nゲージ
 
 ### KATO 113系
 
