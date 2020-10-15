@@ -303,9 +303,6 @@ pre code {
 	border-color: rgba(255, 255, 255, 0.18);
 }
 
-</style>
-
-<style>
 /* Tomorrow Theme */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
@@ -379,9 +376,7 @@ pre code {
 .hljs-strong {
 	font-weight: bold;
 }
-</style>
 
-<style>
 /*
  * Markdown PDF CSS
  */
