@@ -1,0 +1,7 @@
+name: osdmanual
+
+description: build an OSD manual
+
+runs:
+  using: docker
+  image: ../../../.docker/Dockerfile
