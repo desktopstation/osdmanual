@@ -1,0 +1,24 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build PDF",
+      "type": "shell",
+      "command": "docker run --rm --volume '${cwd}:/data' osdmanual",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Docker Image",
+      "type": "shell",
+      "command": "docker build --tag osdmanual .docker",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
