@@ -1,0 +1,2339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OSDManual.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/github/osdmanual/style.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p align="center">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<img src="./logo/loclogo2_big_logo.png" align="center">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</p>
+<div style="text-align: center;">
+<span style="font-size: 300%">
+OPEN SOUND DATA<br/>MANUAL</span><br/>
+~オープンサウンドデータの活用法~<br/>
+rev.4 (Oct 11, 2020)
+<br/>
+<br/>
+<br/>
+<br/>
+</div>
+<p align="center">
+<img src="./logo/logo.png" align="center" width="200">
+</p>
+<div style="page-break-before:always"></div>
+<div style="text-align: center;">
+</br>
+<span style="font-size: 200%">
+INDEX</span>
+</div>
+<!-- TOC -->
+<ul>
+<li><a href="#1-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E3%81%AF">1. オープンサウンドデータとは</a>
+<ul>
+<li><a href="#11-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">1.1. はじめに</a></li>
+<li><a href="#12-%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84">1.2. 利用規約</a></li>
+<li><a href="#13-%E3%81%8A%E3%81%93%E3%81%A8%E3%82%8F%E3%82%8A">1.3. おことわり</a></li>
+<li><a href="#14-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%80%E8%A6%A7">1.4. サウンドデータの一覧</a>
+<ul>
+<li><a href="#141-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%83%BB%E6%B0%97%E5%8B%95%E8%BB%8A">1.4.1. ディーゼル・気動車</a></li>
+<li><a href="#142-%E6%A9%9F%E9%96%A2%E8%BB%8A">1.4.2. 機関車</a></li>
+<li><a href="#143-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E7%89%B9%E6%80%A5%E5%9E%8B">1.4.3. 国鉄・JR 特急型</a></li>
+<li><a href="#144-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E9%80%9A%E5%8B%A4%E5%9E%8B%E4%BB%96">1.4.4. 国鉄・JR 通勤型他</a></li>
+<li><a href="#145-%E7%A7%81%E9%89%84">1.4.5. 私鉄</a></li>
+</ul>
+</li>
+<li><a href="#15-%E5%BF%83%E6%A7%8B%E3%81%88">1.5. 心構え</a></li>
+<li><a href="#16-%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE">1.6. 用意するもの</a></li>
+</ul>
+</li>
+<li><a href="#2-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80">2. LokSoundデコーダ</a>
+<ul>
+<li><a href="#21-%E9%96%8B%E7%99%BA%E5%85%83%E3%81%AEesu%E7%A4%BE%E3%81%A8%E3%81%AF">2.1. 開発元のESU社とは</a></li>
+<li><a href="#22-loksound%E3%81%AE%E6%AD%B4%E5%8F%B2">2.2. LokSoundの歴史</a></li>
+<li><a href="#23-loksound-5%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA">2.3. LokSound 5シリーズ</a></li>
+<li><a href="#24-loksound%E3%82%92%E3%81%AA%E3%81%9C%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B">2.4. LokSoundをなぜ使うのか</a></li>
+</ul>
+</li>
+<li><a href="#3-lokprogrammer%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">3. LokProgrammerの使い方</a>
+<ul>
+<li><a href="#31-lokprogrammer%E3%82%BD%E3%83%95%E3%83%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">3.1. LokProgrammerソフトのダウンロードとインストール</a></li>
+<li><a href="#32-lokprogrammer%E3%81%AE%E8%B5%B7%E5%8B%95">3.2. LokProgrammerの起動</a></li>
+<li><a href="#33-%E6%9B%B8%E8%BE%BC%E3%81%BF%E8%A3%85%E7%BD%AE%E3%81%AE%E6%8E%A5%E7%B6%9A">3.3. 書込み装置の接続</a></li>
+<li><a href="#34-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF">3.4. オープンサウンドデータの書込み</a></li>
+<li><a href="#35-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%81%AE%E8%AA%AC%E6%98%8E">3.5. サウンドの編集画面の説明</a></li>
+<li><a href="#36-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%81%A3%E3%81%A6">3.6. サウンドスロットって？</a></li>
+<li><a href="#37-%E3%83%95%E3%82%A1%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E7%95%AA%E5%8F%B7%E3%81%AE%E5%A4%89%E6%9B%B4">3.7. ファンクション番号の変更</a></li>
+</ul>
+</li>
+<li><a href="#4-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4. サウンドの作り方</a>
+<ul>
+<li><a href="#41-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">4.1. はじめに</a></li>
+<li><a href="#42-%E5%8F%8E%E9%8C%B2%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E5%BF%83%E6%A7%8B%E3%81%88">4.2. 収録に向けた心構え</a></li>
+<li><a href="#43-%E5%8F%8E%E9%8C%B2%E3%81%AE%E3%82%B3%E3%83%84">4.3. 収録のコツ</a></li>
+<li><a href="#44-%E5%8F%8E%E9%8C%B2%E3%81%97%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E9%9F%B3">4.4. 収録しなければならない音</a></li>
+<li><a href="#45-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5%E3%83%BB%E3%83%8E%E3%82%A4%E3%82%BA%E4%BD%8E%E6%B8%9B">4.5. サウンド加工・ノイズ低減</a></li>
+<li><a href="#46-%E8%B5%B0%E8%A1%8C%E9%9F%B3%E3%81%AE%E5%8A%A0%E5%B7%A5%E3%83%BB%E7%B7%A8%E9%9B%86">4.6. 走行音の加工・編集</a></li>
+<li><a href="#47-%E7%99%BA%E8%BB%8A%E3%83%99%E3%83%AB%E5%88%87%E5%87%BA%E3%81%97">4.7. 発車ベル切出し</a></li>
+<li><a href="#48-vvvf%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4.8. VVVFサウンドの作り方</a></li>
+<li><a href="#49-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4.9. ディーゼルサウンドの作り方</a></li>
+<li><a href="#410-spectrallayers%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">4.10. SpectralLayersの使い方</a></li>
+</ul>
+</li>
+<li><a href="#5-%E6%90%AD%E8%BC%89%E6%96%B9%E6%B3%95">5. 搭載方法</a>
+<ul>
+<li><a href="#51-%E6%90%AD%E8%BC%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">5.1. 搭載するにあたり注意事項</a></li>
+<li><a href="#52-dcc%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF">5.2. DCCコネクタ</a></li>
+<li><a href="#53-kato-ho%E5%8D%98%E8%A1%8C%E8%BB%8A%E3%82%AF%E3%83%A2%E3%83%8F40-%E3%82%AD%E3%83%8F110%E7%AD%89">5.3. KATO HO単行車クモハ40, キハ110等</a></li>
+<li><a href="#54-kato-ho%E5%8B%95%E5%8A%9B%E8%BB%8A%E3%82%AD%E3%83%8F80%E7%AD%89">5.4. KATO HO動力車,キハ80等</a></li>
+<li><a href="#55-tomix-ho">5.5. Tomix HO</a></li>
+<li><a href="#56-%E3%83%88%E3%83%A9%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A4-ho">5.6. トラムウェイ HO</a></li>
+<li><a href="#57-%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A6-ho">5.7. エンドウ HO</a></li>
+<li><a href="#58-n%E3%82%B2%E3%83%BC%E3%82%B8">5.8. Nゲージ</a>
+<ul>
+<li><a href="#581-kato-113%E7%B3%BB">5.8.1. KATO 113系</a></li>
+<li><a href="#582-kato-c59-dcc%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5">5.8.2. KATO C59 DCCサウンド加工</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#6-%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E8%A8%AD%E5%AE%9A">6. よく使う設定</a></li>
+<li><a href="#7-%E3%82%B3%E3%83%A9%E3%83%A0">7. コラム</a>
+<ul>
+<li><a href="#71-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%8D%E3%81%A3%E3%81%8B%E3%81%91">7.1. オープンサウンドデータを始めるきっかけ</a></li>
+<li><a href="#72-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89">7.2. オープンサウンドデータのこれから</a></li>
+<li><a href="#73-loksound-v35%E3%81%A8%E3%81%AE%E5%87%BA%E4%BC%9A%E3%81%84">7.3. LokSound V3.5との出会い</a></li>
+</ul>
+</li>
+<li><a href="#8-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">8. サポート</a></li>
+<li><a href="#9-faq">9. FAQ</a>
+<ul>
+<li><a href="#91-%E6%AC%A7%E7%B1%B3%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AF%E5%85%AC%E9%96%8B%E3%81%97%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B">9.1. 欧米のサウンドデータは公開しないのですか？</a></li>
+<li><a href="#92-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AFesu%E4%BB%A5%E5%A4%96%E3%81%AE%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%99%E3%81%8B">9.2. オープンサウンドデータはESU以外のデコーダに書き込めますか？</a></li>
+<li><a href="#93-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%82%92%E5%A3%8A%E3%81%95%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.3. デコーダを壊さないようにするにはどうすればよいですか</a></li>
+<li><a href="#94-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E5%8F%8D%E5%BF%9C%E3%81%97%E3%81%AA%E3%81%84%E6%95%85%E9%9A%9C%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F">9.4. デコーダが動かない、反応しない、故障してしまった。</a></li>
+<li><a href="#95-pwm%E3%83%91%E3%83%AF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B">9.5. PWMパワーパックで動かせますか？</a></li>
+<li><a href="#96-%E7%B7%9A%E8%B7%AF%E9%9B%BB%E5%9C%A7%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.6. 線路電圧はどうすればよいですか？</a></li>
+<li><a href="#97-lokprogrammer%E3%81%A7%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A7%E3%82%82%E3%81%86%E3%81%BE%E3%81%8F%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%AA%E3%81%84">9.7. LokProgrammerでサウンドを書き込んでもうまく書き込めない</a></li>
+<li><a href="#98-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F">9.8. アドレスが分からなくなった</a></li>
+<li><a href="#99-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E3%81%82%E3%82%8B">9.9. コマンドステーションによって動かないアドレスがある</a></li>
+<li><a href="#910-loksoundv4%E3%81%ABloksound5%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B">9.10. LokSoundV4に、LokSound5向けのサウンドデータを書き込みできますか？</a></li>
+<li><a href="#911-loksound5%E3%81%ABloksoundv4%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B">9.11. LokSound5に、LokSoundV4向けのサウンドデータを書き込みできますか？</a></li>
+<li><a href="#912-%E9%9F%B3%E9%87%8F%E3%81%8C%E5%B0%8F%E3%81%95%E3%81%84%E3%81%AE%E3%81%A7%E8%AA%BF%E6%95%B4%E3%81%97%E3%81%9F%E3%81%84">9.12. 音量が小さいので調整したい</a></li>
+<li><a href="#913-%E2%97%8B%E2%97%8B%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%A6%E6%AC%B2%E3%81%97%E3%81%84">9.13. ○○のサウンドデータを提供して欲しい</a></li>
+<li><a href="#914-%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B">9.14. アナログで動かせますか？</a></li>
+<li><a href="#915-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8B%E3%82%89%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%97%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93">9.15. LokSoundデコーダからサウンドデータが取り出しできません</a></li>
+<li><a href="#916-loksound%E3%81%AF%E8%89%B2%E3%80%85%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8C%E3%81%A9%E3%82%8C%E3%81%8C%E8%89%AF%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.16. LokSoundは色々ありますが、どれが良いですか？</a></li>
+<li><a href="#917-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A7%E5%95%86%E6%A5%AD%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88esu%E3%81%A8%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%8B">9.17. オープンサウンドデータで商業利用する場合、ESUとのライセンスは必要か？</a></li>
+<li><a href="#918-%E5%B9%B4%E4%BB%A5%E4%B8%8A%E5%89%8D%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A0loksoundv4%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%83%BB%E9%9F%B3%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%84">9.18. 年以上前に書き込んだLokSoundV4が動かない・音が出ない</a></li>
+<li><a href="#919-%E9%89%84%E9%81%93%E4%BC%9A%E7%A4%BE%E3%81%AE%E8%A8%B1%E8%AB%BE%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%81%8B">9.19. 鉄道会社の許諾は必要ですか？</a></li>
+<li><a href="#920-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B">9.20. サウンドデータの著作権はどうなっていますか</a></li>
+<li><a href="#921-%E6%A8%A1%E5%9E%8B%E5%BA%97%E3%83%BB%E6%A8%A1%E5%9E%8B%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A7%E3%81%99%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%92%E8%A1%8C%E3%81%86%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%8B">9.21. 模型店・模型メーカーです。オープンサウンドデータを使ってビジネスを行うにはどうすればよいか？</a></li>
+</ul>
+</li>
+<li><a href="#10-%E6%9C%80%E5%BE%8C%E3%81%AB">10. 最後に</a>
+<ul>
+<li><a href="#101-%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E3%83%BB%E9%9F%B3%E6%BA%90%E6%8F%90%E4%BE%9B">10.1. クリエイター・音源提供</a></li>
+<li><a href="#102-%E5%9B%A3%E4%BD%93%E3%83%BB%E7%B5%84%E7%B9%94">10.2. 団体・組織</a></li>
+<li><a href="#103-%E8%91%97%E4%BD%9Ccopyright">10.3. 著作/Copyright</a></li>
+<li><a href="#104-mit-license">10.4. MIT License</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<div class="page"/>
+<h1 id="1-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E3%81%AF">1. オープンサウンドデータとは</h1>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E3%81%AF" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E3%81%AF"></a></p>
+<h2 id="11-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">1.1. はじめに</h2>
+<p><a id="markdown-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" name="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"></a></p>
+<p>オープンサウンドデータは、日本で比較的普及していたESU社のLokSoundデコーダ向けに、日本型のDCCサウンドデータを無償で公開し、ユーザーみんなで協力してDCCを盛り上げていくプロジェクトです。</p>
+<p>完全に自由ではありませんが、比較的緩和された利用規約としており、個人でオープンサウンドデータのコンセプトに共感頂ける方は問題なく楽しめるようにしております。</p>
+<p>また、小規模な鉄道模型店の方々がオープンサウンドデータを活用し、ロングテールな部分でビジネスを発展していけるよう、ビジネスも可能な規約を設けております。</p>
+<p>詳細については、オープンサウンドデータのWebページを参照頂ければ幸いです。</p>
+<p>オープンサウンドデータは、DCC電子工作連合加盟メンバーとDesktopStationが運営資金を提供するスポンサー下で、日本のDCCユーザーならびにクラブと連携や協力の上で、独自に運営しています。ドイツESU社や、本書で取り上げている模型メーカーとは資本的にも、ビジネス的にも、何ら関係はございません。</p>
+<p>オープンサウンドデータ<br/>
+https://desktopstation.net/sounds/</p>
+<h2 id="12-%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84">1.2. 利用規約</h2>
+<p><a id="markdown-%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84" name="%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84"></a></p>
+<p>サウンドデータをダウンロードもしくはデータファイルを受け取った方、デコーダに書き込んで利用する方を&quot;ユーザー&quot;と記述します。</p>
+<p>本ページで公開されているサウンドデータをダウンロードもしくは入手した場合には、本利用規約に同意したものとします。</p>
+<p>同意されない場合、オープンサウンドデータのデータを利用中に利用規約を遵守できない場合は、オープンサウンドデータを利用することができません。直ちにデコーダならびに保存したデータの全てを保有のコンピュータや記憶媒体から削除を行ってください。</p>
+<ul>
+<li>オープンサウンドデータのコンセプト・趣旨に賛同または共感していること</li>
+<li>本サービスの管理者、クリエイター、他のユーザーまたはその他の第三者に不利益，損害，不快感を与える行為を行わないこと</li>
+<li>利用規約を遵守するユーザーは、本ページに掲載されているサウンドデータを無料で自身の保有するDCCデコーダに書き込んで、利用することができます。</li>
+<li>もし、このサウンドデータ自体を有償で、もしくは書き込まれたデコーダや搭載車両を本来の価格を超える金額で受け取った場合には、販売した者に返金請求しなければなりません。また、不正にサウンドデータを販売目的で利用した者の詳細な情報をDesktopStationに通知しなければなりません。</li>
+<li>ユーザーは、本ページのサウンドデータを改変することは可能です。ただし、その改変したデータを後述する鉄道模型店・模型メーカーが行えるサービスを除き、不特定多数の他人に渡す行為や、Webやその他の媒体を通じて再頒布を行う際にはDesktopStationまで連絡を行い、本ページの中で配布しなければなりません。また、利用規約をそのまま適用しなければなりません。</li>
+<li>本ページのサウンドデータを改変することが許容されていますが、改変したデータ単独の販売は行ってはいけません。デコーダへの書込みサービスでの提供、書き込んだ模型の販売が許容されます。なお、販売やサービスを行う際には、オープンサウンドデータをベースに作成したことを顧客に明示しなければなりません。</li>
+<li>頒布されるサウンドデータを用いてデコーダに書き込む行為、または書き込んだデコーダ自体・もしくはデコーダを搭載した車両の販売を、生業（ビジネス）の一環として行うユーザー（企業または個人事業主、個人）は、書き込みを実施するサービスを開始する旨を事前に、DesktopStationに許諾（無償）を得るために連絡をしなければならない事、書き込みを有償サービスで実施する場合には作業金額を店舗内またはホームページで明示すること、サウンドデータまたはそのサウンドデータ自体によって発生する価値に相当する費用・代金を、最終的に支払う顧客に対して請求・上乗せしないこと、を制約事項として設けます。なお、過去の経緯や評判、与信情報、その他の情報から、DCCの活動を阻害する、もしくは公序良俗として不適切と判断される場合には、サウンドデータの利用を許可しない・許可を取り消す場合があります。</li>
+<li>本ページのサウンドデータファイルへの直接リンクを禁止します。リンクは必ず本ページに行ってください。</li>
+<li>本ページのサウンドデータファイルの他のページへの転載、DVD等の媒体での不特定多数への頒布を禁止します。許可は出しません。</li>
+<li>オープンサウンドデータ自体、関連するデータ、開発者、協力者等に、根拠無く違法性を公の場で指摘・公開し、活動を妨害するといった行為を禁止します。</li>
+<li>サウンドデータを不正に利用した業者・個人事業主が、不正利用の補償について解決に応じない場合、業者の名称・住所・代表者の名前を不特定多数の場で掲示することをダウンロードもしくは入手の時点で了承したものとします。</li>
+<li>サウンドデータの著作権は放棄されていません。</li>
+<li>サウンドデータによって引き起こされる故障、事故、損害などについて、一切の保証を行わない旨を承諾すること。</li>
+<li>個別のサポートは実施しないことを了承すること。</li>
+<li>本利用規約は予告・通告なしに変更されることがある。</li>
+</ul>
+<div style="page-break-before:always"></div>
+<h2 id="13-%E3%81%8A%E3%81%93%E3%81%A8%E3%82%8F%E3%82%8A">1.3. おことわり</h2>
+<p><a id="markdown-%E3%81%8A%E3%81%93%E3%81%A8%E3%82%8F%E3%82%8A" name="%E3%81%8A%E3%81%93%E3%81%A8%E3%82%8F%E3%82%8A"></a></p>
+<p>ここで公開してるサウンドデータは、記載の鉄道会社や車両、その他略称、名称が書かれておりますが、一切の関係はございません。商標となっている名称が記載されている場合、その名称は商標権を保有する会社のものであり、オープンサウンドデータは一切の関係はございません。
+あくまでも、記載の車両や時代、雰囲気をモチーフにしてサウンドを作成しており、実車以外のサウンドや、合成された音を多々、使用して作成しております。</p>
+<p>オープンサウンドデータでは、著作権や著作隣接権の権利の及ばない形となるよう、収録・使用しています。また法律上で権利が有効となる、発車メロディの使用や鉄道会社の商標には抵触しないよう、データの作成には十分な注意を行っております。</p>
+<p>実時間に合わせた加減速となっておらず、模型映えを重視した設計となっています。また、細かい形式が異なる、更新前・後など様々な形式があり、それらを全て考慮して作成されたサウンドではございません。気になる場合には、ご自分でカスタマイズしてディテールアップをお願いいたします。</p>
+<blockquote>
+<p>著作権法では、著作権の対象となる範囲や定義が明確に定められています。サウンドは全てが対象とならず、権利を主張できないものも多数あります。たとえば、ブザーや機械の音、警告音等は法律上で権利として含まれません。また、法律の上権利が認められる場合であっても、権利を主張する期限が定められています。
+これらの解釈は、Web上で弁理士事務所や著作権管理団体で解説されています。各自で参照ください。</p>
+</blockquote>
+<ul>
+<li>LokSound, LokProgrammer は、独ESU electronic solutions ulm GmbH &amp; Co KG社の商標です。</li>
+<li>Windowsはマイクロソフト社の商標です。</li>
+<li>その他製品名、会社名はそれぞれの会社が商標等の権利を有しています。</li>
+<li></li>
+</ul>
+<div style="page-break-before:always"></div>
+<h2 id="14-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%80%E8%A6%A7">1.4. サウンドデータの一覧</h2>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%80%E8%A6%A7" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%80%E8%A6%A7"></a></p>
+<p>2020年10月現在で公開されているサウンドデータは以下の通りです。</p>
+<h3 id="141-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%83%BB%E6%B0%97%E5%8B%95%E8%BB%8A">1.4.1. ディーゼル・気動車</h3>
+<p><a id="markdown-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%83%BB%E6%B0%97%E5%8B%95%E8%BB%8A" name="%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%83%BB%E6%B0%97%E5%8B%95%E8%BB%8A"></a></p>
+<ul>
+<li>キハ40系ディーゼル車</li>
+<li>DML30HSE キハ183系</li>
+<li>DMH17 キハ82系</li>
+<li>DML30HSE キハ181系</li>
+<li>DMH17C 縦型エンジン(汎用) キハ10/20/55等、小湊 キハ200</li>
+<li>DMH17H 横型エンジン(汎用) キハ81/82/58/52/45/35/23/28等、名鉄キハ8000</li>
+<li>DMF15HSA (汎用) キハ40,47,48等, キハ183/184</li>
+<li>DMF15HSA 晩年ワンマン仕様(汎用)</li>
+<li>DMF13HZA キハ261</li>
+<li>DMF13HZA キハ110</li>
+<li>NTA-855-R-1 キハ110</li>
+<li>SA6D125H HOT7000系</li>
+<li>SA6D125H キハ120系</li>
+<li>SA6D125H 四国2000系, N2000系</li>
+<li>SA6D140HE キハE130系, キハE120系</li>
+<li>NTA-855-R-1 キハ75系</li>
+<li>NTA-855-R-1 キハ85系 ※名鉄キハ8500系、会津キハ8500系にも最適。</li>
+</ul>
+<h3 id="142-%E6%A9%9F%E9%96%A2%E8%BB%8A">1.4.2. 機関車</h3>
+<p><a id="markdown-%E6%A9%9F%E9%96%A2%E8%BB%8A" name="%E6%A9%9F%E9%96%A2%E8%BB%8A"></a></p>
+<ul>
+<li>JNR 8620 蒸気機関車</li>
+<li>JNR 9600 蒸気機関車</li>
+<li>JNR C56,C12  蒸気機関車</li>
+<li>JNR C58 蒸気機関車</li>
+<li>JNR C57,C59 蒸気機関車</li>
+<li>JNR D51 蒸気機関車</li>
+<li>JNR C61 蒸気機関車</li>
+<li>JNR C62 蒸気機関車</li>
+<li>JNR DE10 ディーゼル機関車</li>
+<li>JNR EF81形 交流直流両用電気機関車</li>
+<li>JRF EH200形 直流電気機関車</li>
+<li>大井川鐡道 DD20 ディーゼル機関車</li>
+</ul>
+<h3 id="143-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E7%89%B9%E6%80%A5%E5%9E%8B">1.4.3. 国鉄・JR 特急型</h3>
+<p><a id="markdown-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E7%89%B9%E6%80%A5%E5%9E%8B" name="%E5%9B%BD%E9%89%84%E3%83%BBjr-%E7%89%B9%E6%80%A5%E5%9E%8B"></a></p>
+<ul>
+<li>MT54・国鉄急行・特急型 165,183系等</li>
+<li>JNR 781系 交流特急電車</li>
+<li>JNR 381系 直流特急電車</li>
+<li>JRE E257系0番台 VVVF直流特急電車</li>
+<li>JRE E259系 VVVF直流特急電車 主要機器が共通のE657系にも好適</li>
+<li>JRE E353系 VVVF直流特急電車</li>
+<li>JRW 683系・289系 特急電車</li>
+<li>JRW 285系 特急電車 サンライズエクスプレス (東芝IGBT/三菱IGBT)</li>
+<li>JRC 373系,383系(東芝GTO VVVF)</li>
+<li>JRE E5系新幹線</li>
+<li>JRW 500系新幹線</li>
+<li>JRW/JRC N700A系新幹線</li>
+</ul>
+<h3 id="144-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E9%80%9A%E5%8B%A4%E5%9E%8B%E4%BB%96">1.4.4. 国鉄・JR 通勤型他</h3>
+<p><a id="markdown-%E5%9B%BD%E9%89%84%E3%83%BBjr-%E9%80%9A%E5%8B%A4%E5%9E%8B%E4%BB%96" name="%E5%9B%BD%E9%89%84%E3%83%BBjr-%E9%80%9A%E5%8B%A4%E5%9E%8B%E4%BB%96"></a></p>
+<ul>
+<li>旧型国電タイプ(吊り掛け)  クモハ12,40等</li>
+<li>MT54・国鉄近郊型  113,115系,185系等</li>
+<li>国鉄(JNR) 211系/213系 直流電車</li>
+<li>国鉄(JNR) 205系5000番台 (東洋IGBT VVVF)</li>
+<li>国鉄(JNR) 209系</li>
+<li>E231系</li>
+<li>E233系 通勤型</li>
+<li>E233系 近郊型</li>
+<li>E235系 通勤型</li>
+<li>JRW 207系1000番台 東芝GTO VVVF</li>
+<li>JRW 223系 日立IGBT VVVF</li>
+<li>JRW 223系 三菱IGBT VVVF</li>
+<li>JRW 223系 東芝IGBT VVVF</li>
+<li>JRW 225系 東洋IGBT VVVF</li>
+<li>JRW 321系 東洋IGBT VVVF</li>
+</ul>
+<h3 id="145-%E7%A7%81%E9%89%84">1.4.5. 私鉄</h3>
+<p><a id="markdown-%E7%A7%81%E9%89%84" name="%E7%A7%81%E9%89%84"></a></p>
+<ul>
+<li>東急 1000系</li>
+<li>東急 8500系</li>
+<li>東急 5050系, 5000系 ※開発中</li>
+<li>東急 2020系, 6020系, 3020系 ※開発中</li>
+<li>京王 1000系 日立2レベルIGBT VVVF</li>
+<li>京王 1000系 東洋IGBT VVVF</li>
+<li>京王 1000系(2代目) 東洋GTO VVVF</li>
+<li>伊豆急 100系 クモハ100形</li>
+<li>京急 600形 東洋GTO VVVF</li>
+<li>京急 新1000系 1033F シーメンス GTO VVVF(ドレミファインバータ) ※2100系にもどうぞ。</li>
+<li>京急 新1000系風 東洋IGBT VVVF ※開発中</li>
+<li>京成 3700形 東洋GTO VVVF</li>
+<li>東武 8000系</li>
+<li>東武 6050系</li>
+<li>東武 500系</li>
+<li>阪急 8300系 東洋GTO VVVF</li>
+<li>近鉄特急電車 MB3127初期型汎用サウンド<br/> (12000系,12200系,12400系,12410系,12600系,30000系向け)</li>
+<li>近鉄特急電車 MB3127後期型汎用サウンド<br/> (12200系,12400系,12410系,12600系,30000系向け)</li>
+<li>近鉄 22000系 三菱GTO VVVF特急電車</li>
+<li>近鉄 22600系・21020系 三菱IGBT VVVF特急電車、※開発中</li>
+<li>近鉄 抵抗制御通勤車<br/> (1800,1810,2400,2410,2430,2444,2600,2610,2800系)</li>
+<li>静岡 A3000 ※開発中</li>
+<li>静岡 1000 ※開発中</li>
+</ul>
+<div style="page-break-before:always"></div>
+<h2 id="15-%E5%BF%83%E6%A7%8B%E3%81%88">1.5. 心構え</h2>
+<p><a id="markdown-%E5%BF%83%E6%A7%8B%E3%81%88" name="%E5%BF%83%E6%A7%8B%E3%81%88"></a></p>
+<p>オープンサウンドデータは、決して簡単で平易なものではありません。DCCを用いるデジタル鉄道模型で楽しむ仕組みであるため、ただ単に使うだけでも、それなりの知識や勉強を要求される物となります。
+このため、オープンサウンドデータは万人向け、誰でも楽しめる簡単なものとは申しません。鉄道模型をもっと楽しくしたい、音を出したい、自動運転やコンピュータ制御をしたい、という飽くなき探求を追い求める方々向けとなります。</p>
+<p>機材の入手も、少ない予算で実現するためには、英語を駆使して輸入しなければりません。何かあれば、外国のお店とメールでやりあう事も要求されます。それすらも楽しむくらいの余裕を持つことが求められてきます。</p>
+<p>オープンサウンドデータに触れる覚悟はできましたでしょうか。覚悟ができたら、次の章に進みましょう。</p>
+<h2 id="16-%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE">1.6. 用意するもの</h2>
+<p><a id="markdown-%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE" name="%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE"></a></p>
+<p>オープンサウンドデータでは、DCCのコマンドステーションなどを既に保有されている方々が利用する事を前提にしています。</p>
+<ul>
+<li>LokProgrammer本体(ESU 53451または53452)</li>
+<li>デコーダテスタ(ESU  または LaisDcc など)、またはLokSound5を搭載した車両</li>
+<li>LokSound5デコーダ(後述)</li>
+<li>ACアダプタ(たとえば12V/2A)</li>
+</ul>
+<div class="page"/>
+<h1 id="2-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80">2. LokSoundデコーダ</h1>
+<p><a id="markdown-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80" name="loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80"></a></p>
+<h2 id="21-%E9%96%8B%E7%99%BA%E5%85%83%E3%81%AEesu%E7%A4%BE%E3%81%A8%E3%81%AF">2.1. 開発元のESU社とは</h2>
+<p><a id="markdown-%E9%96%8B%E7%99%BA%E5%85%83%E3%81%AEesu%E7%A4%BE%E3%81%A8%E3%81%AF" name="%E9%96%8B%E7%99%BA%E5%85%83%E3%81%AEesu%E7%A4%BE%E3%81%A8%E3%81%AF"></a></p>
+<p>ESU社の創立は1998年で、ドイツのウルムに本社を持ちます。正式には、Electronic Solutions Ulmという会社名で、その頭文字でESU社と呼ばれます。</p>
+<p>メルクリンの制御器やデコーダ部品のOEMメーカーとして以前は活動しており、セントラルステーション1(CS1)の時代はESU ECoS1と共通だった事もあります。</p>
+<p>2020年現在は、メルクリンのOEMメーカーとしては活動していないようですが、中小の模型メーカーへのOEM提供や、技術力や資金を武器に、ESUブランドとしてドイツ型のオリジナル鉄道模型車両の販売をしています。</p>
+<p>ESU社の製品は、ドイツ企業らしく安定性に定評があります。日本では一時期問題となった、メーカー間の互換が取れない相性問題もそれほど聞かれず、安心して使用できるDCCメーカーの１つです。</p>
+<p>日本ではいくつか代理店があり、コマンドステーション、デコーダ、模型車両(HO)といった商品が展開されております。特に車両は、音、連結開放/パンタ上げ下げ、スチーム、ライトなどの派手なギミックが最初から組み込まれており、定評があります。</p>
+<h2 id="22-loksound%E3%81%AE%E6%AD%B4%E5%8F%B2">2.2. LokSoundの歴史</h2>
+<p><a id="markdown-loksound%E3%81%AE%E6%AD%B4%E5%8F%B2" name="loksound%E3%81%AE%E6%AD%B4%E5%8F%B2"></a></p>
+<p>1999年に最初に製品として出されたのは、LokSound 1(classic)とのことです。サイズは43mm x 16mmと小型だったことが特徴と記載されています。その後、1Mbit～3MbitのROMを搭載したLokSound2が登場し、当初は44mm x 19.5mmのサイズだったものが、大容量化しつつ小型化し、36mm x 15.5mmのサイズを実現しました。</p>
+<blockquote>
+<p>http://www.esu.eu/produkte/fruehere-produkte/fruehere-loksound-decoder/</p>
+</blockquote>
+<p>日本で、紹介され始めたのは、LokSound2 (2001)からであると思います。その時には、SOUNDTRAXXよりも小型という点で、評価されていたようです。それから、LokSound 3が2005年に登場します。</p>
+<p>LokSound V3.5は、日本国内でも雑誌や書籍などで紹介されたことから、輸入販売の模型店や、個人輸入で手に入れる方がおり、サウンドデータをブロック図で作成できるということで、DCCサウンドのユーザーに普及が進みました。</p>
+<img border="0" src="./lok/lok35_5.jpg" width="400" >
+<p>LokSound V4は2011年に登場しました。V4では、メモリやサウンドプログラミングの制約が大幅に緩和され、現在の形に近いレベルのサウンドデータの作成ができるようになりました。V3.5から、あまりにも大きな更新だったため、多くのユーザーはデータを作り直したり勉強をし直すなどが求められました。しかし、その代わりに高音質で様々なシーンの再現が可能となりました。</p>
+<img border="0" src="./lok/lok35_6.jpg" width="400" >
+<p>そして、満を持して、現行版であるLokSound 5が2019年に登場しました。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">時期</th>
+<th style="text-align:left">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">LokSound 1</td>
+<td style="text-align:left">1999</td>
+<td style="text-align:left">LokSound classicと呼ばれる。</td>
+</tr>
+<tr>
+<td style="text-align:left">LokSound 2</td>
+<td style="text-align:left">2002</td>
+<td style="text-align:left">大容量ROM搭載(1Mbit→3Mbit)。RocoへのOEM品も存在。</td>
+</tr>
+<tr>
+<td style="text-align:left">LokSound 3</td>
+<td style="text-align:left">2005</td>
+<td style="text-align:left">16Mbit大容量ROM, mfx(M4)のサポート。同時発音数4ch。</td>
+</tr>
+<tr>
+<td style="text-align:left">LokSound 3.5</td>
+<td style="text-align:left">2006</td>
+<td style="text-align:left">16Mbit大容量ROM,同時発音数4ch。</td>
+</tr>
+<tr>
+<td style="text-align:left">LokSound V4</td>
+<td style="text-align:left">2011</td>
+<td style="text-align:left">サウンドプログラミングの大幅進化、32MBit大容量ROM、同時発音数8ch。</td>
+</tr>
+<tr>
+<td style="text-align:left">LokSound 5</td>
+<td style="text-align:left">2019</td>
+<td style="text-align:left">書込みスピード高速化,MicroシリーズがNext18に統一、大容量ROM 128MBit、同時発音数10ch。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-loksound-5%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA">2.3. LokSound 5シリーズ</h2>
+<p><a id="markdown-loksound-5%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA" name="loksound-5%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA"></a></p>
+<p>LokSound 5シリーズは、2019年1月に発表されたもので、大きく、３種類のプラットフォームで構成されます。この区分けは以前と変わりませんが、小型化などの改良が加えられています。</p>
+<p>内部の性能は基本的に同じで、モータの出力電流や、AUX信号の数などの差異が中心となっています。オープンサウンドデータでは、LokSound 5シリーズ全てに対応できるようにしており、データの設定が例えばmicro用であっても、問題なく無印版に書込みが可能です。</p>
+<p>内部のアーキテクチャも大きく変更され、旧ATMELのAVRマイコンから、MicrochipのSAMDシリーズのARMマイコンに変更され、性能が強化されています。詳しくは、ATSAMC21G17A(ARM Cortex-M0+ 48MHz, FLASH 128KB, RAM 16KB)で、外付けにwinbond W25Q128JV 16MB(128MBit) 外部SPI FLASH)やDC/DCコンバータなどが搭載されています。</p>
+<p>性能としては、同時発音数が10チャンネル、音質も16000Hzから32500Hzと大きく改善されました。内部のユーザー変数、シフト変数も追加され、サウンドデータの表現の幅も強化されています。さらに、サウンドデータの書込み速度も2倍程度に改良され、サウンドの書込み時間が30分以上だったものが、データによっては10分程度になり、開発効率の向上が図れます。</p>
+<p>アメリカ・オセアニア向けにメルクリンモトローラ・mfx(メルクリン社の双方向模型通信技術の名称。M4とも呼ばれる。)の機能を除去したDCC専用版が安価に設定されています。これは、SOUNDTRAXXやデジトラックスなど、アメリカの有力サウンドDCCメーカーとの競合との価格戦略上で設けられた物と推定されます。また、加減速時間の単位が、欧州・世界版と異なっており、非常に長く設定ができます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Art.No</th>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">Scale</th>
+<th style="text-align:left">容量</th>
+<th style="text-align:left">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">58410,58412, 58416,58419</td>
+<td style="text-align:left">LokSound 5</td>
+<td style="text-align:left">HO, O</td>
+<td style="text-align:left">1.5A</td>
+<td style="text-align:left">いわゆる無印。</td>
+</tr>
+<tr>
+<td style="text-align:left">58420,58429</td>
+<td style="text-align:left">LokSound 5 DCC</td>
+<td style="text-align:left">HO, O</td>
+<td style="text-align:left">1.5A</td>
+<td style="text-align:left">いわゆる無印。アメリカ・オセアニア向け商品で、mfxやMM2等のサポートが無い。代わりに10%程安価。スピーカは付属しません。</td>
+</tr>
+<tr>
+<td style="text-align:left">58810,58813, 58816,58818</td>
+<td style="text-align:left">LokSound 5 micro</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">0.75A</td>
+<td style="text-align:left">超小型でNext18コネクタ標準搭載。</td>
+</tr>
+<tr>
+<td style="text-align:left">58820,58823, 58828</td>
+<td style="text-align:left">LokSound 5 micro DCC</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">0.75A</td>
+<td style="text-align:left">超小型でNext18コネクタ標準搭載。無印より10%ほど高い。アメリカ・オセアニア向け商品で、mfxやMM2等のサポートが無い。代わりに10%程安価。スピーカは付属しません。</td>
+</tr>
+<tr>
+<td style="text-align:left">58315</td>
+<td style="text-align:left">LokSound 5 L</td>
+<td style="text-align:left">O, G</td>
+<td style="text-align:left">3.0A</td>
+<td style="text-align:left">大容量、O, Gゲージ向け。</td>
+</tr>
+<tr>
+<td style="text-align:left">58325</td>
+<td style="text-align:left">LokSound 5 L DCC</td>
+<td style="text-align:left">O, G</td>
+<td style="text-align:left">3.0A</td>
+<td style="text-align:left">大容量。アメリカ・オセアニア向け商品。 スピーカは付属しません。</td>
+</tr>
+<tr>
+<td style="text-align:left">58513,58515</td>
+<td style="text-align:left">LokSound 5 XL</td>
+<td style="text-align:left">O, G</td>
+<td style="text-align:left">4.0A</td>
+<td style="text-align:left">超大容量。</td>
+</tr>
+</tbody>
+</table>
+<p>LokSound5デコーダでのmicro(N)と無印(HO)のサイズの違いを以下に示します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">micro</th>
+<th style="text-align:left">無印</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><img border="0" src="./dec/LS5_micro.jpg" width="400" ></td>
+<td style="text-align:left"><img border="0" src="./dec/LS5_normal.jpg" width="400" ></td>
+</tr>
+</tbody>
+</table>
+<h2 id="24-loksound%E3%82%92%E3%81%AA%E3%81%9C%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B">2.4. LokSoundをなぜ使うのか</h2>
+<p><a id="markdown-loksound%E3%82%92%E3%81%AA%E3%81%9C%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B" name="loksound%E3%82%92%E3%81%AA%E3%81%9C%E4%BD%BF%E3%81%86%E3%81%AE%E3%81%8B"></a></p>
+<p>オープンサウンドデータはなぜ、ESU社のLokSoundデコーダを採用するのかというと、サウンドデータを開発するプラットフォームが唯一、しっかりと整えられている理想形だからです。</p>
+<p>以下の3点が大きな理由です。</p>
+<ul>
+<li>パソコンでサウンドデータを容易に開発できる環境が整っている（サウンドデータ開発ツールが提供されている）</li>
+<li>サウンドデコーダの性能・音質・動作の安定性が確保されている</li>
+<li>日本で使用しているユーザーが一定数以上いる</li>
+</ul>
+<p>デジトラックス、ZIMOも同様にサウンドの開発環境が提供されていますが、この3つを完全にはクリアできていません。入手性でも、デジトラックスは入手性はKATOが代理店となっているため良好ですが、全ての製品が入手できるわけではありません。また在庫もお店によってまちまちで、タイミングによっては長い時間、待たされるケースがあります。ZIMOのサウンドデコーダの入手性においては非常に悪く、入手する場合は輸入が第一の選択肢となります。</p>
+<p>容易に開発できると言うことは、DCCサウンドを入門した人でも、とっかかり安い、多少の変更作業で自分でカスタマイズできる、というメリットに繋がります。プロしか編集できない・カスタマイズできないデータでは、オープンサウンドデータのコンセプトは成立しません。ZIMO、デジトラックスはスクリプトを入力して実装する形であり、サウンドデータを作成するには大きなハードルがあります。</p>
+<p>ESU社の商品は総じて高価寄りですが、要らぬトラブルや不安定性で悩むことを考えれば、トータルでの満足度では確実に上であると判断しております。
+また、個人輸入すれば、それほど大きな価格差でも無くなりますので、オープンサウンドデータではESU社のLokSound5シリーズを前提としていきます。</p>
+<p>そして、LokSoundは2001年頃から、日本にも使用者がいて、LokSound V3.5の時代には雑誌や書籍にも紹介されるほど、広がりを見せていました。この頃と、LokProgrammerソフトは進化していますが、書込み装置となるLokProgrammerハードは特に変わらず、そのまま使用できます。</p>
+<div class="page"/>
+<h1 id="3-lokprogrammer%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">3. LokProgrammerの使い方</h1>
+<p><a id="markdown-lokprogrammer%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9" name="lokprogrammer%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9"></a></p>
+<p>ここでは、LokProgrammerのよく使う機能が、どこにあるのかをまとめていきたいと思います。なお、LokProgrammerは全く同じ名前で、書込み装置（ハードウェア, ESU ）と、編集書込みソフト（ソフトウェア）の２種類があります。どちらもセットで使用するので、混同しないようにしましょう。</p>
+<h2 id="31-lokprogrammer%E3%82%BD%E3%83%95%E3%83%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">3.1. LokProgrammerソフトのダウンロードとインストール</h2>
+<p><a id="markdown-lokprogrammer%E3%82%BD%E3%83%95%E3%83%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" name="lokprogrammer%E3%82%BD%E3%83%95%E3%83%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%A8%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"></a></p>
+<p>LokProgrammerソフト(フリーソフト、無償)をESUのページからダウンロードしてインストールしておいてください。</p>
+<blockquote>
+<p>LokProgrammer
+http://www.esu.eu/en/downloads/software/lokprogrammer/</p>
+</blockquote>
+<p>なお、書込みや試運転をしないのであれば、ハードウェアのLokProgrammer(ESU 53451または53452)は不要です。パソコンだけでOKです。繋ぐ必要もありません。</p>
+<img border="0" alt="LokProgrammer_ESUSite.png" src="./lok/LokProgrammer_ESUSite-thumbnail2.png" width="400" height="211">
+<h2 id="32-lokprogrammer%E3%81%AE%E8%B5%B7%E5%8B%95">3.2. LokProgrammerの起動</h2>
+<p><a id="markdown-lokprogrammer%E3%81%AE%E8%B5%B7%E5%8B%95" name="lokprogrammer%E3%81%AE%E8%B5%B7%E5%8B%95"></a></p>
+<p>起動直後は、以下のような画面です。オープンサウンドデータのファイルを開くと色々な機能にアクセスできるようになります。新規作成しても良いですが、難易度が高いので、既存のファイルを使うのが良いでしょう。</p>
+<img border="0" alt="LokProgrammer_New_1.png" src="./lok/LokProgrammer_New_1-thumbnail2.png" width="400" height="273">
+<p>たとえば、キハ110のサウンドを開くと以下のようになります。</p>
+<blockquote>
+<p>オープンサウンドデータ キハ110 <br/>
+https://desktopstation.net/sounds/osd25.html</p>
+</blockquote>
+<img border="0" alt="LokProgrammer_New_2.png" src="./lok/LokProgrammer_New_2-thumbnail2.png" width="400" height="212">
+<p>左側のタブにいろいろ増えましたが、説明すると以下のような感じです。画面が切り替わって編集したり設定できるようになります。</p>
+<img border="0" alt="LokProgrammer_New_3.png" src="./lok/LokProgrammer_New_3-thumbnail2.png" width="400" height="292">
+<h2 id="33-%E6%9B%B8%E8%BE%BC%E3%81%BF%E8%A3%85%E7%BD%AE%E3%81%AE%E6%8E%A5%E7%B6%9A">3.3. 書込み装置の接続</h2>
+<p><a id="markdown-%E6%9B%B8%E8%BE%BC%E3%81%BF%E8%A3%85%E7%BD%AE%E3%81%AE%E6%8E%A5%E7%B6%9A" name="%E6%9B%B8%E8%BE%BC%E3%81%BF%E8%A3%85%E7%BD%AE%E3%81%AE%E6%8E%A5%E7%B6%9A"></a></p>
+<p>LokProgrammer書込み装置は、LokSoundデコーダにサウンドや設定を書き込むときに使用する装置です。パソコンと、デコーダの間に繋いで使用する物です。LokSoundデコーダとは線路経由でサウンドデータ等を書込みできるため、車両の中に組み込んで問題ありません。Windowsにのみ対応しています。</p>
+<p><img src="./TomixHO/image003.jpg" alt=""></p>
+<p>USBケーブルで接続するLokProgrammer書込み装置は、FTDI社のUSBシリアルドライバをインストールする必要があります。通常はUSBケーブルを差し込むと自動でインストールされ、特に操作は不要なのですが、環境によっては自動でインストールされない場合があります。</p>
+<p>この場合は、FTDI社のUSBシリアルドライバを自分でダウンロードし、予め、インストールしておく必要があります。インストール方法や、チェック方法は検索すればでてきますのでご確認ください。</p>
+<blockquote>
+<p>FTDI社のUSBドライバページ<br/>
+https://www.ftdichip.com/Drivers/VCP.htm</p>
+</blockquote>
+<p>USBケーブルを繋げただけでは動作しません。ACアダプタを接続しないと、正常に認識や書込みができないのでご注意ください。ACアダプタを付け忘れて動かないというトラブルは、よくやりがちです。</p>
+<p>ACアダプタの付け忘れ、USBケーブルの差し込み忘れ、またはその両方をした場合、LokProgrammerでサウンドデータの書込みを行うと、以下のメッセージが表示されます。</p>
+<img src="./lok/lokprogrammer_error.png" width=200 align="center">
+<p>ACアダプタは、Φ2.5mmのDCジャックに対応した、12V～16Vのものであれば問題ありません。以下に、秋月電子で販売されている、LokProgrammerでも動作を確認したアダプタを示します。なお、ESU社が推奨しているわけではありませんので、自己責任の下でご利用ください。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">メーカー</th>
+<th style="text-align:left">型式</th>
+<th style="text-align:left">仕様</th>
+<th style="text-align:left">販売場所</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GO FORWARD ENTERPRISE</td>
+<td style="text-align:left">GF48-US1240</td>
+<td style="text-align:left">DC12V/4A</td>
+<td style="text-align:left">秋月電子 M-00244</td>
+<td style="text-align:left">Z,N,HO向け</td>
+</tr>
+<tr>
+<td style="text-align:left">GO FORWARD ENTERPRISE</td>
+<td style="text-align:left">GF65I-US1640</td>
+<td style="text-align:left">DC16V/4A</td>
+<td style="text-align:left">秋月電子 M-00407</td>
+<td style="text-align:left">HO向け</td>
+</tr>
+<tr>
+<td style="text-align:left">Adapter Technology</td>
+<td style="text-align:left">STD-12020U</td>
+<td style="text-align:left">DC12V/2A</td>
+<td style="text-align:left">秋月電子 M-06239</td>
+<td style="text-align:left">Z,N,HO向け</td>
+</tr>
+<tr>
+<td style="text-align:left">XIAMEN UME ELECTRONICS</td>
+<td style="text-align:left">AD-D120P200</td>
+<td style="text-align:left">DC12V/2A</td>
+<td style="text-align:left">秋月電子 M-10659	Z</td>
+<td style="text-align:left">N,HO向け</td>
+</tr>
+</tbody>
+</table>
+<p>古いLokProgrammerをお持ちで、Windows10で動かない！という方は、秋月電子のUSBシリアルアダプタがそのまま使えます。これは、最新のLokProgrammerに付属の物と同じものです。秋月電子で、ACアダプタと一緒に購入されるのをお勧めします。</p>
+<blockquote>
+<p>秋月電子のUSBシリアルアダプタ<br/>
+http://akizukidenshi.com/catalog/g/gM-08343/</p>
+</blockquote>
+<h2 id="34-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF">3.4. オープンサウンドデータの書込み</h2>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF"></a></p>
+<p>LokProgrammerの画面で、オープンサウンドデータの事前にダウンロードし、ZIPファイルを解凍した上で、esuxファイルを開きます。
+LokProgrammer書込み装置をUSBケーブルで接続し、ACアダプタを繋げて電源供給ができた状況で、以下の音符のアイコンを押すと、書込みになります。</p>
+<p><img src="./lok/lokprogrammer_soundwrite.png" alt=""></p>
+<p>ドキュメントのアイコンの書込みボタンは、Decoderタブで設定したデータを書き込めます。</p>
+<p><img src="./lok/lokprogrammer_CVwrite.png" alt=""></p>
+<p>デコーダとの接続がうまくいかない場合、エラーメッセージが表示されます。フィーダ線が繋がっているか、配線が切れていないか、車両に搭載した場合には配線ミスや、車輪とレールとの接触不良が無いかを確認しましょう。</p>
+<p>なお、オープンサウンドデータのデータは、ほとんどがLokSound5シリーズ向けです。LokSound5で作成されたデータや、LokSound5 microで作成されたもの等、混ざっておりますが、LokSound5シリーズであれば自動的に変換処理がされますので、問題なく書込みできます。</p>
+<p>ただし、LokSoundV4シリーズのデコーダに、LokSound5向けのサウンドデータは書込みできません。また、デコーダからサウンドデータを読み出すことはできません。設定値のみ、取り出しができます。</p>
+<h2 id="35-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%81%AE%E8%AA%AC%E6%98%8E">3.5. サウンドの編集画面の説明</h2>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%81%AE%E8%AA%AC%E6%98%8E" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2%E3%81%AE%E8%AA%AC%E6%98%8E"></a></p>
+<p>Soundのタブをクリックすると、以下のような画面になります。この画面が、サウンド編集で一番よく使うものになります。</p>
+<p><a href="./lok/LokProgrammer_Sound_1.png" target="_blank"><img border="0" alt="LokProgrammer_Sound_1.png" src="./lok/LokProgrammer_Sound_1-thumbnail2.png" width="400" height="212"></a></p>
+<h2 id="36-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%81%A3%E3%81%A6">3.6. サウンドスロットって？</h2>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%81%A3%E3%81%A6%EF%BC%9F" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%B9%E3%83%AD%E3%83%83%E3%83%88%E3%81%A3%E3%81%A6%EF%BC%9F"></a></p>
+<p>サウンドスロットとは、サウンドデータを鳴らすためのチャンネルと思ってください。LokSound5は10個のサウンドスロットを用いて同時に音を再生できます。
+MGの音、ブロアの音、走行音の音に重ねて、様々な音を重ねることができるため、より音や状況の再現性を高めることができます。</p>
+<p>サウンドスロットに、様々な音を個別に登録して、条件に応じて鳴らしたりすることで、車両の動きを表現します。以下は、VVVFのサウンドスロットの例です。</p>
+<img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400">
+<p>なお、<em>１つのサウンドスロットで同時に再生できる音は１つだけ</em>です。サウンドスロットで再生が終わったら、次のブロックに遷移して違う音を鳴らすことができます。よって、同時に複数の音を鳴らしたいときは、他のサウンドスロットを関連づける機能が一つ一つのブロックで設定できるので、それを使用して、他のサウンドスロットを呼び出して鳴らすこととなります。</p>
+<h2 id="37-%E3%83%95%E3%82%A1%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E7%95%AA%E5%8F%B7%E3%81%AE%E5%A4%89%E6%9B%B4">3.7. ファンクション番号の変更</h2>
+<p><a id="markdown-%E3%83%95%E3%82%A1%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E7%95%AA%E5%8F%B7%E3%81%AE%E5%A4%89%E6%9B%B4" name="%E3%83%95%E3%82%A1%E3%83%B3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%E7%95%AA%E5%8F%B7%E3%81%AE%E5%A4%89%E6%9B%B4"></a></p>
+<p>オープンサウンドデータで、予め設定したファンクション番号(F0,F1,F2など)を、変更したい場合があるかと思います。LokProgrammerを使うと変更ができますので、紹介していきます。</p>
+<p>まず、変更したいオープンサウンドデータのサウンドデータをLokProgrammerで開いてください。</p>
+<p>Decoderタブから、Function Mappingをクリックすると、ファンクションの一覧が出てきます。この画面は、ファンクション番号に、サウンドの機能や、AUXの出力、内部の特殊機能を自由に割り当てられる、重要な設定箇所となります。</p>
+<img src="./lok/functionmap_1.png" width="400">
+<p>変更したいファンクション番号のプルダウンを押すと、DrivingやDirectionなど、色々出てくると思います。以下説明の表で示します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目名</th>
+<th style="text-align:left">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Driving</td>
+<td style="text-align:left">運転中か、停止中か</td>
+</tr>
+<tr>
+<td style="text-align:left">Direction</td>
+<td style="text-align:left">進行方向がFwdかRevか</td>
+</tr>
+<tr>
+<td style="text-align:left">F0</td>
+<td style="text-align:left">ファンクション0(F0)の設定か</td>
+</tr>
+<tr>
+<td style="text-align:left">F1</td>
+<td style="text-align:left">ファンクション1(F1)の設定か</td>
+</tr>
+<tr>
+<td style="text-align:left">F2-F28</td>
+<td style="text-align:left">ファンクション2(F2)～F28までの設定か</td>
+</tr>
+</tbody>
+</table>
+<p>実際の画面は以下の通りです。</p>
+<img src="./lok/functionmap_2.png" width="400">
+<p>それぞれのファンクション番号に、有効無効の設定が可能です。複数のファンクションを紐付けて、条件を分けることも可能です。さらに走行中かどうか、進行方向がどちらか、というように条件を分けることもできます。</p>
+<p>設定としては、以下の項目が選択できますが、意味は以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">選択項目名</th>
+<th style="text-align:left">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Ignore</td>
+<td style="text-align:left">無視する(無効)</td>
+</tr>
+<tr>
+<td style="text-align:left">On</td>
+<td style="text-align:left">このファンクション番号がONとなったとき有効</td>
+</tr>
+<tr>
+<td style="text-align:left">Off</td>
+<td style="text-align:left">このファンクション番号がOFFとなったとき有効</td>
+</tr>
+<tr>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Drivingの項目でのみ有効。走行中のとき有効。</td>
+</tr>
+<tr>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Drivingの項目でのみ有効。停止中のとき有効。</td>
+</tr>
+<tr>
+<td style="text-align:left">Forward</td>
+<td style="text-align:left">Directionの項目でのみ有効。進行方向が前のとき有効。</td>
+</tr>
+<tr>
+<td style="text-align:left">Reverse</td>
+<td style="text-align:left">Directionの項目でのみ有効。進行方向が後ろのとき有効。</td>
+</tr>
+</tbody>
+</table>
+<p>通常は、Onのみ設定すれば良いですが、たとえば、電機機関車の入換表示灯などを再現する場合には、複数のAUX信号を操作しつつ、進行方向やその他のファンクション状態を加味して条件を設定する必要があります。
+自分で作りたいファンクションの動きに合わせて、様々な条件を設定する事ができます。</p>
+<img src="./lok/functionmap_3.png" width="400">
+<p>ファンクションマッピングの設定が終わったら、以下の設定データのみの書込みボタンで、デコーダに書込みを行います。サウンドデータは書き込まれません（変更されません）ので、すぐに書込みは終了します。サウンドデータと一緒に書き込みたい場合は、右隣の音符のアイコンを選択すると、ファンクションマッピングの変更済みデータと、サウンドデータの両方を書き込みます。10分以上掛かりますので、ゆっくりお待ちください。</p>
+<img src="./lok/functionmap_4.png" width="400">
+<div style="page-break-before:always"></div>
+<h1 id="4-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4. サウンドの作り方</h1>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"></a></p>
+<h2 id="41-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">4.1. はじめに</h2>
+<p><a id="markdown-%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB" name="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"></a></p>
+<p>ここでは、サウンドの作成に必要な物、機材の揃え方（輸入方法）、録音の手段やコツを挙げていきます。必要な物は以下の通りです。</p>
+<p><strong>編集で使うもの：</strong></p>
+<ul>
+<li>Windowsパソコン（Macの方はBootcampやParallels等の仮想PCソフトをどうぞ）</li>
+<li><a href="http://www.esu.eu/en/downloads/software/lokprogrammer/" target="_blank">LokProgrammer</a>(ソフト、無料）</li>
+<li><a href="http://www.esu.eu/en/products/lokprogrammer/" target="_blank">LokProgrammer</a>(ハード、輸入で１５０００円くらい）</li>
+<li><a href="http://www.esu.eu/en/products/loksound/" target="_blank">LokSound5デコーダ</a>(microでもOK）</li>
+<li>デコーダテスタ（ESU でもLaisDcc でも何でもOK）</li>
+<li><a href="https://www.audacityteam.org/" target="_blank">Audacity</a>(音編集ソフト、無料、好みがあれば他でも可）</li>
+<li>SpectraLayers 音編集ソフト。特定の音をピンポイントに消せる。</li>
+</ul>
+<p><a href="./lok/LokProgrammer_DecoderTester.jpg" target="_blank"><img border="0" alt="LokProgrammer_DecoderTester.jpg" src="./lok/LokProgrammer_DecoderTester-thumbnail2.jpg" width="400" height="359"></a></p>
+<p>LokProgrammerとLokSound、デコーダテスタを入手しないと始まりません。たぶん、<a href="https://desktopstation.net/sounds/" target="_blank">オープンサウンドデータ</a>を使ってる人達は、全て持っているケースが多いと思いますが、持っていない方は、輸入をお勧めします。</p>
+<p>日本のDCCマニアがよく使うのは以下の２つのお店です。</p>
+<ul>
+<li><a href="https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html" target="_blank">モデルバーンショップ lippe</a><br/>https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html</li>
+<li><a href="https://www.tee-usa.com/store/product3714.html" target="_blank">EURO LOK SHOP</a><br/>https://www.tee-usa.com/store/product3714.html</li>
+</ul>
+<h2 id="42-%E5%8F%8E%E9%8C%B2%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E5%BF%83%E6%A7%8B%E3%81%88">4.2. 収録に向けた心構え</h2>
+<p><a id="markdown-%E5%8F%8E%E9%8C%B2%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E5%BF%83%E6%A7%8B%E3%81%88" name="%E5%8F%8E%E9%8C%B2%E3%81%AB%E5%90%91%E3%81%91%E3%81%9F%E5%BF%83%E6%A7%8B%E3%81%88"></a></p>
+<p>形で入らないようにしてください。一番大事なことはテクニックや、ノウハウです。機材よりもそれが重要です。
+スマホ持ってますか？収録で使うものは、<strong>ぶっちゃけますと、スマホ１台でもOK</strong>です。ただし、収録がやりにくい、雑音や風切り音が入りやすいので、そこそこ性能の良いスマホ向けの外付けマイクがあるとベターです。<a href="https://desktopstation.net/sounds/osd23.html" target="_blank">キハ261</a>の音も、iPhoneと外付けマイクで収録したと聞いております。</p>
+<p>なお、録音設定は必ず、最高音質としてください。低い音質で録音すると、ほとんど使い物になりません。</p>
+<img border="0" alt="recording2.jpg" src="./img/recording2-thumbnail2.jpg" width="400" height="113">
+<p>ただ、良いレコーダがあればそれに越したことはありません。周りを見ると、TASCAMを使われる方が多い印象です。レコーダよりも、風防（ウィンドジャマー）の付いたマイクが一番重要に思ってます。</p>
+<p>形から入らずに、まずはお手持ちの機材や、少しお金を出せば買える風防付マイクで、まずは収録にチャレンジしましょう。お金に余裕が出れば、レコーダを買うのも良いです。</p>
+<h2 id="43-%E5%8F%8E%E9%8C%B2%E3%81%AE%E3%82%B3%E3%83%84">4.3. 収録のコツ</h2>
+<p><a id="markdown-%E5%8F%8E%E9%8C%B2%E3%81%AE%E3%82%B3%E3%83%84" name="%E5%8F%8E%E9%8C%B2%E3%81%AE%E3%82%B3%E3%83%84"></a></p>
+<ul>
+<li>風切り音に気をつける</li>
+<li>風防付マイクを絶対に使う</li>
+</ul>
+<p>マイクに風防（フワフワしたネコの毛みたいなもの）のあるなしで、雲泥の差です。風防無しで録音したものを聞いたら風切り音だらけで使い物にならない・・・なんてことはたくさんあります。
+なお、どうしてもないときはタオルやハンカチでマイクを被うだけでも少しは違います。</p>
+<p>風切り音とは違いますが、感度が良いマイクでは、マイクを触る音も拾ってしまうケースがあります。この場合は、マイクをなるべく触らないようにするか、スポンジや防音シートを付けて触る音を低減するなどの工夫が必要です。レコーダ付属のマイクだと、対策されてますが、外付けマイクで超高いようなものは気をつけましょう。</p>
+<blockquote>
+<p><b>音の出るところまで限界まで近づく（YOMIXさんの収録テクニックより）</b><br/>http://blog.livedoor.jp/yomi_tetu/archives/5467087.html<br/><br/>
+音は距離の二乗で減衰するためそれらを意識したものとしました。
+明瞭なエンジン音というのは窓が開かない限り厳しいものです。
+しかも、距離の二乗ということはエンジンから離れた車端部では
+エンジン音はほぼ聞こえないというものになってしまいます。
+しかし、エンジン直上では床で遮音されkHzオーダー以上の音はほぼ聞こえなくなってしまいます。
+今回は窓が開かない車両なので色々悩んだ結果エンジン直上での収録を試みました。
+結果、距離が近いほうが勝ち、タービン音の収録をすることができました。
+ところでエンジン直上とは言ったのですが本当に直上の席の床で撮りました。
+それも席の下の空間にマイクを床に直置きし、その空間をカバンで密閉しました。
+これにより、エアコンの音、車内のガサガサ音や放送などを削減することができました。
+個人でできる最大のS/N比を持ったエンジンとタービンのサウンドを録ることができました。</p>
+</blockquote>
+<p>音は、距離が遠くなると、ものすごく音量が下がります。安全を最優先にしながら、できる限り近づけるように収録する場所を工夫しましょう。</p>
+<p>たとえば、車内アナウンスは、スピーカーのすぐ目の前にマイクを置いて収録。床下音は、VVVFならモータの近く、ディーゼルならエンジンの近くの座席に着席後、周囲の音を拾わないように、マイクを鞄で被って抑え付けてしまう等です。</p>
+<p>SIVやコンプレッサーの音は、駅のホームでは無く、そばに道路があればそこから収録する方がより近づけて品質が良くなります。</p>
+<p><a href="./img/recording.jpg" target="_blank"><img border="0" alt="recording.jpg" src="./img/recording-thumbnail2.jpg" width="400" height="266"></a></p>
+<ul>
+<li>何度も何度も堪え忍ぶ</li>
+</ul>
+<p>周りのお客さんが咳をするなんて日常茶飯事。反対側のホームに電車が来て音が被るのも当たり前。何十回も収録し直すことを想定しましょう。１発で取れることなんてありませんよ。</p>
+<h2 id="44-%E5%8F%8E%E9%8C%B2%E3%81%97%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E9%9F%B3">4.4. 収録しなければならない音</h2>
+<p><a id="markdown-%E5%8F%8E%E9%8C%B2%E3%81%97%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E9%9F%B3" name="%E5%8F%8E%E9%8C%B2%E3%81%97%E3%81%AA%E3%81%91%E3%82%8C%E3%81%B0%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84%E9%9F%B3"></a></p>
+<p>何を収録すれば良いのか、必要な物を以下に挙げます。なお、できる限り何度も同じ音を録りましょう。まともに使えるのは、ほんのわずかなケースが多いです。</p>
+<p><strong>車内で収録する物</strong></p>
+<ul>
+<li>車内アナウンス</li>
+<li>電車内での、走行音（停車～加速～惰行～減速～停車）</li>
+<li>ドアの開閉音</li>
+<li>ATS、ATCなどの信号系の音（運転席）</li>
+</ul>
+<p><strong>駅で収録</strong>（なるべく、トンネル内や開削して作られた駅では無く、開けた駅で録りましょう）</p>
+<ul>
+<li>床下のブレーキ緩解、緩め音</li>
+<li>ブレーキ音</li>
+<li>コンプレッサーの音</li>
+<li>SIVの音</li>
+<li>駅のアナウンス</li>
+</ul>
+<p>道路から収録、駅のスピーカーが一番背の低いところを探すなど、あの手この手でいきましょう。なお自撮り棒で録音してる人いますけど、NGですよ。架線に当たって感電死しますよ。</p>
+<p><strong>車庫や夜間に泊まる駅で収録</strong></p>
+<ul>
+<li>パンタ上げ、下げ</li>
+<li>起動音、電源オフ音</li>
+</ul>
+<img border="0" alt="rokuon2020_1.jpg" src="./img/rokuon2020_1-thumbnail2.jpg" width="400" height="266">
+<p>この次は、音の編集のコツです。ノイズを消したり、小さかった音を大きめに直す作業です。主に使うのは、Audacityです。その他に、SoundEngineなど、別のソフトもありますが、お好みのソフトをご利用ください。DCCサウンドユーザーのほとんどがAudacityを使用しているということは事実です。</p>
+<blockquote>
+<p>Audacity<br/>
+https://www.audacityteam.org/</p>
+</blockquote>
+<h2 id="45-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5%E3%83%BB%E3%83%8E%E3%82%A4%E3%82%BA%E4%BD%8E%E6%B8%9B">4.5. サウンド加工・ノイズ低減</h2>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5%E3%83%BB%E3%83%8E%E3%82%A4%E3%82%BA%E4%BD%8E%E6%B8%9B" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5%E3%83%BB%E3%83%8E%E3%82%A4%E3%82%BA%E4%BD%8E%E6%B8%9B"></a></p>
+<p>収録してきたサウンドの加工について挙げます。加工で行う作業は以下のものです。</p>
+<ul>
+<li>必要な音を取り出す</li>
+<li>不要な音を消す（ノイズ低減処理、ハイパスフィルタ、ローパスフィルタなど）</li>
+<li>音の大きさを適切に直す（増幅、ノーマライズ）</li>
+<li>音のループを作る（警笛、SIV、ベル、ディーゼルのアイドル音、吹き上がり音など）</li>
+</ul>
+<p>これらは、先ほど紹介した無料のサウンド編集ソフトのAudacityで行えます。</p>
+<p>基本的な操作は、入門サイトなど自分で調べて頂ければ幸いです。私がよく使うフィルタは以下です。</p>
+<p><a href="./audacity/Audacity_Filter.png" target="_blank"><img border="0" alt="Audacity_Filter.png" src="./audacity/Audacity_Filter-thumbnail2.png" width="387" height="400"></a></p>
+<p>特に使うのが”ノイズ低減”です。たとえば、以下のように、ドア開閉音があるとします。</p>
+<p><a href="./audacity/Audacity_door1.png" target="_blank"><img border="0" alt="Audacity_door1.png" src="./audacity/Audacity_door1-thumbnail2.png" width="400" height="212"></a></p>
+<p>ホワイトノイズやバックの音を消したい時、以下のようにバックグラウンドの音が入り込んだエリアを選択します。</p>
+<p><a href="./audacity/Audacity_door2.png" target="_blank"><img border="0" alt="Audacity_door2.png" src="./audacity/Audacity_door2-thumbnail2.png" width="400" height="212"></a></p>
+<p>ノイズ低減を選択して、選択エリアをノイズとして登録します。</p>
+<p><a href="./audacity/Audacity_door3.png" target="_blank"><img border="0" alt="Audacity_door3.png" src="./audacity/Audacity_door3-thumbnail2.png" width="400" height="363"></a></p>
+<p>次に、ノイズを低減したいエリアを選択します。ここでは全部です。バックグラウンドの音は、ドア開の音全体に入り込んでいます。この音を消すことで、ドア開の音だけを抽出できるのです。</p>
+<p><a href="./audacity/Audacity_door4.png" target="_blank"><img border="0" alt="Audacity_door4.png" src="./audacity/Audacity_door4-thumbnail2.png" width="400" height="212"></a></p>
+<p>再度、ノイズ低減を呼び出して、調整します。除去のレベルはさじ加減をプレビューで確認しながら行います。かけ過ぎると、キンキンな変な音になるので、ギリギリを狙って再調整を繰り返します。</p>
+<p><a href="./audacity/Audacity_door5.png" target="_blank"><img border="0" alt="Audacity_door5.png" src="./audacity/Audacity_door5-thumbnail2.png" width="400" height="363"></a></p>
+<p>ノイズ低減処理でOKを押すと以下のように低減されます。バックグラウンドの音が小さくなって、キレイになっているのが分かります。</p>
+<p><a href="./audacity/Audacity_door6.png" target="_blank"><img border="0" alt="Audacity_door6.png" src="./audacity/Audacity_door6-thumbnail2.png" width="400" height="212"></a></p>
+<p>前後を切り落として、ドア開だけの音になるように長さを調整します。</p>
+<p><a href="./audacity/Audacity_door7.png" target="_blank"><img border="0" alt="Audacity_door7.png" src="./audacity/Audacity_door7-thumbnail2.png" width="400" height="212"></a></p>
+<p>あとは、音の大きさを調整するために増幅したりするなどして、微調整すれば完了です。WAV形式で保存すれば、LokProgrammerに登録して、DCCデコーダから音を出すことができます。</p>
+<h2 id="46-%E8%B5%B0%E8%A1%8C%E9%9F%B3%E3%81%AE%E5%8A%A0%E5%B7%A5%E3%83%BB%E7%B7%A8%E9%9B%86">4.6. 走行音の加工・編集</h2>
+<p><a id="markdown-%E8%B5%B0%E8%A1%8C%E9%9F%B3%E3%81%AE%E5%8A%A0%E5%B7%A5%E3%83%BB%E7%B7%A8%E9%9B%86" name="%E8%B5%B0%E8%A1%8C%E9%9F%B3%E3%81%AE%E5%8A%A0%E5%B7%A5%E3%83%BB%E7%B7%A8%E9%9B%86"></a></p>
+<p>まず、走行音。以下はYOMIXさんのディーゼル音(キハ261)の例。
+<a href="./audacity/Audacity_DIESEL_K261_1.png" target="_blank"><img border="0" alt="Audacity_DIESEL_K261_1.png" src="./audacity/Audacity_DIESEL_K261_1-thumbnail2.png" width="400" height="212"></a></p>
+<p>次は、かわけいさんにもらった、東急50x0電車の例。
+<a href="./audacity/Audacity_VVVF_TQ_1.png" target="_blank"><img border="0" alt="Audacity_VVVF_TQ_1.png" src="./audacity/Audacity_VVVF_TQ_1-thumbnail2.png" width="400" height="212"></a></p>
+<p>ディーゼルと電車では、作成のアプローチがまったく異なります。</p>
+<p>ディーゼルは、エンジンを吹かす音、ギアチェンジの音、ターボ音などが変速ごとに変わるので、その組み合わせを順に切り替えていくようにサウンドを加工していきます。変速が切り替わった後に、自然なように音を弄るのがポイントです。惰行は、アイドル音のガラガラ音だけなので、走行風の音や、レール継ぎ目音を入れて自然になるように調整する形です。減速はブレーキ音のキキー音や、機関ブレーキの音が中心なので、そこを重ねて出せば良いです。</p>
+<p>電車の場合は、加速と減速の両方の音を６～７の段階に切り刻んで作成します。VVVFは減速でも特有の音がありますので、速度に応じて鳴るように、減速音をきちんと作らないといけません。</p>
+<p>作り方や編集のアプローチが違うので、そこは気をつけて作っていきましょう。それではディーゼルの走行音の切り刻み方を説明します。</p>
+<h2 id="47-%E7%99%BA%E8%BB%8A%E3%83%99%E3%83%AB%E5%88%87%E5%87%BA%E3%81%97">4.7. 発車ベル切出し</h2>
+<p><a id="markdown-%E7%99%BA%E8%BB%8A%E3%83%99%E3%83%AB%E5%88%87%E5%87%BA%E3%81%97" name="%E7%99%BA%E8%BB%8A%E3%83%99%E3%83%AB%E5%88%87%E5%87%BA%E3%81%97"></a></p>
+<p>突然、ディーゼルの走行音の話になってややこしくなったので、小休憩します。</p>
+<p>ここでは、発車ベルを切り出すノウハウについて説明していきたいと思います。これまた、かわけいさんの東急の発車ベルの音です。</p>
+<blockquote>
+<p>5050_発車ベル_20200423.wav
+http://buin2gou.sakura.ne.jp/sblo_files/powerele/image/5050_E799BAE8BB8AE38399E383AB_20200423.wav</p>
+</blockquote>
+<p>まずは、適当に、start、loop、endという３つのラベルで発車ベルの中身を区切っていきます。</p>
+<p><a href="./lok/LokProgrammer_loop_1.png" target="_blank"><img border="0" alt="LokProgrammer_loop_1.png" src="./lok/LokProgrammer_loop_1-thumbnail2.png" width="400" height="257"></a></p>
+<p>ここから、ループ音(繰り返し流す音の範囲）を探索して、切り出していきます。</p>
+<p>まず、波形をよーく見ると、似たような形が何度も繰り返しているのが見えると思います。つまり、似たような所の範囲をうまく決めてあげれば、同じ音を鳴らし続けることができるわけです。</p>
+<p><a href="./lok/LokProgrammer_loop_2.png" target="_blank"><img border="0" alt="LokProgrammer_loop_2.png" src="./lok/LokProgrammer_loop_2-thumbnail2.png" width="400" height="117"></a></p>
+<p>まず、startとloopの間を調べていきます。一番、音の振幅が小さくなるところを調べて、そこを拡大します。すると、以下のような部分が見つかりました。ここのゼロクロス部分をstartラベルとloopラベルの境目になるように位置をずらして調整します。○の部分をD&amp;Dするとずらせます。</p>
+<p><a href="./lok/LokProgrammer_loop_3.png" target="_blank"><img border="0" alt="LokProgrammer_loop_3.png" src="./lok/LokProgrammer_loop_3-thumbnail2.png" width="400" height="212"></a></p>
+<p>同じように、loopとendのラベルの境目も探します。ちゃんと、先ほど決めたstartとloopの間の境目とキレイに繋がるように、波の上なのか下なのかをきちんと決めておいてください。ここでは、上側の振幅がゼロになる部分で切ります。</p>
+<p><a href="./lok/LokProgrammer_loop_4.png" target="_blank"><img border="0" alt="LokProgrammer_loop_4.png" src="./lok/LokProgrammer_loop_4-thumbnail2.png" width="400" height="212"></a></p>
+<p>音を鳴らして確認しましょう。loopの範囲を選択して、Shift+Spaceを押すと、ループ再生してくれます。</p>
+<p><a href="./lok/LokProgrammer_loop_5.png" target="_blank"><img border="0" alt="LokProgrammer_loop_5.png" src="./lok/LokProgrammer_loop_5-thumbnail2.png" width="400" height="212"></a></p>
+<p>狙ったとおりにできたら、複数ラベルの書き出しで、保存します。私は以下のようなファイルを書き出せました。</p>
+<blockquote>
+<p>bell.zip<br/>
+http://buin2gou.sakura.ne.jp/sblo_files/powerele/image/bell.zip</p>
+</blockquote>
+<h2 id="48-vvvf%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4.8. VVVFサウンドの作り方</h2>
+<p><a id="markdown-vvvf%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9" name="vvvf%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"></a></p>
+<p>まずは、VVVF音の編集について、次に説明していきたいと思います。</p>
+<p>オープンサウンドデータの走行音は、加速と減速、走行音（風切り音）の３つで大きく構成されてます。</p>
+<p>走行風の音は、速度に応じて低くなったり高くなったりします。これは、サウンドスロットの設定で速度に応じて変わるように設定してありますが、今後、細かいことは説明します。</p>
+<p>オープンサウンドデータのVVVF系のデータは、MBさん、かわけいさんの作ったデータをベースにしているので、ほとんど同じテンプレートになっています。以下の図の赤矢印で書かれたスロット（音が出るチャンネル）が該当します。</p>
+<p><a href="./audacity/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a></p>
+<p>ここで紹介するのは、走行風の音では無く、加速と減速の独特の音をLokSoundから出すための音の編集作業になります。収録する際は、レコーダ（スマホでもOK）で、車内で録音すると思いますが、停車～加速～惰行～減速～停車の流れになるはずです。この中から、加速と減速の部分だけを切り出していきます。</p>
+<p>切り出すのは、加速と減速の２つの種類になりますが、それぞれを６つに分割します。７つでも８つでも良いのですが、オープンサウンドデータでは６つで分割することを基本にしてます。６つと言うことは、つまり、速度の段階が６つあると思って頂いて構いません。DCCでは127 Speed Stepで127段階の速度がありますが、サウンドと連動させるために、これをあえて6つに区切るわけです。127で区切っても良いんですが、非常に複雑になるので、今までの知見から６つに分割という方針に落ち着いています。</p>
+<p>LokProgrammerでの、VVVFの実際のサウンドプログラムは以下の通りです。見ての通り、６つの黄色のブロックに、加速の６つの分割した音、減速の６つの分割した音をはめ込んで、速度に応じて音を鳴らしているだけなのです。</p>
+<p>加速：
+<a href="./audacity/Audacity_VVVF14.png" target="_blank"><img border="0" alt="Audacity_VVVF14.png" src="./audacity/Audacity_VVVF14-thumbnail2.png" width="400" height="212"></a></p>
+<p>減速：
+<a href="./audacity/Audacity_VVVF15.png" target="_blank"><img border="0" alt="Audacity_VVVF15.png" src="./audacity/Audacity_VVVF15-thumbnail2.png" width="400" height="212"></a></p>
+<p>それでは、東急50X0系の加速～惰行～減速の音から、走行音の切り出しを行っていきます。なお、切り出す前には、音の修正などいろいろ弄らないといけないのですが、既に修正は終わった物として、理想的な加速・減速サウンドになっている前提で進めます。</p>
+<p>発車～惰行までの範囲を、予め聞きながら把握しておきます。この範囲を６つに分割します。分割の仕方は様々ですが、なるべく低速を短くするのがコツです。まず、発車直後の部分をラベル付けしていきます。</p>
+<p><a href="./audacity/Audacity_VVVF1.png" target="_blank"><img border="0" alt="Audacity_VVVF1.png" src="./audacity/Audacity_VVVF1-thumbnail2.png" width="400" height="212"></a></p>
+<p>選択範囲にラベルを付けます。ラベルを付けた後からでも位置の調整はできます。</p>
+<p><a href="./audacity/Audacity_VVVF2.png" target="_blank"><img border="0" alt="Audacity_VVVF2.png" src="./audacity/Audacity_VVVF2-thumbnail2.png" width="400" height="225"></a></p>
+<p>Audacityでは、ラベルを付けることで、いつでもラベルに沿ってWAVファイルを書き出すことができ、非常に楽ができます。DCCサウンド作成には必須の機能と思います。これは、VVVFだけではなく、他でも使用できます。今後紹介する、ディーゼル走行音の切り出しでも同じです。</p>
+<p><a href="./audacity/Audacity_VVVF3.png" target="_blank"><img border="0" alt="Audacity_VVVF3.png" src="./audacity/Audacity_VVVF3-thumbnail2.png" width="400" height="225"></a></p>
+<p>これを繰り返して、加速完了まで６つのブロックを作っていきます。</p>
+<p><a href="./audacity/Audacity_VVVF4.png" target="_blank"><img border="0" alt="Audacity_VVVF4.png" src="./audacity/Audacity_VVVF4-thumbnail2.png" width="400" height="212"></a></p>
+<p>加速部分のブロックを作り終えました。</p>
+<p><a href="./audacity/Audacity_VVVF5.png" target="_blank"><img border="0" alt="Audacity_VVVF5.png" src="./audacity/Audacity_VVVF5-thumbnail2.png" width="400" height="212"></a></p>
+<p>なお、ブロックの間は、ゼロクロスする部分（値がゼロのところ）にするのがコツです。と言うのも、ゼロ以外で切ると、ブツ音がする場合があるためです。このちょっとした編集で、確実にブツ音を消せます。また、さらに調整できるのであれば、VVVFの音の区切りの部分のゼロクロスで切るのが一番良いです。</p>
+<p>このテクニックは、ループ音（同じ音を繰り返し再生する）の作り方にも使用します。特にディーゼルでは必須のテクニックなので、絶対に覚えておきましょう。ループの場合は、ループ前後の似た波形とゼロクロスを探すという追加の根気の要る作業も加わります。</p>
+<p><a href="./audacity/Audacity_VVVF6.png" target="_blank"><img border="0" alt="Audacity_VVVF6.png" src="./audacity/Audacity_VVVF6-thumbnail2.png" width="400" height="212"></a></p>
+<p>次に減速のブロックを作っていきます。同じように減速の始まりの所を選択してラベルを付けていきます。</p>
+<p><a href="./audacity/Audacity_VVVF7.png" target="_blank"><img border="0" alt="Audacity_VVVF7.png" src="./audacity/Audacity_VVVF7-thumbnail2.png" width="400" height="212"></a></p>
+<p>減速の始まりの所のラベル付けをしました。これを繰り返していきます。</p>
+<p><a href="./audacity/Audacity_VVVF8.png" target="_blank"><img border="0" alt="Audacity_VVVF8.png" src="./audacity/Audacity_VVVF8-thumbnail2.png" width="400" height="212"></a></p>
+<p>停車までの区間を、ほどよく調整して、ラベル付けを完了しました。</p>
+<p><a href="./audacity/Audacity_VVVF9.png" target="_blank"><img border="0" alt="Audacity_VVVF9.png" src="./audacity/Audacity_VVVF9-thumbnail2.png" width="400" height="212"></a></p>
+<p>ファイルメニューから、複数のファイルの書き出しを選択して、実際にWAVファイルを書き出していきます。</p>
+<p><a href="./audacity/Audacity_VVVF10.png" target="_blank"><img border="0" alt="Audacity_VVVF10.png" src="./audacity/Audacity_VVVF10-thumbnail2.png" width="400" height="295"></a></p>
+<p>出力先フォルダを指定します。走行音だけのフォルダを作ると良いでしょう。</p>
+<p><a href="./audacity/Audacity_VVVF11.png" target="_blank"><img border="0" alt="Audacity_VVVF11.png" src="./audacity/Audacity_VVVF11-thumbnail2.png" width="400" height="255"></a></p>
+<p>以下のように、ラベル付けした範囲が個別にWAVファイルに書き出されます。</p>
+<p><a href="./audacity/Audacity_VVVF12.png" target="_blank"><img border="0" alt="Audacity_VVVF12.png" src="./audacity/Audacity_VVVF12-thumbnail2.png" width="400" height="211"></a></p>
+<p>書き出したWAVファイルは、LokProgrammerのサウンドファイルリストを上書きする（エクスプローラー等からドラッグアンドドロップ）ことで、データに反映させることができます。このファイルは、上で説明した加速・減速のプログラムに紐付いているサウンドファイルです。差し替えれば、自動的に音が差し替えた物に切り替わります。</p>
+<p><a href="./audacity/Audacity_VVVF13.png" target="_blank"><img border="0" alt="Audacity_VVVF13.png" src="./audacity/Audacity_VVVF13-thumbnail2.png" width="400" height="261"></a></p>
+<p>今回は、説明が足りてなかったVVVFの惰行、加速、減速についてブロック図を説明します。とは言っても、ディーゼルよりはシンプルな動きです。</p>
+<p>VVVF走行音は、サウンドスロットを以下のように３つを使う事になります。それ以外にもドア開閉音やブレーキ緩解・緩め音などいろいろありますが、タイミングに応じてマッピングで設定しておき、同時に鳴らすという動作だけなので、走行音とは別に作っておくこととなります。</p>
+<p><a href="./audacity/Audacity_VVVF0.png" target="_blank"><img border="0" alt="Audacity_VVVF0.png" src="./audacity/Audacity_VVVF0-thumbnail2.png" width="258" height="400"></a></p>
+<p>まず惰行音。ファンクションオフ、停車、走行の３つのブロックに大まかに分かれます。走行の部分が一番大きいですが、やってることは、走行風や台車のうなりを速度に応じて高くしたり低くしたり、大きくしたり小さくしたりしているだけ。</p>
+<p><a href="./lok/LokProgrammer_VVVF_1.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_1.png" src="./lok/LokProgrammer_VVVF_1-thumbnail2.png" width="400" height="106"></a></p>
+<p>ブロックに分けて示すと以下のような感じです。一番重要なのは、加速と減速の部分が分かれてるところです。つまり、加速しているとき（スピードが上がる）は、上の方のブロックが使われて、減速しているとき（スピードが下がる）ときは、下の方のブロックが使われます。</p>
+<p><a href="./lok/LokProgrammer_VVVF_4.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_4.png" src="./lok/LokProgrammer_VVVF_4-thumbnail2.png" width="400" height="116"></a></p>
+<p>加速の赤枠の中に入っている物には、以下のようにMappingに加速のサウンドスロットを割り付けます。
+そうすることで、加速中は必ず、加速のサウンドが鳴るようになります。</p>
+<p><a href="./lok/LokProgrammer_VVVF_5.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_5.png" src="./lok/LokProgrammer_VVVF_5-thumbnail2.png" width="400" height="212"></a></p>
+<p>加速のサウンドスロットは以下のブロックです。各スロットに、分割した加速の音を当てはめていきます。減速のサウンドスロットは別となります。加速の範囲に居る場合のみ、速度に応じて加速のサウンドが惰行音と同時に鳴ります。</p>
+<p><a href="./lok/LokProgrammer_VVVF_2.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_2.png" src="./lok/LokProgrammer_VVVF_2-thumbnail2.png" width="400" height="156"></a></p>
+<p>減速は、減速の赤枠のブロックのMappingで、以下のように減速のサウンドスロットを割り付けておきます。</p>
+<p><a href="./lok/LokProgrammer_VVVF_6.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_6.png" src="./lok/LokProgrammer_VVVF_6-thumbnail2.png" width="400" height="212"></a></p>
+<p>割り付ける減速のサウンドスロットの中身は以下の通りです。</p>
+<p><a href="./lok/LokProgrammer_VVVF_3.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_3.png" src="./lok/LokProgrammer_VVVF_3-thumbnail2.png" width="400" height="150"></a></p>
+<p>なお、停車の時にキキーとかプシューとか音を出すのは、以下のようにD-Sブロックで実装しています。このブロックで、他のサウンドスロットで作り込んである音を鳴らすわけですが、鳴らすタイミングは矢印にあるreq=0 &amp; spd &lt;= 5とあるように、速度が5/255以下になったら鳴るようにしてます。この数値は、音の長さとか車両の癖とかもあると思うので、ケースバイケースで決めていきます。</p>
+<p><a href="./lok/LokProgrammer_VVVF_7.png" target="_blank"><img border="0" alt="LokProgrammer_VVVF_7.png" src="./lok/LokProgrammer_VVVF_7-thumbnail2.png" width="400" height="212"></a></p>
+<p>という感じで、VVVFのサウンドを鳴らすことができます。電車は全般的に、上記の作り方となるかと思います。</p>
+<h2 id="49-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9">4.9. ディーゼルサウンドの作り方</h2>
+<p><a id="markdown-%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9" name="%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"></a></p>
+<p>ディーゼルサウンドについて、説明していきます。まず、キハ110やキハ261で使用しているディーゼル走行音の動きを見ていきましょう。</p>
+<blockquote>
+<p>キハ110
+https://desktopstation.net/sounds/osd25.html</p>
+</blockquote>
+<blockquote>
+<p>キハ261
+https://desktopstation.net/sounds/osd23.html</p>
+</blockquote>
+<p>VVVFの場合は単純なので、説明するまでも無いですが、ディーゼルは加速する際にエンジンの速度と実際の速度が異なります。これは変速機というものがあるためで、変速する段数に応じて音が変わるためです。少し複雑なので、順に解説していきます。</p>
+<p>まず全体のブロック図は以下のようになってます。速度に応じて、ブロックから違うブロックに移動していく流れです。大きくは、ファンクションオフ、停車時、アイドル時、加速、の４つの塊に分かれます。</p>
+<p>ファンクションオフ→停車→加速→アイドル→加速→・・・・→アイドル→停車→ファンクションオフ、のようにこのブロック図の中で動いていくことで、走行音を実現しているのです。</p>
+<p><a href="./lok/LokProgrammer_kiha261_1.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_1.png" src="./lok/LokProgrammer_kiha261_1-thumbnail2.png" width="400" height="103"></a></p>
+<p>オレンジ色の矢印は、速度が上がるとブロックをどんどん移動していく流れを示しています。速度は最高速度が255、停車が0という数値の範囲になってます。プログラミングをされる方はすんなり理解されると思いますが、慣れていない方は最大値が100ではないことに、ご注意を。</p>
+<p>たとえば、速度が10から30に変化したらここまでこのブロックは音を鳴らす、などとなってます。速度は少しずつ上がるように設定してありますので、ブロックはすぐに一番右には行きません。おおよそ１分程度の時間が掛かりますが、これはDriving Characteristics(デコーダタブで設定可能）の加減速時間で決まります。この時間は、サウンドの再生時間の絡みで自分で決めます。最初はエイヤでだいたい合ってれば大丈夫です。</p>
+<p>加速が終わると、一番下の”アイドル”ブロックに移動します。このとき、DCxというブロックを通過しますが、加速が終わった音をすぐにアイドルに切り替えると不自然なので、吹き上がる良いタイミングでアイドルになるように、音をクロスフェード加工したり、キリの良いところで切るように作り込んでおきます。CDxはその逆で、アイドルから加速音に移行するときの音を作って配置するために置いています。</p>
+<p><a href="./lok/LokProgrammer_kiha261_4.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_4.png" src="./lok/LokProgrammer_kiha261_4-thumbnail2.png" width="400" height="187"></a></p>
+<p>分かりにくいと思うので、キハ261の走行音データとブロック図の対応付けをしてみました。
+囲った部分の音波形を切り刻んで、ブロックに音を割り付けて鳴らす形です。完全にこれらのブロックにセットする音データをこの生波形から全て作れる訳では無いですが、イメージとしてはこの通りです。</p>
+<p><a href="./lok/LokProgrammer_kiha261_5.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_5.png" src="./lok/LokProgrammer_kiha261_5-thumbnail2.png" width="400" height="207"></a></p>
+<p>それでは、各ブロックはどのように設定されているのかを説明します。</p>
+<p><a href="./lok/LokProgrammer_kiha261_2.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_2.png" src="./lok/LokProgrammer_kiha261_2-thumbnail2.png" width="400" height="212"></a></p>
+<p>ブロック内部のプロパティの説明をします。</p>
+<p><a href="./lok/LokProgrammer_kiha261_3.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_3.png" src="./lok/LokProgrammer_kiha261_3-thumbnail2.png" width="400" height="335"></a></p>
+<blockquote>
+<p>・Restore<br/>
+チェックを入れると、優先順位が高いサウンドが割り込んで再生された後、再生を終えるときに、中断されていたこのサウンドが再開されるという機能です。類似の機能で、Unlimitedのチェックボックスがサウンドスロットに用意されています。こちらは、このブロックではなく、スロット単位で動くものです。</p>
+</blockquote>
+<blockquote>
+<p>・Sample<br/>
+このブロックに入ったときに再生される音を、音ファイルリストから選びます。</p>
+</blockquote>
+<blockquote>
+<p>・Repeat Playback<br/>
+loopにチェックすると、Sampleで設定した音を再生し続けます。次のブロックに移動する条件が成立すると（矢印に条件を記載する）、自動的にloopは止まって次のブロックに移動します。
+loopにチェックしない場合は、MinとMaxに数値を入れて鳴らしたいループ回数を指定します。minとmaxで数値を変えると、ランダムにその中の間でループ回数を決めて鳴らしてくれます。</p>
+</blockquote>
+<blockquote>
+<p>・Flags<br/>
+Drivestopにチェックを入れると、このブロックにいる間は車両を動かさないようにします。</p>
+</blockquote>
+<blockquote>
+<p>・Mapping<br/>
+このブロックに紐付けるサウンドスロットなどを設定できます。紐付けたサウンドスロットは、このスロットと一緒に同時に動くようになります。たくさんのスロットを割り付けると、同時再生スロット数を超えておかしな動きをするので注意して設定しましょう。</p>
+</blockquote>
+<p>具体的に、どんな風に音を変えて行くのかを説明します。</p>
+<p>まず、Sという所に居る（＝F1をONして、停車している。音はガラガラとアイドル音がしているが走行中では無い。）とします。赤い矢印に注目してください。
+最初のSから出て行く矢印に「2 :[share1 != 200 &amp; S1 = false &amp; req &gt; 0]」と書かれているはずです。</p>
+<p><a href="./lok/LokProgrammer_kiha261_6.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_6.png" src="./lok/LokProgrammer_kiha261_6-thumbnail2.png" width="400" height="154"></a></p>
+<p>最初の数字は優先番号で、小さい数字ほど優先されます。一つのブロックから複数の矢印を出すときに、この番号で、どの矢印を優先するかを決めてあげます。その後、share1 != 200 &amp; S1 = false &amp; req &gt; 0という謎の文字列がありますが、ややこしいので、最後のreq&gt;0だけ見てください。</p>
+<p>reqは、「速度のリクエスト」という意味になります。つまり、req&gt;0は「速度のリクエストが0より大きい」という意味と理解してください。この条件が成立したとき、矢印に沿ってブロックを移動します。
+速度のリクエストって何だっと言うと、お手持ちのスロットルを使って車両のスピードを０より高く変えて速度を指定したときということです。</p>
+<p>注意なのが、spd(スピード)という言葉がこの後出てきますが、これは車両(モーター）の実際の速度です。速度のリクエストは、遊んでいる人が指定した速度です。加減速があるので、常に一致するとは限りません。加減速中は必ず異なると思ってください。混同しやすいので注意です。</p>
+<p>話を戻すと、そのあと、SDというブロックに入ります。実は、このブロックは「コンテナ」というブロックで、中にブロックが入っています。ブロックをまとめる箱と思ってください。中では、ブレーキ緩解・緩め音を出すブロックが配置してあるだけです。プシューとかヒューーーンとかの音を出してるだけです。</p>
+<p>SDブロック（コンテナ）の中身：
+<a href="./lok/LokProgrammer_kiha261_7.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_7.png" src="./lok/LokProgrammer_kiha261_7-thumbnail2.png" width="400" height="48"></a></p>
+<p>その後、1:[true] という矢印がスロットルアップA_02というブロックに繋がっています。これは、「どんな条件であっても」という意味になります。つまり、特に条件は無いけど動いて良いよ、と理解してください。</p>
+<p>SDブロックの中で、ブレーキ緩解・緩め音が再生終わったら、無条件に、スロットルアップA_02に移動するわけです。</p>
+<p>スロットルアップA_02に注目しましょう。矢印が２本でているはずです。赤矢印はD1のブロックに、青矢印は下の方を向いてます。D1に向かう矢印は、2:[true]となってます。一方下に向かう矢印は1:[acc&lt;0]となってます。</p>
+<p><a href="./lok/LokProgrammer_kiha261_8.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_8.png" src="./lok/LokProgrammer_kiha261_8-thumbnail2.png" width="290" height="301"></a></p>
+<p>どういうことかというと、<strong>acc&lt;0 というのは、「加速がマイナスだったら」という意味</strong>です。つまり減速していたら、ということです。発車直後に、飛び乗ろうとしたお客さんがいたんでしょうか、急停車ってことです。減速が始まったのに音を加速させるD1のブロックに移動したら不自然なので、アイドルの方に行く青い矢印を作っているのです。</p>
+<p>矢印の条件は、以下の左側のところに記述します。</p>
+<p><a href="./lok/LokProgrammer_kiha261_9.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_9.png" src="./lok/LokProgrammer_kiha261_9-thumbnail2.png" width="400" height="327"></a></p>
+<p>条件のところをダブルクリックすると、内容を編集できます。</p>
+<p><a href="./lok/LokProgrammer_kiha261_10.png" target="_blank"><img border="0" alt="LokProgrammer_kiha261_10.png" src="./lok/LokProgrammer_kiha261_10-thumbnail2.png" width="400" height="353"></a></p>
+<p>とりあえず、D1ブロックまで説明できました。</p>
+<p>ご参考までに、S～D1までに割り当てている音データを以下に置いておきます。</p>
+<blockquote>
+<p>データ協力： YOMIX様、yusa様<br/>
+./img/kiha261_A.zip</p>
+</blockquote>
+<p>ブロックの割付は以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ブロック名</th>
+<th style="text-align:left">割付ファイル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S</td>
+<td style="text-align:left">Idle.wav</td>
+</tr>
+<tr>
+<td style="text-align:left">スロットルアップA01</td>
+<td style="text-align:left">A01.wav</td>
+</tr>
+<tr>
+<td style="text-align:left">スロットルアップA02</td>
+<td style="text-align:left">A02.wav</td>
+</tr>
+<tr>
+<td style="text-align:left">D1</td>
+<td style="text-align:left">Aloop.wav</td>
+</tr>
+<tr>
+<td style="text-align:left">DC1</td>
+<td style="text-align:left">AX.wav</td>
+</tr>
+<tr>
+<td style="text-align:left">アイドル</td>
+<td style="text-align:left">Idle.wav</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-before:always"></div>
+<h2 id="410-spectrallayers%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9">4.10. SpectralLayersの使い方</h2>
+<p><a id="markdown-spectrallayers%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9" name="spectrallayers%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9"></a></p>
+<p>周波数分析してサウンドを編集できるソフト SpectraLayersProを使って、DCCサウンド向けに収録した音の加工がサクサクできてしまったので、その機能の使い方を紹介したいと思います。</p>
+<p>有料のソフトですが、数ヶ月に１回程度、オンラインセールで5000円前後で購入が可能です。</p>
+<blockquote>
+<p>SpectralLayers
+https://www.sourcenext.com/product/vegas/spectralayers/</p>
+</blockquote>
+<p>まず、起動直後は以下のような画面が表示されます。</p>
+<p><a href="./slayer/SpectraLayers_inst_1.png" target="_blank"><img border="0" alt="SpectraLayers_inst_1.png" src="./slayer/SpectraLayers_inst_1-thumbnail2.png" width="400" height="212"></a></p>
+<p>ここに、収録したMP3ファイルやWAVファイル(レコーダーで録音したナマのサウンドデータ）をD&amp;Dか、メニューから開きます。E5系の走行音から、ちょうど連結部の音が入り込んだモノを用意しました。</p>
+<blockquote>
+<p>E5系収録音<br/>
+http://buin2gou.sakura.ne.jp/sblo_files/powerele/image/E5_test1.wav</p>
+</blockquote>
+<p>Audacityで開くとこんな感じです。</p>
+<p><a href="./slayer/SpectraLayers_inst_2.png" target="_blank"><img border="0" alt="SpectraLayers_inst_2.png" src="./slayer/SpectraLayers_inst_2-thumbnail2.png" width="400" height="212"></a></p>
+<p>開くと、モヤモヤしたものが出てくると思います。これが、サウンドデータを周波数別に表示したデータになります。音がなんで周波数別にできるのかは、小学校や中学や高校の理科の授業を思い出して頂ければ。</p>
+<img border="0" alt="SpectraLayers_inst_3.png" src="./slayer/SpectraLayers_inst_3-thumbnail2.png" width="400" height="212">
+<p>ここで、音を再生してください。雑音がいくつかあるのが分かると思います。</p>
+<img border="0" alt="SpectraLayers_inst_4.png" src="./slayer/SpectraLayers_inst_4-thumbnail2.png" width="400" height="212">
+<p>見ると、怪しい縦の筋がいくつか見えると思います。このソフトは、特定の範囲だけを再生することができます。範囲選択ツールを使って、縦の筋を囲んで再生ボタンを押してください。縦の筋の音付近が聞こえるはずです。</p>
+<p><a href="./slayer/SpectraLayers_inst_5.png" target="_blank"><img border="0" alt="SpectraLayers_inst_5.png" src="./slayer/SpectraLayers_inst_5-thumbnail2.png" width="400" height="212"></a></p>
+<p>この縦の筋が雑音で、消した方が良いことは見えてきました。どう消せば良いか、悩みます。いくつか方法はあるのですが、一番良いのはスタンプと思いますので、スタンプツールで消していきましょう。
+まず、PickSourceボタンを押してからスタンプする元の場所を選びます。スタンプのサイズや縦横の比率は、上のツールメニュー(Size, Aspect Ratio)で選べます。</p>
+<p><a href="./slayer/SpectraLayers_inst_6.png" target="_blank"><img border="0" alt="SpectraLayers_inst_6.png" src="./slayer/SpectraLayers_inst_6-thumbnail2.png" width="400" height="212"></a></p>
+<p><a href="./slayer/SpectraLayers_inst_7.png" target="_blank"><img border="0" alt="SpectraLayers_inst_7.png" src="./slayer/SpectraLayers_inst_7-thumbnail2.png" width="400" height="212"></a></p>
+<p><a href="./slayer/SpectraLayers_inst_8.png" target="_blank"><img border="0" alt="SpectraLayers_inst_8.png" src="./slayer/SpectraLayers_inst_8-thumbnail2.png" width="400" height="212"></a></p>
+<img border="0" alt="SpectraLayers_inst_9.png" src="./slayer/SpectraLayers_inst_9-thumbnail2.png" width="400" height="212">
+<p>まずはスタンプで綺麗に消せました。
+スタンプ以外には、縦の選択ツールと、マジック選択ツールが使えます。選択後に、Deleteキーを押せば、その範囲を除去できます。</p>
+<img border="0" alt="SpectraLayers_inst_10.png" src="./slayer/SpectraLayers_inst_10-thumbnail2.png" width="400" height="212">
+<p>マジック選択ツールは、混ざり込んだ雑音を消すのにちょうど良いです。</p>
+<img border="0" alt="SpectraLayers_inst_11.png" src="./slayer/SpectraLayers_inst_11-thumbnail2.png" width="400" height="212">
+<p>とりあえず、これを駆使すれば、データの作成ができます。最終的に綺麗にしたモノが以下です。縦の筋を全て除去しました。</p>
+<img border="0" alt="SpectraLayers_inst_12.png" src="./slayer/SpectraLayers_inst_12-thumbnail2.png" width="400" height="212">
+<blockquote>
+<p>完成したサウンドデータ<br/>
+http://buin2gou.sakura.ne.jp/sblo_files/powerele/image/E5_testAfter.wav</p>
+</blockquote>
+<p>あと最後に保存の時の注意事項を。WAV形式で保存する場合は、Int 16bitにして保存してください。Float 32bitなども選べますが、LokProgrammerには登録できません。AudacityではFloat 32bitも問題なく開けます。</p>
+<p>また、Spectra Layers Proだけでは、前後のカットなど、使いにくいので、Audacityで音量などを含めて最終的な仕上げをする事になると思います。</p>
+<img border="0" alt="SpectraLayers_inst_13.png" src="./slayer/SpectraLayers_inst_13-thumbnail2.png" width="400" height="216">
+<div style="page-break-before:always"></div>
+<h1 id="5-%E6%90%AD%E8%BC%89%E6%96%B9%E6%B3%95">5. 搭載方法</h1>
+<p><a id="markdown-%E6%90%AD%E8%BC%89%E6%96%B9%E6%B3%95" name="%E6%90%AD%E8%BC%89%E6%96%B9%E6%B3%95"></a></p>
+<h2 id="51-%E6%90%AD%E8%BC%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">5.1. 搭載するにあたり注意事項</h2>
+<p><a id="markdown-%E6%90%AD%E8%BC%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85" name="%E6%90%AD%E8%BC%89%E3%81%99%E3%82%8B%E3%81%AB%E3%81%82%E3%81%9F%E3%82%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"></a></p>
+<p>車両へのDCCデコーダ搭載にあたり、重要なことがあります。</p>
+<ul>
+<li>配線の絶縁を徹底すること。必要最低限の内部配線にすること。</li>
+<li>テスターを使用して必ずショートのチェック、線路から来る配線とファンクションやスピーカーとの接触が無いことを確認する。</li>
+<li>必ずLokSoundデコーダを装着前に、安価なデコーダを装着して試運転すること。安価なデコーダで、ならし運転すること</li>
+<li>デコーダテスタを使って、LokSoundデコーダの走行・サウンド・ファンクションが正常に動くことを確認すること。</li>
+</ul>
+<p>Next18やMTC21といった、デコーダを差し替え可能な構造になっている場合には絶対に動作チェックを先に実施してください。動作チェックには1000円台の安価なDCCデコーダを使うと、最悪の事態でも被害は少なくすみます。</p>
+<p>今まで多くの人が、高価なLokSoundデコーダを壊してきました。Next18やMTC21と言った、壊さずに動作テストできる手段が今はあります。これを活用しない手はありません。</p>
+<p>搭載するにあたり、ExpBoardと呼ばれる、日本型車両をDCC化しやすくする補助基板を頒布しています。ぜひご活用ください。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">メーカー</th>
+<th style="text-align:left">製品名</th>
+<th style="text-align:left">コネクタ</th>
+<th style="text-align:center">Scale</th>
+<th style="text-align:left">ArtNo</th>
+<th style="text-align:left">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Easy</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ECS-E1</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Standard</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ECS-S2</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Economy</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ECS-C6</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Type T</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ECT-S2</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ectmanual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Type F</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ECF-S2,ECF-E4</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ecfmanual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim Type H</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">ELH-S1,ELH-E1</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/ELH-Manual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim SL Type A</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">SL-C57/D51</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/expforsl-manual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim SL Type B</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">SL-C59/C62</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/expforsl-manual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">TRAINO</td>
+<td style="text-align:left">ExpBoard EC-Slim SL Type C</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">N</td>
+<td style="text-align:left">SL-C58</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/lib/exe/fetch.php/expforsl-manual.pdf">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">DesktopStation</td>
+<td style="text-align:left">ExpBoard for KATO HO</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10024</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/doku.php/expboardnext18">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">DesktopStation</td>
+<td style="text-align:left">ExpBoard for General HO</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10023</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/doku.php/expboardgeneral">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">DesktopStation</td>
+<td style="text-align:left">ExpBoard for YP</td>
+<td style="text-align:left">MTC21</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10026</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/doku.php/expboardendo">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">DesktopStation</td>
+<td style="text-align:left">EF81 Light Board</td>
+<td style="text-align:left">-</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10031</td>
+<td style="text-align:left"><a href="https://desktopstation.net/wiki/doku.php/ef81lightpcb">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">DesktopStation</td>
+<td style="text-align:left">ExpBoard EH200</td>
+<td style="text-align:left">MTC21</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10030</td>
+<td style="text-align:left"><a href="https://desktopstation.net/shop/products/detail/55">URL</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Fujigaya2</td>
+<td style="text-align:left">ExpBoard for KATO HO DE10</td>
+<td style="text-align:left">Next18</td>
+<td style="text-align:center">HO</td>
+<td style="text-align:left">10033</td>
+<td style="text-align:left"><a href="https://desktopstation.net/shop/products/detail/65">URL</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-dcc%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF">5.2. DCCコネクタ</h2>
+<p><a id="markdown-dcc%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF" name="dcc%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF"></a></p>
+<p>DCCデコーダを車両に搭載する場合、コネクタを使用することで、デコーダ交換を容易にすることができます。また、ピン数が20ピン前後となった高機能なコネクタが現在では欧米を中心に主流となりつつあります。</p>
+<p>従来は、デコーダに直接配線する方法が中心であったため、トラブル時には配線のやり直しが必要で、非常にとっつきにくいものでありました。</p>
+<p>日本では、KATOのHO動力ではNEM652が標準的に搭載されている場合が多いですが、台車モータのタイプ(E5系、EF81、EF510)ではDCCはあまり考慮されていないケースもあります。TOMIX、エンドウ、カツミ、でんてつ工房、U-TRAINS等では、アナログ専用となっており、標準でDCC対応がされていないのが実情です。</p>
+<p>オープンサウンドデータでは、MTC21とNext18をDCCコネクタの標準として推奨しております。以下に代表的なDCCコネクタの一覧を示します。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">コネクタ</th>
+<th style="text-align:left">ピン数</th>
+<th style="text-align:left">スケール</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">NEM651</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">後継はNext18</td>
+</tr>
+<tr>
+<td style="text-align:left">NEM652</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">HO</td>
+<td style="text-align:left">後継はPluXまたはMTC21</td>
+</tr>
+<tr>
+<td style="text-align:left">NEM662 Next18</td>
+<td style="text-align:left">18</td>
+<td style="text-align:left">N</td>
+<td style="text-align:left">Nゲージでは普及が進</td>
+</tr>
+<tr>
+<td style="text-align:left">NEM660 MTC21</td>
+<td style="text-align:left">21</td>
+<td style="text-align:left">HO</td>
+<td style="text-align:left">PluXと規格争い中</td>
+</tr>
+<tr>
+<td style="text-align:left">NEM658 PluX22</td>
+<td style="text-align:left">21</td>
+<td style="text-align:left">HO</td>
+<td style="text-align:left">PluX8, 16はフェードアウトの模様</td>
+</tr>
+</tbody>
+</table>
+<p>KATO HO標準動力や、10年以上前に設計されたHO車両では、NEM652(NMRA 8ピン)が多く使われています。ピン配置は以下の通りです。</p>
+<img border="0" src="./dec/exp_nem652_pinassign.png">
+<p>Next18のコネクタのピン配置は以下の通りです。なお、このピン配置はNext18-Sというサウンド向けの配置となっています。Next18のコネクタは、海外のメーカーが製造しているものであり、日本国内では入手の難しい状況となっています。</p>
+<img border="0" src="./dec/Next18.jpg" width="150" align="right">
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Pin</th>
+<th style="text-align:left">Pin</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">RAIL_A</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">RAIL_A</td>
+</tr>
+<tr>
+<td style="text-align:left">Head</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">11</td>
+<td style="text-align:left">Motor-</td>
+</tr>
+<tr>
+<td style="text-align:left">Speaker+</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">AUX2</td>
+</tr>
+<tr>
+<td style="text-align:left">COM+</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">13</td>
+<td style="text-align:left">AUX4</td>
+</tr>
+<tr>
+<td style="text-align:left">GND</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">14</td>
+<td style="text-align:left">GND</td>
+</tr>
+<tr>
+<td style="text-align:left">AUX3</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">15</td>
+<td style="text-align:left">COM+</td>
+</tr>
+<tr>
+<td style="text-align:left">AUX1</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">Speaker-</td>
+</tr>
+<tr>
+<td style="text-align:left">Motor+</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">17</td>
+<td style="text-align:left">Tail</td>
+</tr>
+<tr>
+<td style="text-align:left">RAIL_B</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">18</td>
+<td style="text-align:left">RAIL_B</td>
+</tr>
+</tbody>
+</table>
+<p>MTC21のコネクタの仕様は以下の通りです。1.27mmピッチのピンヘッダ・ピンフレームを使用するため、日本国内でもコネクタ部品の入手性は非常に良好です。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Assignment</th>
+<th style="text-align:left">Pin</th>
+<th style="text-align:left">Pin</th>
+<th style="text-align:left">Assignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">センサ1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">22</td>
+<td style="text-align:left">線路 左</td>
+</tr>
+<tr>
+<td style="text-align:left">センサ2</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">21</td>
+<td style="text-align:left">線路 右</td>
+</tr>
+<tr>
+<td style="text-align:left">AUX6(L)</td>
+<td style="text-align:left">3</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">GND</td>
+</tr>
+<tr>
+<td style="text-align:left">AUX4(L)</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">19</td>
+<td style="text-align:left">モータ+</td>
+</tr>
+<tr>
+<td style="text-align:left">SUSI CLK</td>
+<td style="text-align:left">5</td>
+<td style="text-align:left">18</td>
+<td style="text-align:left">モータ-</td>
+</tr>
+<tr>
+<td style="text-align:left">SUSI DAT</td>
+<td style="text-align:left">6</td>
+<td style="text-align:left">17</td>
+<td style="text-align:left">AUX5(L)</td>
+</tr>
+<tr>
+<td style="text-align:left">テールライト</td>
+<td style="text-align:left">7</td>
+<td style="text-align:left">16</td>
+<td style="text-align:left">COM+</td>
+</tr>
+<tr>
+<td style="text-align:left">ヘッドライト</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">15</td>
+<td style="text-align:left">AUX1</td>
+</tr>
+<tr>
+<td style="text-align:left">スピーカー2</td>
+<td style="text-align:left">9</td>
+<td style="text-align:left">14</td>
+<td style="text-align:left">AUX2</td>
+</tr>
+<tr>
+<td style="text-align:left">スピーカー1</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">13</td>
+<td style="text-align:left">AUX3(L)</td>
+</tr>
+<tr>
+<td style="text-align:left">ピンなし</td>
+<td style="text-align:left">×</td>
+<td style="text-align:left">12</td>
+<td style="text-align:left">VCC +5V</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-before:always"></div>
+<h2 id="53-kato-ho%E5%8D%98%E8%A1%8C%E8%BB%8A%E3%82%AF%E3%83%A2%E3%83%8F40-%E3%82%AD%E3%83%8F110%E7%AD%89">5.3. KATO HO(単行車クモハ40, キハ110等)</h2>
+<p><a id="markdown-kato-ho%E5%8D%98%E8%A1%8C%E8%BB%8A%E3%82%AF%E3%83%A2%E3%83%8F40%2C-%E3%82%AD%E3%83%8F110%E7%AD%89" name="kato-ho%E5%8D%98%E8%A1%8C%E8%BB%8A%E3%82%AF%E3%83%A2%E3%83%8F40%2C-%E3%82%AD%E3%83%8F110%E7%AD%89"></a></p>
+<p>KATOのHO キハ110 200番台(1-615)は、NMRAコネクタが搭載されていますが、完全なDCC readyではありません。</p>
+<p>ただし、基板上は、一部パターンカットして改造すれば、完全なDCCreadyにできることが分かってるので、説明書に１文字もDCC対応とは書いてませんが、DCCサウンドへの改造を行いました。</p>
+<img border="0" src="./kato/kiha110_1.jpg">
+<p>床板の下は以下のようになっています。ウェイトとなっている鉄板が入っていますが、これをExpBoard Next18 for KATO HOで置き換える事となります。</p>
+<img border="0" src="./kato/kiha110_4.jpg">
+<p>改造前の基板は以下の通りです。</p>
+<img border="0" src="./kato/kiha110_2.jpg">
+<p>カットしろ、ジャンパしろ、と指示をしているパターンがありますので、基板が言うとおりにパターンカットとジャンパをしました。</p>
+<img border="0" src="./kato/kiha110_3.jpg">
+<p>一応、箇所を明示すると以下の通りです。</p>
+<img border="0" src="./kato/kiha110_3b.jpg">
+<blockquote>
+<p>重要！
+C,T,Hと、LED照明基板に書かれてますが、そのまんま配線すると、おかしなことになります。全く同じ基板を使っているので、筐体というか、車両の照明の位置関係が反対なので配線を入れ替えないと進行方向と合いません。</p>
+<p>FWD側（→の先）
+C：同じ配線でOK
+T：H(Rear,NMRA Pin2)を繋げる
+H：T(Head,NMRA Pin6)を繋げる</p>
+<p>REV側(→のおしり側)
+C：同じ配線でOK
+T：T(Head,NMRA Pin6)を繋げる
+H：H(Rear,NMRA Pin2)を繋げる</p>
+</blockquote>
+<img border="0" src="./kato/kiha110_next18_5.jpg">
+<p>床板の開口部は、Next18コネクタのサイズ分しか空いていません。よって、デコーダをこのままでは入れることができません。</p>
+<img border="0" src="./kato/kiha110_next18_3.jpg">
+<p>そこで、開口部をくりぬいて、デコーダを搭載できるようにします。</p>
+<img border="0" src="./kato/kiha110_next18_4.jpg">
+<h2 id="54-kato-ho%E5%8B%95%E5%8A%9B%E8%BB%8A%E3%82%AD%E3%83%8F80%E7%AD%89">5.4. KATO HO(動力車,キハ80等)</h2>
+<p><a id="markdown-kato-ho%E5%8B%95%E5%8A%9B%E8%BB%8A%2C%E3%82%AD%E3%83%8F80%E7%AD%89" name="kato-ho%E5%8B%95%E5%8A%9B%E8%BB%8A%2C%E3%82%AD%E3%83%8F80%E7%AD%89"></a></p>
+<p>KATOのHO キハ80のM車に、LokSound5 microを搭載していきます。</p>
+<ul>
+<li>半田ごて等、ハンダ付道具一式</li>
+<li>ピンバイス,ピンセット</li>
+<li>スピーカー</li>
+<li>LokSound5 micro</li>
+<li>ExpBoard Next18 for KATO HO<br/>https://desktopstation.net/wiki/doku.php/expboardnext18</li>
+<li>KATO HO キハ80(M) 1-611<br/>https://www.katomodels.com/product/ho/kiha82</li>
+</ul>
+<p><a href="./img/KATO_kiha80M_Next18_15.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_15.jpg" src="./img/KATO_kiha80M_Next18_15-thumbnail2.jpg" width="400" height="258"></a></p>
+<p>搭載作業をしていきます。</p>
+<p><a href="./img/KATO_kiha80M_Next18_1.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_1.jpg" src="./img/KATO_kiha80M_Next18_1-thumbnail2.jpg" width="400" height="66"></a></p>
+<p><a href="./img/KATO_kiha80M_Next18_2.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_2.jpg" src="./img/KATO_kiha80M_Next18_2-thumbnail2.jpg" width="400" height="68"></a></p>
+<p><a href="./img/KATO_kiha80M_Next18_3.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_3.jpg" src="./img/KATO_kiha80M_Next18_3-thumbnail2.jpg" width="400" height="100"></a></p>
+<p><a href="./img/KATO_kiha80M_Next18_4.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_4.jpg" src="./img/KATO_kiha80M_Next18_4-thumbnail2.jpg" width="400" height="108"></a></p>
+<p><a href="./img/KATO_kiha80M_Next18_5.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_5.jpg" src="./img/KATO_kiha80M_Next18_5-thumbnail2.jpg" width="400" height="67"></a></p>
+<p>リン青銅の銅板を半田付けします。変に曲げすぎると、しっかりと下の金属ウェイトに当たらず、接触不良の原因となるので、写真と同じように半田付けします。</p>
+<p><a href="./img/KATO_kiha80M_Next18_6.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_6.jpg" src="./img/KATO_kiha80M_Next18_6-thumbnail2.jpg" width="400" height="97"></a></p>
+<p>板バネのように、下の金属ウェイトに接触していることを確認してください。</p>
+<p><a href="./img/KATO_kiha80M_Next18_7.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_7.jpg" src="./img/KATO_kiha80M_Next18_7-thumbnail2.jpg" width="400" height="149"></a></p>
+<p>ハンダ付して取り付けます。</p>
+<p><a href="./img/KATO_kiha80M_Next18_8.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_8.jpg" src="./img/KATO_kiha80M_Next18_8-thumbnail2.jpg" width="400" height="60"></a></p>
+<p>赤線部分を切り取ります。座席部分もカッターなどでカットします。ここをカットしないと、Next18のデコーダが搭載できません。</p>
+<p><a href="./img/KATO_kiha80M_Next18_9.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_9.jpg" src="./img/KATO_kiha80M_Next18_9-thumbnail2.jpg" width="400" height="103"></a></p>
+<p><a href="./img/KATO_kiha80M_Next18_10.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_10.jpg" src="./img/KATO_kiha80M_Next18_10-thumbnail2.jpg" width="400" height="58"></a></p>
+<p>デコーダが入るか確認します。</p>
+<p><a href="./img/KATO_kiha80M_Next18_11.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_11.jpg" src="./img/KATO_kiha80M_Next18_11-thumbnail2.jpg" width="400" height="72"></a></p>
+<p>問題無さそう。</p>
+<p><a href="./img/KATO_kiha80M_Next18_12.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_12.jpg" src="./img/KATO_kiha80M_Next18_12-thumbnail2.jpg" width="400" height="66"></a></p>
+<p>スピーカーの音を下に抜かすための穴をピンバイスで開けます。</p>
+<p><a href="./img/KATO_kiha80M_Next18_13.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_13.jpg" src="./img/KATO_kiha80M_Next18_13-thumbnail2.jpg" width="400" height="139"></a></p>
+<p>トイレなどの部分にスピーカーを隠せるので、ここにピンバイスで穴を開けてスピーカー配線をして半田付けします。隠し方は、スピーカーのサイズに依ると思うので、皆様の工夫が出てくるかと思います。</p>
+<p><a href="./img/KATO_kiha80M_Next18_14.jpg" target="_blank"><img border="0" alt="KATO_kiha80M_Next18_14.jpg" src="./img/KATO_kiha80M_Next18_14-thumbnail2.jpg" width="400" height="307"></a></p>
+<p>あとは車両を被せて、動作確認して完成です！</p>
+<div style="page-break-before:always"></div>
+<h2 id="55-tomix-ho">5.5. Tomix HO</h2>
+<p><a id="markdown-tomix-ho" name="tomix-ho"></a></p>
+<p>This chapter describes how to assemble ESU LokSound5 micro decoder to Tomix’s HO 1/80 scale 16.5mm gauge kiha 261.</p>
+<p><img src="./TomixHO/image007.jpg" alt="">
+<img src="./TomixHO/image008.jpg" alt="">
+<img src="./TomixHO/image009.jpg" alt="">
+<img src="./TomixHO/image010.jpg" alt=""></p>
+<p>Remove cupper board using soldering iron.</p>
+<p><img src="./TomixHO/image011.jpg" alt=""></p>
+<p>Solder wires and motor pins. Then set motor and floor parts.</p>
+<p><img src="./TomixHO/image012.jpg" alt="">
+<img src="./TomixHO/image013.jpg" alt="">
+<img src="./TomixHO/image014.jpg" alt="">
+<img src="./TomixHO/image015.jpg" alt="">
+<img src="./TomixHO/image016.jpg" alt=""></p>
+<p>Check wire position and seat parts. After that, make a hole.</p>
+<p><img src="./TomixHO/image017.jpg" alt=""></p>
+<p>Pull up motor wires from bottom side.</p>
+<p><img src="./TomixHO/image018.jpg" alt=""></p>
+<p>Solder ExpBoard Next18 for General HO(https://desktopstation.net/wiki/doku.php/expboardgeneral) and PUI Audio’s ASE02506MS-LW90-DSM-R Speaker in this example.</p>
+<p><img src="./TomixHO/image019.jpg" alt=""></p>
+<p>LokSound5 micro is assembled.</p>
+<p><img src="./TomixHO/image020.jpg" alt=""></p>
+<p>Please place the decoder boards to hidden space.</p>
+<p><img src="./TomixHO/image021.jpg" alt=""></p>
+<p>That’s all!</p>
+<p><img src="./TomixHO/image022.jpg" alt=""></p>
+<div style="page-break-before:always"></div>
+<h2 id="56-%E3%83%88%E3%83%A9%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A4-ho">5.6. トラムウェイ HO</h2>
+<p><a id="markdown-%E3%83%88%E3%83%A9%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A4-ho" name="%E3%83%88%E3%83%A9%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A4-ho"></a></p>
+<p>トラムウェイのキハ40-500のDCCサウンド化にチャレンジしてきます。それでは箱から、取り出すまでを以下に並べます。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_1.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_1.jpg" src="./img/Tramway_HO_Kiha40_500_1-thumbnail2.jpg" width="400" height="151"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_2.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_2.jpg" src="./img/Tramway_HO_Kiha40_500_2-thumbnail2.jpg" width="400" height="135"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_3.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_3.jpg" src="./img/Tramway_HO_Kiha40_500_3-thumbnail2.jpg" width="400" height="132"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_4.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_4.jpg" src="./img/Tramway_HO_Kiha40_500_4-thumbnail2.jpg" width="400" height="65"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_5.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_5.jpg" src="./img/Tramway_HO_Kiha40_500_5-thumbnail2.jpg" width="400" height="113"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_6.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_6.jpg" src="./img/Tramway_HO_Kiha40_500_6-thumbnail2.jpg" width="400" height="213"></a></p>
+<p>DCC化するための調査で、バラバラにします。残念ながらNEM652の8ピンなどのコネクタは装着されていませんでした。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_7.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_7.jpg" src="./img/Tramway_HO_Kiha40_500_7-thumbnail2.jpg" width="400" height="155"></a></p>
+<p>トラムウェイの車両を買うのは初めてですが、外側筐体に重りの鉄板があります。おかげで、床下部分についてはプラ部品のみのため車内工作しやすいです。代わりに剛性が犠牲になっていますが・・・。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_8.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_8.jpg" src="./img/Tramway_HO_Kiha40_500_8-thumbnail2.jpg" width="400" height="82"></a></p>
+<p>上部の照明基板との接続はポゴピンです。こういう使い方も有りと言えば有りですが・・・。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_10.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_10.jpg" src="./img/Tramway_HO_Kiha40_500_10-thumbnail2.jpg" width="400" height="362"></a></p>
+<p><a href="./img/Tramway_HO_Kiha40_500_9.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_9.jpg" src="./img/Tramway_HO_Kiha40_500_9-thumbnail2.jpg" width="400" height="140"></a></p>
+<p>ライト基板（下）。線路からの配線、モータ、反対側基板への配線がしてあります。
+最終的には、コモンとF0出力、室内灯制御の信号だけ配線することになります。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_11.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_11.jpg" src="./img/Tramway_HO_Kiha40_500_11-thumbnail2.jpg" width="400" height="310"></a></p>
+<p><a href="https://www.mmjp.or.jp/tramway/goods/pg350.html" target="_blank">照明基板の回路図がトラムウェイにあった</a>ので、BSChで書き直して、DCCに割り付けるとこうかな？というのを書いてみました。まだ検証していないので、間違っている可能性があります！要注意です。</p>
+<blockquote>
+<p>注：この回路図通りに改造して動作を確認しましたが、動作を保証するものではありません。</p>
+</blockquote>
+<p><a href="./img/LightPCB_DCCInstall.PNG" target="_blank"><img border="0" alt="LightPCB_DCCInstall.PNG" src="./img/LightPCB_DCCInstall-thumbnail2.PNG" width="400" height="300"></a></p>
+<p>基板に図示してみました。赤線はパターンカットです。カッターなどを使って、基板上の銅パターンを削って除去してください。両極性タイプから、オープンコレクタ出力のNMRA 8ピンに対応させるための作業となります。</p>
+<blockquote>
+<p>なお、NMRAピンの色とピン番号を図示していますが、ライト系ではFWD/REVで意味が変わるため、そのまま配線する意味ではないので注意してください！</p>
+</blockquote>
+<p><a href="./img/Tramway_HO_Kiha40_500_12.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_12.jpg" src="./img/Tramway_HO_Kiha40_500_12-thumbnail2.jpg" width="400" height="240"></a></p>
+<p>ここでは、よくあるFL12やワンコインデコーダFL等のライトデコーダを２個追加するのではなく、ESU LokSoundのピンをそのまま使うようにするため、基板にパターンカットや配線追加を行って、対応しています。複雑な車内の配線工事必須で、上級者向けなので、難しそうと思ったら、FLデコーダを使う方が良いと思います。</p>
+<p>それでは作業していきます。まず、線路と直結されている配線を半田ごてで取り外します。テールライト配線で、LEDに配線を追加しています。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_14.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_14.jpg" src="./img/Tramway_HO_Kiha40_500_14-thumbnail2.jpg" width="400" height="290"></a></p>
+<p>基板に配線を足しました。ヘッドライト、テールライト、室内灯用です。なお、筐体側の基板は一切改造しなくても良いように工夫しています。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_15.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_15.jpg" src="./img/Tramway_HO_Kiha40_500_15-thumbnail2.jpg" width="400" height="275"></a></p>
+<p>配線を半田付けしたら、配線を固定していきます。もともとある、粘着テープをそのまま使用しました。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_16.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_16.jpg" src="./img/Tramway_HO_Kiha40_500_16-thumbnail2.jpg" width="400" height="258"></a></p>
+<p>カバーを取り付けました。配線引き出し用に、一部、穴を開けて配線を取り出しています。配線は、ExpBoard Next18 for General HOのパッドに繋げていきました。</p>
+<p><a href="./img/kiha40_next18_4.jpg" target="_blank"><img border="0" alt="kiha40_next18_4.jpg" src="./img/kiha40_next18_4-thumbnail2.jpg" width="400" height="213"></a></p>
+<p>振動で動いても困るので、アセテート粘着テープ(絶縁性があり施工性抜群！)で固定。スピーカーも黒に塗りました。</p>
+<p><a href="./img/kiha40_next18_5.jpg" target="_blank"><img border="0" alt="kiha40_next18_5.jpg" src="./img/kiha40_next18_5-thumbnail2.jpg" width="400" height="189"></a></p>
+<p>Next18を使う事で、車体を被せても、配線の山が大きく目立つことはありません。</p>
+<p><a href="./img/kiha40_next18_6.jpg" target="_blank"><img border="0" alt="kiha40_next18_6.jpg" src="./img/kiha40_next18_6-thumbnail2.jpg" width="400" height="171"></a></p>
+<p>次に、室内灯の取り付けを検討しました。キハ40の天井側には、室内灯の端子が出ています。テスタで測定したところ、回路図は4.7kΩとなってましたが実際は2.2kΩでした。あの回路図の定数は信用しない方が良さそうですね・・・。配線は合っているようです。
+あと気になった点としては、どちらがプラス側か一切書いてません。みなさん、テスタであたって調べてるんでしょうか？基板裏側にシルクで書いてくれれば良かったのですが。一応、写真の中にあるようにマスキングテープで印を付けました。ご参考ください。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_21.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_21.jpg" src="./img/Tramway_HO_Kiha40_500_21-thumbnail2.jpg" width="400" height="61"></a></p>
+<p>高い照明を買うのも大変ですし、手配も面倒でしたので、社内に落ちていたテープLEDを使用しました。３直列LEDで電流制限抵抗は150Ωです。電線とタブ端子を付けました。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_22.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_22.jpg" src="./img/Tramway_HO_Kiha40_500_22-thumbnail2.jpg" width="400" height="71"></a></p>
+<p>一応、計算して多少は光るか確認します。</p>
+<p>LED 3直列なので、Vf=2.5<em>3=7.5V (白色LEDのVfは2.5Vくらいと仮定)
+抵抗値は、2.2kΩ+150Ω=2.35kΩ
+電圧が12Vのとき、V=IR→V-Vf=IRなので、12-7.5=I</em>2.35k, I=(12-7.5)/2.35 = 1.9[mA]</p>
+<p>ぼんやりと、かろうじて光るな、ということは計算で分かりました。</p>
+<p>LEDテープを装着した後は以下のような感じです。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_23.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_23.jpg" src="./img/Tramway_HO_Kiha40_500_23-thumbnail2.jpg" width="400" height="113"></a></p>
+<p>光らせてみました。計算通り、微妙に光っていますが、模型の室内灯としては結構良い感じと思います。DCCなので、ヘッドライト・テールライトとは別に、室内灯をファンクションでちゃんとON/OFFできるので、使い勝手も良い感じです。車庫への回送なのに光り続ける間抜けな運用は避けられそうです。</p>
+<p><a href="./img/Tramway_HO_Kiha40_500_24.jpg" target="_blank"><img border="0" alt="Tramway_HO_Kiha40_500_24.jpg" src="./img/Tramway_HO_Kiha40_500_24-thumbnail2.jpg" width="400" height="157"></a></p>
+<div style="page-break-before:always"></div>
+<h2 id="57-%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A6-ho">5.7. エンドウ HO</h2>
+<p><a id="markdown-%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A6-ho" name="%E3%82%A8%E3%83%B3%E3%83%89%E3%82%A6-ho"></a></p>
+<p>ExpBoard YPを使って、近鉄22000系塗装済みキットのDCCサウンド化を行っていきます。</p>
+<blockquote>
+<p>ExpBoard YP
+https://desktopstation.net/wiki/doku.php/expboardendo</p>
+</blockquote>
+<p>まず、ExpBoard YPの半田付けをしました。細かい部品ばかりなので、難易度は高いです。電子工作上級者なことが前提になります。MTC21コネクタは、1.27mmのピンヘッダですが、インデックスピンという黒い■のあるところは、ピンをあらかじめ抜いておきます。誤挿入防止用のようです。</p>
+<p><a href="./img/EypBoardYP_9.jpg" target="_blank"><img border="0" alt="EypBoardYP_9.jpg" src="./img/EypBoardYP_9-thumbnail2.jpg" width="400" height="53"></a></p>
+<p>IC1とIC2は同じ形状ですが、部品は違うので用意注意です。IC1には<strong>A1</strong>というマークが書いてあります。IC2には<strong>G3</strong>というマークが書かれてます。そこで判断してください。D1とD2には、ショットキーダイオードと定電流ダイオードを付けますが、万が一間違えて逆にしても普通に動きます。ただし、アノード・カソードの位置は間違えないようにしてくださいね。</p>
+<p><a href="./img/EypBoardYP_10.jpg" target="_blank"><img border="0" alt="EypBoardYP_10.jpg" src="./img/EypBoardYP_10-thumbnail2.jpg" width="400" height="286"></a></p>
+<p><a href="./img/EypBoardYP_11.jpg" target="_blank"><img border="0" alt="EypBoardYP_11.jpg" src="./img/EypBoardYP_11-thumbnail2.jpg" width="400" height="364"></a></p>
+<p>半田付け後、スピーカーも付けてみました。</p>
+<p><a href="./img/EypBoardYP_4.jpg" target="_blank"><img border="0" alt="EypBoardYP_4.jpg" src="./img/EypBoardYP_4-thumbnail2.jpg" width="400" height="88"></a></p>
+<p>実際に組み込んでいくので、その準備工事。</p>
+<p><a href="./img/EypBoardYP_7.jpg" target="_blank"><img border="0" alt="EypBoardYP_7.jpg" src="./img/EypBoardYP_7-thumbnail2.jpg" width="400" height="123"></a></p>
+<p>はんだ付けした基板を天井に搭載して位置チェック。</p>
+<p><a href="./img/EypBoardYP_8.jpg" target="_blank"><img border="0" alt="EypBoardYP_8.jpg" src="./img/EypBoardYP_8-thumbnail2.jpg" width="400" height="129"></a></p>
+<p>ExpBoard YPのおかげで、ヘッドライト・テールライト、室内灯、サウンドなどなどは凄く楽なのですが、床下部分は全く考慮されていないので、コネクタの取り付けなどに意外と時間を費やしました。</p>
+<p><a href="./img/EypBoardYP_12.jpg" target="_blank"><img border="0" alt="EypBoardYP_12.jpg" src="./img/EypBoardYP_12-thumbnail2.jpg" width="400" height="172"></a></p>
+<p>両極性機能の動作チェック。ExpBoard  YPは、両極性基板の機能を搭載しているので、通常DCCで使用されるオープンコレクタ出力ではなく、両極性出力を使えます。という事は、アナログ車両のヘッドライト・テールライトのユニットは通常、両極性専用なので、日本型車両に搭載がしやすくなるわけです。</p>
+<p><a href="./img/EypBoardYP_5.jpg" target="_blank"><img border="0" alt="EypBoardYP_5.jpg" src="./img/EypBoardYP_5-thumbnail2.jpg" width="400" height="268"></a></p>
+<p>こんな感じで、とりあず動きました。</p>
+<div style="page-break-before:always"></div>
+<h2 id="58-n%E3%82%B2%E3%83%BC%E3%82%B8">5.8. Nゲージ</h2>
+<p><a id="markdown-n%E3%82%B2%E3%83%BC%E3%82%B8" name="n%E3%82%B2%E3%83%BC%E3%82%B8"></a></p>
+<h3 id="581-kato-113%E7%B3%BB">5.8.1. KATO 113系</h3>
+<p><a id="markdown-kato-113%E7%B3%BB" name="kato-113%E7%B3%BB"></a></p>
+<p>ついに、KATO 113系東海道線色がリニューアルされましたね～。もちろん、あの懐かしいMT54サウンドを再現したく、いつものLokSoundデコーダを搭載することにしました。</p>
+<p>まずは、M車モハ113のDCC化です。</p>
+<img border="0" src="./henoheno/n113_1.jpg" width="400" >
+<p>ExpBoard EC-Slimは、スタンダードセット相当で、さらに室内灯を付けたものを利用します。</p>
+<blockquote>
+<p>ExpBoard EC-Slim<br/>
+https://desktopstation.net/wiki/doku.php/expboardecn</p>
+</blockquote>
+<p>モハ113の ボディと床下カバーを外して、どのように取り付けるか検討します。画面左側の室内灯ユニットが取り付く側にサウンドデコーダを配置します。</p>
+<img border="0" src="./henoheno/n113_2.jpg" width="400" >
+<p>また、スピーカーは右側に取り付けることにしました。タカチのケース(SW-15B)とaliで購入したスピーカーを使います。</p>
+<img border="0" src="./henoheno/n113_3.jpg" width="400" >
+<p>タカチのケースは半分くらいに薄く削っています。組み立てる前はこのような形です。</p>
+<img border="0" src="./henoheno/n113_4.jpg" width="400" >
+<p>ユニットとケースは透明ゴム系接着剤で固定しています。また、今回両側についている金属端子を上向きにしてボディに当てることで、床下に押し付けて固定する効果も狙ってます。</p>
+<img border="0" src="./henoheno/n113_5.jpg" width="400" >
+<p>さて組み立てです。EC-Slimはいつものとおり、EM13装着部に差し込みます。今回は室内が青いので青いケーブルを使います。ケーブルが同色ですと接続先を間違る可能性があるので、信号名を��いたシールを貼るとよいでしょう。</p>
+<img border="0" src="./henoheno/n113_6.jpg" width="400" >
+<p>ケーブルを床下パーツの隙間から出して、床下パーツがしっかり取り付いてることを確認します。（実は今回、いつものグレーのケーブルで製作を初めて、途中で青ケーブルに付け直してます）。</p>
+<img border="0" src="./henoheno/n113_7.jpg" width="400" >
+<p>この姿にして、一度走行試験をするとよいでしょう。</p>
+<img border="0" src="./henoheno/n113_8.jpg" width="400" >
+<p>動力ユニットの上に、EC-Slimとスピーカーを載せて位置決めして配線の長さを決めます。</p>
+<img border="0" src="./henoheno/n113_9.jpg" width="400" >
+<p>配線をカットして、先端の被覆をむきハンダメッキしておきます。</p>
+<img border="0" src="./henoheno/n113_10.jpg" width="400" >
+<p>基板を載せてTLK1,2 MT1,2を配線します。レール側とモーター側の配線が間違いないことを再確認してください。さらにスピーカーにも配線します。</p>
+<img border="0" src="./henoheno/n113_11.jpg" width="400" >
+<p>試走して問題ないことを確認した後に、ボディをかぶせてサウンドをテストします。今回、いつものプラバンエンクロージャよりちょっと大きいので、気持ち音が大きくなったかもしれません。</p>
+<div style="page-break-before:always"></div>
+<h3 id="582-kato-c59-dcc%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5">5.8.2. KATO C59 DCCサウンド加工</h3>
+<p><a id="markdown-kato-c59-dcc%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5" name="kato-c59-dcc%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E5%8A%A0%E5%B7%A5"></a></p>
+<p>C59(KATO製品)のDCCサウンド加工のご紹介です。</p>
+<img border="0" src="./henoheno/nc59_1.jpg" width="400" >
+<p>利用するExpBoardはこちらです。C57用とちょっと似ていますが、端子の位置などが異なります。</p>
+<p>C57用はデコーダの下側に取り付けていましたが、こちらはデコーダやスピーカーの上側に取り付けることを想定し、配線パッドが両面についています。</p>
+<img border="0" src="./henoheno/nc59_2.jpg" width="400" >
+<p>さて加工を始めます。C59のテンダーは長いのですがこの部分にＲがついていてスピーカーの角と当たるのでリューターで少し彫り込みます。</p>
+<img border="0" src="./henoheno/nc59_3.jpg" width="400" >
+<p>スピーカーユニットはいつものNagodenさん頒布品です。</p>
+<blockquote>
+<p>Nagoden http://www007.upp.so-net.ne.jp/nagoden/</p>
+</blockquote>
+<p>端子はレールからの電流が流れるウエイトに接触しないよう短くカットし、配線しやすいようハンダメッキをしておきます。</p>
+<img border="0" src="./henoheno/nc59_4.jpg" width="400" >
+<p>エンクロージャは以前ご紹介したプラ板・プラ棒の組み合わせです。角を落とし、またスピーカー配線を通すためのミゾをやすりで掘っておきます。</p>
+<img border="0" src="./henoheno/nc59_5.jpg" width="400" >
+<p>スピーカーとエンクロージャをダイキャストパーツの中に、仮置きしてみます。ダイキャストが広がるときは当たっている部分を再度削ります。</p>
+<img border="0" src="./henoheno/nc59_6.jpg" width="400" >
+<p>それぞれのパーツをウエイトの中に納まるか確認します。特に、プリント基板がウエイトより上部に飛びさすときは、スピーカーの当たっているところをわずかに削ります。</p>
+<img border="0" src="./henoheno/nc59_7.jpg" width="400" >
+<p>ExpBoardからモーターとスピーカーの配線を取り出します。今回は、すべて下側から配線を取り出しました。また、レールからの給電は洋白線（0.2mm)を左右のウエイトに押し当てて行います。</p>
+<img border="0" src="./henoheno/nc59_8.jpg" width="400" >
+<p>なお、ヘッドライト配線は使いません。開発中のこのヘッドライト用デコーダ(PetitDecoder-SL)に取り換えました（詳しくは別途説明します）。C57は、はずすのが大変そうだったのですが、C59の場合はこの状態で基板交換ができました。</p>
+<img border="0" src="./henoheno/nc59_9.jpg" width="400" >
+<p>作ったパーツをくみ上げます。プリント基板とスピーカーは少量のゴム系接着剤で止めています。また、LokSoundの基板もダイキャストでショートしないようテープで絶縁しておきます。</p>
+<img border="0" src="./henoheno/nc59_10.jpg" width="400" >
+<p>このようにぴったりはまりました。モーターへの配線がからまないように注意して引き出します。</p>
+<img border="0" src="./henoheno/nc59_11.jpg" width="400" >
+<p>テンダー上面パーツで蓋をします。このときに、床下などが中に押されて盛り上がっていないことを確認してください。</p>
+<img border="0" src="./henoheno/nc59_12.jpg" width="400" >
+<p>スピーカーの配線を通してテンダーを組み立てます。</p>
+<img border="0" src="./henoheno/nc59_13.jpg" width="400" >
+<p>エンジン側の分解や改造はC57と同じです。モーター配線はダイキャストにはめ込んである金属板を外し、テンダーからの配線につなぎ替えます。ボディ（ダイキャスト）に配線が接触しないようにカプトンテープなどできちんと絶縁してください。</p>
+<img border="0" src="./henoheno/nc59_14.jpg" width="400" >
+<p>このように外部から配線などは一切見えません。</p>
+<img border="0" src="./henoheno/nc59_15.jpg" width="400" >
+<p>この後、開発中のオープンサウンドデータに書き換えて２両目が完成です。</p>
+<div style="page-break-before:always"></div>
+<h1 id="6-%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E8%A8%AD%E5%AE%9A">6. よく使う設定</h1>
+<p><a id="markdown-%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E8%A8%AD%E5%AE%9A" name="%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%86%E8%A8%AD%E5%AE%9A"></a></p>
+<p>オープンサウンドデータで、LokSound5における、よく使うCVを以下に示します。LokProgrammerを使うと、CVを意識せずに設定変更ができます。
+LokSoundV4では異なる場合がありますので、詳細はESUのマニュアルを参照してください。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">CV番号</th>
+<th style="text-align:left">CV名称</th>
+<th style="text-align:left">設定方法</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CV1</td>
+<td style="text-align:left">ショートアドレス</td>
+<td style="text-align:left">ヨーロッパ式1-100<br/>アメリカ式1-127</td>
+<td style="text-align:left">CV29のbit5が0のときに有効</td>
+</tr>
+<tr>
+<td style="text-align:left">CV17</td>
+<td style="text-align:left">ロングアドレス#1</td>
+<td style="text-align:left">192-230. CV18と組み合わせて使用。</td>
+<td style="text-align:left">CV29のbit5が1のときに有効</td>
+</tr>
+<tr>
+<td style="text-align:left">CV18</td>
+<td style="text-align:left">ロングアドレス#2</td>
+<td style="text-align:left">128-255. CV17と組み合わせて使用。</td>
+<td style="text-align:left">CV29のbit5が1のときに有効</td>
+</tr>
+<tr>
+<td style="text-align:left">CV2</td>
+<td style="text-align:left">開始電圧</td>
+<td style="text-align:left">走行開始時の電圧。デフォルトは1です。</td>
+<td style="text-align:left">255=100%の相対指定なので注意。</td>
+</tr>
+<tr>
+<td style="text-align:left">CV5</td>
+<td style="text-align:left">最大電圧</td>
+<td style="text-align:left">1-255。255で最高速度時に電圧100%を出します。 127で半分50%となります。</td>
+<td style="text-align:left">255=100%の相対指定なので注意。</td>
+</tr>
+<tr>
+<td style="text-align:left">CV63</td>
+<td style="text-align:left">音量</td>
+<td style="text-align:left">0-129。192で最大。128で通常音量。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CV29</td>
+<td style="text-align:left">基本設定</td>
+<td style="text-align:left">デフォルトは30です。</td>
+<td style="text-align:left">28/128Step, アナログ有効, ショートアドレス,スピードテーブル有効</td>
+</tr>
+<tr>
+<td style="text-align:left">CV155-CV170</td>
+<td style="text-align:left">SoundCV</td>
+<td style="text-align:left">データ毎に独自の設定が設けられている場合があります。</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CV258-CV448</td>
+<td style="text-align:left">Function Outputs</td>
+<td style="text-align:left">ヘッドライト・テールライトやAUXの出力設定を行えます。詳細はESUのマニュアルを参照してください。</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-before:always"></div>
+<h1 id="7-%E3%82%B3%E3%83%A9%E3%83%A0">7. コラム</h1>
+<p><a id="markdown-%E3%82%B3%E3%83%A9%E3%83%A0" name="%E3%82%B3%E3%83%A9%E3%83%A0"></a></p>
+<h2 id="71-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%8D%E3%81%A3%E3%81%8B%E3%81%91">7.1. オープンサウンドデータを始めるきっかけ</h2>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%8D%E3%81%A3%E3%81%8B%E3%81%91" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E5%A7%8B%E3%82%81%E3%82%8B%E3%81%8D%E3%81%A3%E3%81%8B%E3%81%91"></a></p>
+<p>1990年代前半の規格戦争を経て、レンツ社が提唱したDCC規格に収束を果たしたデジタル鉄道模型。鉄道模型のデジタル化のメリットはたくさんあります。自動運転、コンピュータ制御との親和性、省配線、複数台同時制御、複数人制御、などなど・・・。その中で、もっとも分かりやすいのがサウンドだと思います。アナログ鉄道模型の時代から、サウンドの探求が試されており、DCCサウンドで世界共通のプラットフォームができあがったと理解しています。</p>
+<p>日本では、2000年頃からデジトラックス、サウンドトラックス、ESUなどが主に使われてきていました。少数派でZIMO、Hornby等がありました。その中でも、KATOが国内代理店をしている関係やコマンドステーションの普及状況からか、デジトラックスが大きなシェアを占めていたと思われます。データを書き換えできるので、一部の模型店からは日本型データが公開され、ユーザーにも多く使われてきたようです。</p>
+<p>一方、日本のDCC界隈でそれなりに普及していたデジトラックスのサウンドデコーダは、2020年前後においては、同時発音数の少なさや音質の悪さなどが目立ちはじめ陳腐化していました。また、2017年頃から普及が始まったNext18やMTC21といったDCCコネクタの対応という面で考えると、課題が大きいと感じていました。また、若干、安定性や品質面でも気になる点がありました。</p>
+<p>一方で、日本型DCCサウンドは、大きなキーとなるソリューションと言うことも強く感じていました。どうすれば良いかと悩んでいたときに、たまたま同じ方向性を考える方々と接する機会に恵まれ、様々なディスカッションの結果、価格はデジトラックスの物よりも上がりますが、ESUのLokSoundを軸にすることで、懸念事項や課題もクリアする事も見いだすことができました。ここで現在のオープンサウンドデータの原型となる物ができあがったと感じています。</p>
+<p>また、同時並行でDCC電子工作連合内でも、DCCコネクタ対応の議論があり、これらの動きをセットで進めていく事としました。</p>
+<p>そして2019年に、オープンサウンドデータを立ち上げ、多くの協力者のボランティアによる活動で、サウンドデータの公開と、ExpBoardシリーズによる容易な日本型車両のDCC化環境作りを整えていくこととしました。</p>
+<p>この活動により、情報共有や、支援グッズが充実したことによって、日本型車両へのDCCサウンド搭載の課題は徐々に解消の方向となっており、ハードルは年々低くなりつつあります。同時に、AUXによるファンクションの高機能化を実現しつつ、改造失敗のリスクの低下も実現しつつあります。</p>
+<p>2000～2010年頃の第一次DCCブームの数々の失敗を経て、2020年は日本型DCC元年となるか、試されているのかもしれません。</p>
+<h2 id="72-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89">7.2. オープンサウンドデータのこれから</h2>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%81%93%E3%82%8C%E3%81%8B%E3%82%89"></a></p>
+<p>サウンドデータを、より多く公開していくと同時に、ユーザーがクリエイターとしてどんどんデータを作成できるような環境作りを進めていきます。</p>
+<p>たとえば、本書のような文書の公開であったり、開発セミナーであったり、オープンサウンドデータミーティングといったオフライン・オンラインを駆使したイベントの実施です。</p>
+<p>その次、2030年頃でサウンドデコーダ、書込み装置の内製化と仕様のオープン化です。「オープンサウンドデコーダ」という、完全に仕様をオープンにして、誰もがサウンドデコーダを開発できるプラットフォームを作り上げていきます。海外の競合DCC企業は、完全に囲い込んだサウンドデコーダシステムとなっており、ユーザーはメーカーを変更したら１からデータを作り直したりしなければなりません。</p>
+<p>アイデアや技術は徐々に蓄えており、超高密度部品実装、ARMかRISC Vベースの高性能マイコンに、DCDCコンバータ、フラッシュメモリ、Raicomベースのデコーダ～書込み装置間のサウンドデータ・ファームウェア書込み技術、ブートローダ、サウンドデータ作成ツールといったアイテムが構築できれば実現できることは分かっています。これらのうち、一部は既にDCC電子工作連合で技術を得ており、徐々に開発を広げていこうとしています。</p>
+<p>オープンサウンドデコーダが実現できれば、たとえメーカーが変わっても同じサウンドデータが使えます。今よりも遙かに多くの選択肢が増えたり、乗り換えたりすることが容易となります。</p>
+<p>オールジャパンで、デジタル鉄道模型・DCCを楽しめる環境を作り上げ、今後は日本が海外の鉄道模型の将来を引っ張って作り上げていく、そんな環境を構築していきたいと考えている次第です。</p>
+<p>日本はDCCが遅れているなら、それをリセットする技術とアイデアで、既存のDCCメーカーのしがらみを壊してしまい、世界をリードしてしまえば良いのです。</p>
+<p>このためには、オープンサウンドデータのユーザーの皆様も大きな協力が不可欠です。ぜひとも、ご協力を頂ければ幸いです。</p>
+<h2 id="73-loksound-v35%E3%81%A8%E3%81%AE%E5%87%BA%E4%BC%9A%E3%81%84">7.3. LokSound V3.5との出会い</h2>
+<p><a id="markdown-loksound-v3.5%E3%81%A8%E3%81%AE%E5%87%BA%E4%BC%9A%E3%81%84" name="loksound-v3.5%E3%81%A8%E3%81%AE%E5%87%BA%E4%BC%9A%E3%81%84"></a></p>
+<p>2007年当時、HornbyのHSTをディーゼルサウンドを模型化したく調べているうちに、英国のSouth West Digital社がHSTのサウンドをプログラムしたLoksound V3.5を取り扱っていることを知り、メールオーダーで取り寄せたのが始まりでした。</p>
+<img border="0" src="./lok/lok35_1.jpg" width="400" >
+<p>今でもSouth West Digital社はメールオーダーのみの取り扱いですが、当時、下手な英文を駆使して注文メールを送り「在庫あり」の返事が来たらクレジットカードの番号を送り（セキュリティーの為、先方のアドバイスによりカード番号は半分ずつ2回に分けて）到着を指折り数えて待っていた思い出があります。</p>
+ <img border="0" src="./lok/lok35_2.jpg" width="400" >
+<p>LokSoundデコーダが自分の手でサウンドが書き換えられることができてオリジナルサウンドデコーダが容易に作れるのを知ったのはその後でした。2008年に自作サウンド制作の為にLokProgrammerも取り寄せてキハ40自作サウンド（初代）の制作に取り掛かりました。パソコンが上手くない自分に制作出来る自信はなかったのですがとりあえずやってみようと･･･。</p>
+<img border="0" src="./lok/lok35_3.jpg" width="400" >
+<p>Mはエンジン停止、Sはアイドル音、Dは惰行音、Aは加速音、CXには減速音、その他にそれぞれ移行音が組めるひな形になっており、移行する条件としてスロットルの開度数値を入力する単純なもので分かりやすく、私はLokSound 5となった現在も全ての基幹サウンドスケジュールの基本にしております。</p>
+<img border="0" src="./lok/lok35_4.jpg" width="400" >
+<p>v3.5のスペックは8Mbit（約69秒のサウンド）しか記憶されないので如何に同じ音を繰り返す「LOOP再生」を多用させて容量以下に押し込むのには苦労させられました。それでもv2だった頃の1M Bit（約11秒）と比べれば充分満足でした。</p>
+<p>その後2008年頃のマイナーチェンジで16M Bit（約138秒のサウンド）まで記憶できるようになり、サウンドデータ編集の幅に余裕が出来ました。</p>
+<p>キハ40サウンド（初代）のサウンドスケジュール例です。
+<img border="0" src="./lok/lok35_5.jpg" width="400" ></p>
+<p>A段は未使用、D段を加速音、CXをアイドル音（惰行）としております。当時、ディーゼル車には申し分無いスペックだったのですが、今思えばImmediate（再生途中の音をその場で切り上げて次のサウンドに強制移行させる）機能が全く無いのでレスポンスが悪く、克服する為には短くキレイなLOOPサウンドを作るしか方法しかありませんでしたし走行サウンドにシンクロさせて断流器等の音も出す機能も無かったのでサウンドプログラムとしては少々物足りないかもしれません。</p>
+<p>2011年にフルモデルチェンジを果たしてLokSound V4となり、サウンド容量も32M Bit（約267秒）まで増大しました。プログラムが全くの別モノに変わり複雑な動きにもサウンドが対応し飛躍的に進化します。中身も一新されて一気に複雑になり私も最初はプログラムの仕方が全く分からず、LokProgrammerの変換機能を使ってLokSound V3.5のデータをV4にコンバートして解析しました。</p>
+<img border="0" src="./lok/lok35_6.jpg" width="400" >
+<p>このLokSound V3.5から LokSound V4への進化は衝撃的で、今のLokSound 5の基本が確立されたサウンドデコーダーと言えます。</p>
+ <img border="0" src="./lok/lok35_7.jpg" width="400" >
+<p>特にサウンドスケジュールの移行にはImmediate（再生途中の音をその場で切り上げて次のサウンドに強制移行させる）機能が付いて移行レスポンスが格段に上がり、電気車の駆動音サウンド向けとしても申し分無いデコーダとなり、以後サウンドデータを多数手がけることとなります。</p>
+<div style="page-break-before:always"></div>
+<h1 id="8-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">8. サポート</h1>
+<p><a id="markdown-%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88" name="%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"></a></p>
+<p>オープンサウンドデータやLokSoundデコーダ等に関わる質問、相談等は、デジタル鉄道模型フォーラムをご利用ください。オープンサウンドデータは収益を得る事業ではありませんので、サポートは原則として実施しません。</p>
+<p>オープンサウンドデータは、基本的に要望や修正依頼、変更依頼を受け付けていません。しかし、自分で収録した音源を、クリエイティブコモンズCC0を宣言した上で提供した場合で、クリエイターの方向性と合致していた場合、サウンドデータを作成する場合があります。収録しても必ず作成される保証はありませんが、一方で、音源を自分で収録をして提供しなければ確実にサウンドデータの提供は無いと考えても差し支えありません。</p>
+<p>デジタル鉄道模型フォーラムはDesktopStationが管理運営しており、登録・年会費無料でご利用頂けます。</p>
+<p>なお、デジタル鉄道模型フォーラムで質問・相談されましても、解消を保証するものではありません。ボランティアによる善意での回答となり、ESU社からの正式な回答ではありません。あくまでもユーザー同士の情報交換という位置づけとなります。</p>
+<blockquote>
+<p>デジタル鉄道模型フォーラム
+https://desktopstation.net/bb/</p>
+</blockquote>
+<p>開発元からの正式なサポート受けたい場合には、ESU社が運営しているサポートフォーラムがあります。ESU社のサポートの範囲に関しての正式な質問を行うには、各自でユーザー登録の上、ご利用ください。なお、日本語はサポートされておらず、ドイツ語または英語で質問・相談されることとなります。</p>
+<p>オープンサウンドデータとESU社は一切の関係を持ちません。オープンサウンドデータの運営元に対して、ESU社の製品のサポートを求める事は固くお断り申し上げます。</p>
+<blockquote>
+<p>http://www.esu.eu/forum/forenuebersicht/</p>
+</blockquote>
+<p><img src="./lok/ESU_support.png" alt=""></p>
+<div style="page-break-before:always"></div>
+<h1 id="9-faq">9. FAQ</h1>
+<p><a id="markdown-faq" name="faq"></a></p>
+<p>ここでは、LokSoundサウンドデコーダで、よくあるトラブルや質問事項に対する回答を有志の立場に手記載させていただきます。なお、この回答で解決することを保証するものでもなく、基本的には自身で解決を行う必要はあります。また、DesktopStationやオープンサウンドデータは、ESU社とは一切関係が無く、日本における代理店契約・サポート契約も行っておりません。当方にLokSoundデコーダのサポートを要求されても、一切の対応をお断りさせていただきます。</p>
+<h2 id="91-%E6%AC%A7%E7%B1%B3%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AF%E5%85%AC%E9%96%8B%E3%81%97%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B">9.1. 欧米のサウンドデータは公開しないのですか？</h2>
+<p><a id="markdown-%E6%AC%A7%E7%B1%B3%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AF%E5%85%AC%E9%96%8B%E3%81%97%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F" name="%E6%AC%A7%E7%B1%B3%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AF%E5%85%AC%E9%96%8B%E3%81%97%E3%81%AA%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>欧米のサウンドデータは、ESUが公式に無償公開しています。</p>
+<blockquote>
+<p>projects.esu.eu
+http://projects.esu.eu/</p>
+</blockquote>
+<p>オープンサウンドデータのスコープ外となります。</p>
+<h2 id="92-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AFesu%E4%BB%A5%E5%A4%96%E3%81%AE%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%99%E3%81%8B">9.2. オープンサウンドデータはESU以外のデコーダに書き込めますか？</h2>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AFesu%E4%BB%A5%E5%A4%96%E3%81%AE%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AFesu%E4%BB%A5%E5%A4%96%E3%81%AE%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>オープンサウンドデータは、ESU社のLokSound V4または5シリーズ向けに専用に作成されたものです。
+ZIMO、Digitrax, SOUNDTRAXX, Uhlenbrock等、他社のサウンドデコーダに書き込むことはできません。</p>
+<h2 id="93-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%82%92%E5%A3%8A%E3%81%95%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.3. デコーダを壊さないようにするにはどうすればよいですか</h2>
+<p><a id="markdown-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%82%92%E5%A3%8A%E3%81%95%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B" name="%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%82%92%E5%A3%8A%E3%81%95%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B"></a></p>
+<p>買ってきたデコーダは、車両への搭載前に、必ずデコーダテスター(ESU 53900 Decoder TesterやLaisDCC 860033 Decoder Tester Pro)で動作確認をしなければなりません。買ってきて、デコーダテスターで動作確認をした時点で壊れた（壊れていた）場合には、初期不良の可能性が非常に高いといえます。特に製造工程が複雑となっているLokSound5 microでは、メーカー出荷後における市場不良率が100個中に1～2個程度というデータがあります。この時点で、メーカーや販売店に初期不良交換を連絡してください。</p>
+<p>また、高額なLokSoundデコーダをすぐには装着せず、MTC21やNext18のDCCコネクタを用いて車両に搭載作業を行い、LaisDccの安価なデコーダで動作確認することも必須事項です。過去多くのデコーダの故障原因は、ユーザーの搭載作業のミスです。複雑な搭載作業は、じっくりと時間をかけて、確認に確認を重ねて行わなければなりません。</p>
+<h2 id="94-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E5%8F%8D%E5%BF%9C%E3%81%97%E3%81%AA%E3%81%84%E6%95%85%E9%9A%9C%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F">9.4. デコーダが動かない、反応しない、故障してしまった。</h2>
+<p><a id="markdown-%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%80%81%E5%8F%8D%E5%BF%9C%E3%81%97%E3%81%AA%E3%81%84%E3%80%81%E6%95%85%E9%9A%9C%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%80%82" name="%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%80%81%E5%8F%8D%E5%BF%9C%E3%81%97%E3%81%AA%E3%81%84%E3%80%81%E6%95%85%E9%9A%9C%E3%81%97%E3%81%A6%E3%81%97%E3%81%BE%E3%81%A3%E3%81%9F%E3%80%82"></a></p>
+<p>前質問で、デコーダを壊さないようにする注意事項を遵守していることは必須要件です。これを怠った場合には、故障原因はユーザーとなってしまいます。</p>
+<p>デコーダを搭載した車両に搭載して動かなくなってしまった場合には、デコーダ搭載作業における配線ミス、絶縁不良、固定の甘さや接触・ショートによる故障の可能性が非常に高いと言えます。</p>
+<p>以下の点を確認してください。</p>
+<ul>
+<li>アドレスを読みだせない(CV1)、設定したアドレスで動かない</li>
+<li>デコーダの表面のICが焦げているかどうか、熱収縮チューブが熱で破けているかどうか</li>
+</ul>
+<p>アドレスが読み出せる場合には、デコーダの機能としては動いていますが、一部の機能は故障により動かなくなっている可能性もあります。ICが焦げているなどの場合は、ほぼ間違いなく故障となり、使用することはできません。見た目では特に問題がなくとも、故障しているケースもあります。また非常に稀ですが、部品の半田付け不良や接触不良により、後から初期不良が見つかるケースもあります。</p>
+<p>DCCコネクタ搭載車両の場合には、デコーダを交換して動作チェックしてください。もし、交換後のデコーダが正常に動く場合には、デコーダが故障している可能性が高いといえます。</p>
+<p>貴重なデコーダを壊さないように使用することが、もっとも重要な対策です。壊れた場合には、大きな損失となります。壊さないためにすることを、必ず遵守し、安全に模型車両のDCC化を進めていきましょう。</p>
+<p>LokSoundデコーダは非常に精密にできております。また、LokSoundに限らず、デコーダの搭載や利用は適切に行わないと、故障を招きます。自身のミスで故障させた場合には、交換することはできません。特に、初心者の方は搭載作業に不慣れで、なおかつ、動作確認などを怠り、最初から高価なLokSoundデコーダを搭載し、気づかないうちに故障させている可能性が多くあります。</p>
+<ul>
+<li>デコーダの対応スケール（ゲージ）と、組み込む車両のスケール・ゲージは一致させましょう。特に機関車などのダイキャストやブラスモデルでは必ず守りましょう。</li>
+<li>Next18やMTC21等のDCCコネクタを活用しましょう。LokSoundデコーダを装着する前に安価なデコーダで動作テストを行いましょう。</li>
+<li>DCCreadyではない車両では、ExpBoard等の搭載補助基板を活用しましょう。</li>
+<li>スピーカーは磁力が強いため、ドライバーなどに引っ付いて、デコーダ配線においてショートや断線を招く場合があります。</li>
+</ul>
+<p>故障要因としては、一般的なノウハウとして、以下が挙げられます。</p>
+<ul>
+<li>スピーカー配線が線路やファンクションやモータ等の関連の信号線と接触するとショートが発生し、内部の回路が破壊されます。</li>
+<li>LokSound5 microなどの小型のスケール向けデコーダを、ダイキャストの非常に重たいHOやOゲージ等に使用し、高速走行や急停車を繰り返すと、モータからの誘起電圧（モータが発電機となる現象）によって、デコーダが過電圧となり破壊される現象が発生します。</li>
+<li>Tomixの製品でよく使われる、ばね式の台車は、脱線やポイント等での衝撃でショートしやすく、過熱現象によって車両が損傷することがあります。DCCのような連続した交流電流の流れる利用を全く想定していない車両もあるので注意しましょう。</li>
+<li>LokSound5 microにおいては2019年～2020年の時期で1～2%程度の確率で初期不良の発生が散見されます。購入時には、デコーダテスタを用いて動作確認を必ず行いましょう。</li>
+</ul>
+<h2 id="95-pwm%E3%83%91%E3%83%AF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B">9.5. PWMパワーパックで動かせますか？</h2>
+<p><a id="markdown-pwm%E3%83%91%E3%83%AF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F" name="pwm%E3%83%91%E3%83%AF%E3%83%BC%E3%83%91%E3%83%83%E3%82%AF%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>LokSoundデコーダは、PWMパワーパックで動作しません。DCCコマンドステーションを使用するか、カンタムのパワーパック、ピュアアナログのパワーパックを使用してください。</p>
+<p>なおPWMパワーパックで動かしても、デコーダは故障することはありませんが、正常に動きません。正常に動かないので故障と勘違いする可能性はあります。</p>
+<h2 id="96-%E7%B7%9A%E8%B7%AF%E9%9B%BB%E5%9C%A7%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.6. 線路電圧はどうすればよいですか？</h2>
+<p><a id="markdown-%E7%B7%9A%E8%B7%AF%E9%9B%BB%E5%9C%A7%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F" name="%E7%B7%9A%E8%B7%AF%E9%9B%BB%E5%9C%A7%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>LokSoundデコーダは、DCCの標準的な仕様に沿って作られていますが、スケールやゲージで判断するとよいです。
+なお、DCCコマンドステーションによっては、電圧が固定になっている場合があります。多少違う場合でも問題なく動作するはずですが、NMRAの規格に合っていないデコーダや、コストダウンを優先した一部のメーカーのDCCデコーダの場合には、故障を誘引するケースもあります。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">スケール・ゲージ</th>
+<th style="text-align:left">電圧範囲</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">z, N</td>
+<td style="text-align:left">12V</td>
+</tr>
+<tr>
+<td style="text-align:left">HO</td>
+<td style="text-align:left">15-16V</td>
+</tr>
+</tbody>
+</table>
+<h2 id="97-lokprogrammer%E3%81%A7%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A7%E3%82%82%E3%81%86%E3%81%BE%E3%81%8F%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%AA%E3%81%84">9.7. LokProgrammerでサウンドを書き込んでもうまく書き込めない</h2>
+<p><a id="markdown-lokprogrammer%E3%81%A7%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A7%E3%82%82%E3%81%86%E3%81%BE%E3%81%8F%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%AA%E3%81%84" name="lokprogrammer%E3%81%A7%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A7%E3%82%82%E3%81%86%E3%81%BE%E3%81%8F%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%81%E3%81%AA%E3%81%84"></a></p>
+<p>LokProgrammerで書き込んでもうまくサウンドが入らない場合、うまく動かないサウンドになってしまうことがあります。以下の事を確認して、再度書込みをして見て下さい。</p>
+<ul>
+<li>レールが汚れている、車輪が汚れている、レールと車輪の接触不良</li>
+<li>車両に搭載している場合、配線接続不良や断線</li>
+<li>ファームウェアが古い、書込みするLokProgrammerと相性が悪い(LokProgrammerでファームウェアをアップデートする)</li>
+<li>LokProgrammerが新しすぎてうまく書けない（下位互換性の喪失, LokSoundV4をLokProgrammerの5以降で書くなど）</li>
+<li>LokProgrammerが古すぎてうまく書けない（上位互換性の喪失）</li>
+<li>CVがうまくリセットされていない</li>
+<li>デコーダが故障している（故障している場合は通常操作もできません）</li>
+</ul>
+<p>正常に書き込めていても、DCCコマンドステーションの使い方を間違えると動かないと勘違いする場合もあります。</p>
+<ul>
+<li>F1を押し忘れている</li>
+<li>線路電源を入れていない</li>
+<li>ACアダプタが入っていない</li>
+</ul>
+<p>サウンドデータを正常に書き込めても、車両自体に問題があることもあります。</p>
+<ul>
+<li>車両の中にデコーダが入っていない</li>
+<li>スピーカーが入っていない</li>
+<li>内部が断線している</li>
+<li>線路が繋がっていない</li>
+</ul>
+<p>特にLokProgrammerを使い慣れていない方は、正常に動くことを確認した車両（DCCが最初から搭載された車両）や、デコーダテスターを使用してください。</p>
+<h2 id="98-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F">9.8. アドレスが分からなくなった</h2>
+<p><a id="markdown-%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F" name="%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E5%88%86%E3%81%8B%E3%82%89%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F"></a></p>
+<p>DSair2等のコマンドステーション製品を使用すると、アドレスを自動で読みだせます。手動で読みだすタイプのコマンドステーションの場合には、CV1,CV17,CV18,CV29を全て読みだして数値をメモし、Web上のCalculator等を用いて計算することで、現在の設定アドレスをチェックすることができます。</p>
+<p>なお、LokProgrammerを使うと、容易に現在のアドレスを確認できます。</p>
+<h2 id="99-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E3%81%82%E3%82%8B">9.9. コマンドステーションによって動かないアドレスがある</h2>
+<p><a id="markdown-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E3%81%82%E3%82%8B" name="%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AB%E3%82%88%E3%81%A3%E3%81%A6%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9%E3%81%8C%E3%81%82%E3%82%8B"></a></p>
+<p>アメリカ式と、ヨーロッパ式で、100-127の取り扱いが異なります。 アメリカ式では1-127がショートアドレス(CV1で設定するモノ）とし、ヨーロッパ系では1-99がショートアドレスとしています。100以降はヨーロッパ式ではロングアドレスとなります。</p>
+<p>日本では、DCS50Kの普及の関係でアメリカ式が主流ですが、一部ヨーロッパ式のコントローラをお持ちの場合で、このアドレス範囲の車両(103や113,115など、アドレスにしたくなる車両が日本には多いです)を動かそうとすると、動かない場合があり、頭を抱えることになります。</p>
+<p>どうすれば良いかというと、100-127は使わないに限ります。</p>
+<h2 id="910-loksoundv4%E3%81%ABloksound5%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B">9.10. LokSoundV4に、LokSound5向けのサウンドデータを書き込みできますか？</h2>
+<p><a id="markdown-loksoundv4%E3%81%AB%E3%80%81loksound5%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F" name="loksoundv4%E3%81%AB%E3%80%81loksound5%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>LokSoundV4に、LokSound5向けのサウンドデータは書き込みできません。下位互換はありません。
+LokSoundV4向けに作成するには、サウンドデータは１から作り直す必要があります。</p>
+<h2 id="911-loksound5%E3%81%ABloksoundv4%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B">9.11. LokSound5に、LokSoundV4向けのサウンドデータを書き込みできますか？</h2>
+<p><a id="markdown-loksound5%E3%81%AB%E3%80%81loksoundv4%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F" name="loksound5%E3%81%AB%E3%80%81loksoundv4%E5%90%91%E3%81%91%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>LokSound5に、LokSoundV4向けのサウンドデータを書き込みすることができます。自動的にLokSound5向けにデータ変換されます。なお、音質はLokSoundV4相当となります。</p>
+<h2 id="912-%E9%9F%B3%E9%87%8F%E3%81%8C%E5%B0%8F%E3%81%95%E3%81%84%E3%81%AE%E3%81%A7%E8%AA%BF%E6%95%B4%E3%81%97%E3%81%9F%E3%81%84">9.12. 音量が小さいので調整したい</h2>
+<p><a id="markdown-%E9%9F%B3%E9%87%8F%E3%81%8C%E5%B0%8F%E3%81%95%E3%81%84%E3%81%AE%E3%81%A7%E8%AA%BF%E6%95%B4%E3%81%97%E3%81%9F%E3%81%84" name="%E9%9F%B3%E9%87%8F%E3%81%8C%E5%B0%8F%E3%81%95%E3%81%84%E3%81%AE%E3%81%A7%E8%AA%BF%E6%95%B4%E3%81%97%E3%81%9F%E3%81%84"></a></p>
+<p>CV63をCV書込み機能（プログラミング機能）で書き換えてください。デフォルトはサウンドデータによって異なります。1～192で設定でき、100%音量は128です。192は150%音量(最大)となります。試しながら、好みの値に設定してください。</p>
+<p>なお、運転中に音量を調整する場合には、F7をON/OFFを繰り返す(ダブルクリック)と一時的に音量を小さく調整できます。</p>
+<h2 id="913-%E2%97%8B%E2%97%8B%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%A6%E6%AC%B2%E3%81%97%E3%81%84">9.13. ○○のサウンドデータを提供して欲しい</h2>
+<p><a id="markdown-%E2%97%8B%E2%97%8B%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%A6%E6%AC%B2%E3%81%97%E3%81%84" name="%E2%97%8B%E2%97%8B%E3%81%AE%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%8F%90%E4%BE%9B%E3%81%97%E3%81%A6%E6%AC%B2%E3%81%97%E3%81%84"></a></p>
+<p>ユーザーからの要望や意見は、一切受け付けておりません。こちらの品質基準に満足する、代表的なサウンドをクリエイター様と協議しながら掲載しております。</p>
+<h2 id="914-%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B">9.14. アナログで動かせますか？</h2>
+<p><a id="markdown-%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F" name="%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>PWMパワーパックでは安定して動作しないケースがあります。ピュアなDCのアナログパワーパック(ピュアアナログアダプタを含)で動かす場合、LokProgrammerでデータ調整が必要です。つきましては、オープンサウンドデータの搭載された車両をアナログ環境で動かすことは可能ですが、全てのアナログパワーパックで動くことの保証は行っておりません。自己責任にて使用下さい。お問い合わせを頂いても、対応はお断りさせていただきます。</p>
+<p>なお、登録模型店の独自のサポートがある場合もありますが、オープンサウンドデータ公式の動作保証をしているものではありません。なお、一部のパワーパック（特殊なPWMパルスを出すタイプ）ではアダプタを使用しても正常に動作しないことが報告されています。</p>
+<p>正確にはアナログではありませんが、設定を変更することでLokSound5はカンタム互換モードとして動かすこともできます。</p>
+<h2 id="915-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8B%E3%82%89%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%97%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93">9.15. LokSoundデコーダからサウンドデータが取り出しできません</h2>
+<p><a id="markdown-loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8B%E3%82%89%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%97%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93" name="loksound%E3%83%87%E3%82%B3%E3%83%BC%E3%83%80%E3%81%8B%E3%82%89%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%8C%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%97%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%9B%E3%82%93"></a></p>
+<p>LokSoundデコーダの仕様上、デコーダからPCにサウンドを取り出すことはできません。取り出せるデータは、設定データ(CV)のみです。</p>
+<p>※オープンサウンドデータに限らず全てのLokSoundデコーダで共通の仕様です。</p>
+<h2 id="916-loksound%E3%81%AF%E8%89%B2%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8C%E3%81%A9%E3%82%8C%E3%81%8C%E8%89%AF%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B">9.16. LokSoundは色々ありますが、どれが良いですか？</h2>
+<p><a id="markdown-loksound%E3%81%AF%E8%89%B2%E3%80%85%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8C%E3%80%81%E3%81%A9%E3%82%8C%E3%81%8C%E8%89%AF%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F" name="loksound%E3%81%AF%E8%89%B2%E3%80%85%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8C%E3%80%81%E3%81%A9%E3%82%8C%E3%81%8C%E8%89%AF%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>LokSoundには、無印・micro・XL・M4がありますが、日本型Nゲージに組み込む場合には、microしか選択肢はありません。N向けですが、日本型車両はデコーダ搭載を考慮した設計にされていません。よって、ディテールを保つためには小型のものが必要です。日本型HO(16番)のプラスチック製車両でしたら、microでも電流消費が少ないため、問題はありません。機能の差異も日本型では影響ありません。ブラス(真鍮)製車両で3両以上の場合やHO,16番機関車のダイキャストボディの場合は、MTC21タイプ(LokSound5無印)を推奨します。</p>
+<h2 id="917-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A7%E5%95%86%E6%A5%AD%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88esu%E3%81%A8%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%8B">9.17. オープンサウンドデータで商業利用する場合、ESUとのライセンスは必要か？</h2>
+<p><a id="markdown-%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A7%E5%95%86%E6%A5%AD%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%80%81esu%E3%81%A8%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%8B%EF%BC%9F" name="%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A7%E5%95%86%E6%A5%AD%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%80%81esu%E3%81%A8%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%8B%EF%BC%9F"></a></p>
+<p>オープンサウンドデータは、独自に収録したサウンドサンプルを使用して開発・頒布を行っております。</p>
+<p>また、サウンドデータは、ESUのライセンスに影響が無いようにライセンス文書に書かれた制限事項を避けて、音源収録・サウンドデータを開発しております。つきましては、オープンサウンドデータを使用する限りにおいてはESUとのライセンス契約は不要です。
+LokProgrammerで作成されたサウンドデータは、自分で収録して全て作成した場合には、作成者が知的所有権を持つとLokProgrammerのライセンス文書にも明記されています。</p>
+<p>※商業利用においてはESUとのライセンス契約は必要ありませんが、オープンサウンドデータの管理運営元とのライセンスの締結が必要となります。</p>
+<p>一方、オープンサウンドデータではなく、ESUが公式に公開している海外型サウンドデータ自体や、ESUが配布するサウンドライブラリ（様々なサウンドサンプルの入った収録音データベースもの、別名テンプレートパック）を使用してビジネスを行うには、ESUとの契約が必要となります。オープンサウンドデータは、ESUが知的所有権を持つサウンド・音源は使用しておりません。この制約事項は、ESUのホームページにあるライセンス文書(サウンドデータ向けとLokProgrammer向けの2種類があります)に細かく書かれていますので、各自で参照して下さい。</p>
+<h2 id="918-%E5%B9%B4%E4%BB%A5%E4%B8%8A%E5%89%8D%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A0loksoundv4%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%83%BB%E9%9F%B3%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%84">9.18. 年以上前に書き込んだLokSoundV4が動かない・音が出ない</h2>
+<p><a id="markdown-%E5%B9%B4%E4%BB%A5%E4%B8%8A%E5%89%8D%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A0loksoundv4%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%83%BB%E9%9F%B3%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%84" name="%E5%B9%B4%E4%BB%A5%E4%B8%8A%E5%89%8D%E3%81%AB%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%82%93%E3%81%A0loksoundv4%E3%81%8C%E5%8B%95%E3%81%8B%E3%81%AA%E3%81%84%E3%83%BB%E9%9F%B3%E3%81%8C%E5%87%BA%E3%81%AA%E3%81%84"></a></p>
+<p>長期間置いたLokSoundV4において、データが消失するなどの現象が起こることが報告されています。何度か書き直すことで、機能を復活できるとのことですが、原因・対策は分かっておりません。長期間置かずに、たまに動かすことが現象の対策になろうかと思います。</p>
+<p>なお、LokSound5においては確認されておりません。</p>
+<h2 id="919-%E9%89%84%E9%81%93%E4%BC%9A%E7%A4%BE%E3%81%AE%E8%A8%B1%E8%AB%BE%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%81%8B">9.19. 鉄道会社の許諾は必要ですか？</h2>
+<p><a id="markdown-%E9%89%84%E9%81%93%E4%BC%9A%E7%A4%BE%E3%81%AE%E8%A8%B1%E8%AB%BE%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F" name="%E9%89%84%E9%81%93%E4%BC%9A%E7%A4%BE%E3%81%AE%E8%A8%B1%E8%AB%BE%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%A7%E3%81%99%E3%81%8B%EF%BC%9F"></a></p>
+<p>鉄道会社が知的所有権を有する部分を何らかの製品、商品、データに有償無償問わず、組み込む場合には、鉄道会社との許諾が必要です。知的所有権とは、著作権、著作隣接権、商標、特許などが挙げられます。鉄道模型車両やロゴマーク等は、通常、鉄道会社がデザインの権利や商標権を持つので、模型メーカーが許諾を取るのはこのためです。</p>
+<p>一方で、企業が権利を有するものでデザインが公開(*)されてから著作権法で守られる年数を経過したもの、商標の権利が維持されていないものは、権利の保護対象から外れるため、許諾を得ずに模型車両を販売している模型メーカーもあります。たとえば、昭和中期頃までの国鉄の鉄道車両は、2020年現在、既に保護対象から外れています。</p>
+<p>オープンサウンドデータでは、鉄道会社が保有する固有の知的所有権（ロゴ、車両デザイン、発車メロディなど）、また著作権管理団体に信託されている音楽は一切を含まないようにしてデータを開発しております。たとえば車両名称は商標登録されているものは、一般的に使われる名称に置換えて掲載しております。また、各社の商標であることを明記します。</p>
+<p>ただし、既にパブリックドメインとなっているもの、著作権法上などの定義で、鉄道会社や車両メーカー、その他企業等に著作権の権利が発生しないもの（機械の音、一般的な定義で騒音として扱われるもの、音楽ではない音声、放送、チャイム、ブザー、警告音など）は有識者の見解や法令、過去の判例を確認し、問題が無い範囲内で利用しております。</p>
+<p>*注 個人が著作権を持つ場合、個人が亡くなってから著作権の保護期間(50年または70年、法律改定による)が規定されています。企業・団体が著作権を有する場合は、公開してから保護期間が定められています。</p>
+<h2 id="920-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B">9.20. サウンドデータの著作権はどうなっていますか</h2>
+<p><a id="markdown-%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B" name="%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%81%8B"></a></p>
+<p>音についての著作権・著作隣接権についてまとめましたので、ご一読願います。</p>
+<blockquote>
+<p>http://powerele.sblo.jp/article/185428579.html</p>
+</blockquote>
+<p>著作権は全てのものに自動的に発生するものではなく、法律に記載の通り、一定の条件を満たさなければ、著作権法でカバーされません。たとえば、機械の音や、一般的な定義で騒音として扱われるもの、音楽ではない音声、ブザー、警告音などは著作権が認められません。詳細は、知財関連の有識者の見解が掲載されたホームページなどを紹介している、上記のブログのまとめページを記載下さい。</p>
+<p>一方で、著作権の無い音を収録した場合、収録者には著作隣接権というものが発生します。このため、オープンサウンドデータでは音源提供者、クリエイターが自分で収録したものを提供（原則としてクリエイティブコモンズ CC0を宣言して頂いたもの）してもらい、クリエイターによる加工編集の上で使用しております。加工編集作業によって著作権が発生するため、オープンサウンドデータのデータは、クリエイターが著作権を有します。音単体に加えて加工編集したサウンドデータというものにも著作権があるということをご理解下さい。</p>
+<h2 id="921-%E6%A8%A1%E5%9E%8B%E5%BA%97%E3%83%BB%E6%A8%A1%E5%9E%8B%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A7%E3%81%99%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%92%E8%A1%8C%E3%81%86%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%8B">9.21. 模型店・模型メーカーです。オープンサウンドデータを使ってビジネスを行うにはどうすればよいか？</h2>
+<p><a id="markdown-%E6%A8%A1%E5%9E%8B%E5%BA%97%E3%83%BB%E6%A8%A1%E5%9E%8B%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A7%E3%81%99%E3%80%82%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%92%E8%A1%8C%E3%81%86%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%8B%EF%BC%9F" name="%E6%A8%A1%E5%9E%8B%E5%BA%97%E3%83%BB%E6%A8%A1%E5%9E%8B%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%A7%E3%81%99%E3%80%82%E3%82%AA%E3%83%BC%E3%83%97%E3%83%B3%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%82%92%E8%A1%8C%E3%81%86%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%8B%EF%BC%9F"></a></p>
+<p>許諾について、費用は一切頂きません。書き込みサービスを行う旨のご連絡をいただき、DesktopStationまたはDCC電子工作連合のメンバーによるFace to Faceによる面談後に許諾をいたします。DCCの普及に協力していただけない方や、不払い・粗悪な作業、オークションでの高額転売といった業者様が希にいらっしゃいますので、確認作業をさせていただいております。</p>
+<p>また、許諾の際には、オープンサウンドデータの活動に協力いただくことも合わせて、お願いいたします。</p>
+<p>なお、オープンサウンドデータはデータの提供を行うのみとなっております。模型店・模型メーカー様で発生する各種トラブル、故障、不具合のサポートなどは、ESU社が行うべき内容も多分に含まれておりますので、オープンサウンドデータ運営元は一切のサポートは行っておりません。</p>
+<p>提供しているオープンサウンドデータのバグなどについては報告頂ければ、時期をみて修正作業を行いますが、修正を確約をする物ではございません。</p>
+<div style="page-break-before:always"></div>
+<h1 id="10-%E6%9C%80%E5%BE%8C%E3%81%AB">10. 最後に</h1>
+<p><a id="markdown-%E6%9C%80%E5%BE%8C%E3%81%AB" name="%E6%9C%80%E5%BE%8C%E3%81%AB"></a></p>
+<p>オープンサウンドデータを運営するにあたり、以下の方々の協力を頂いております。感謝を申し上げます。</p>
+<!-- TOC ignore:true -->
+<h2 id="101-%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E3%83%BB%E9%9F%B3%E6%BA%90%E6%8F%90%E4%BE%9B">10.1. クリエイター・音源提供</h2>
+<p><a id="markdown-%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E3%83%BB%E9%9F%B3%E6%BA%90%E6%8F%90%E4%BE%9B" name="%E3%82%AF%E3%83%AA%E3%82%A8%E3%82%A4%E3%82%BF%E3%83%BC%E3%83%BB%E9%9F%B3%E6%BA%90%E6%8F%90%E4%BE%9B"></a></p>
+<p>MB3110A様, かわけい様, JR浜松様, 栃木総合車両所様, へのへのもへじ様, 安達太良のマイケル様, うえだねじろう様, パシフィック231様, Salam様, ともん一刻様, YOMIX様, yusa様, 勝田工房様, HK1000様, HISAO KOBAYASHI様, KC 田之上様, Nagoden様, フジガヤ2様, MECY様, Nucky様<br/></p>
+<h2 id="102-%E5%9B%A3%E4%BD%93%E3%83%BB%E7%B5%84%E7%B9%94">10.2. 団体・組織</h2>
+<p><a id="markdown-%E5%9B%A3%E4%BD%93%E3%83%BB%E7%B5%84%E7%B9%94" name="%E5%9B%A3%E4%BD%93%E3%83%BB%E7%B5%84%E7%B9%94"></a></p>
+<p>大阪亀屋様, 石田商店様</p>
+<h2 id="103-%E8%91%97%E4%BD%9Ccopyright">10.3. 著作/Copyright</h2>
+<p><a id="markdown-%E8%91%97%E4%BD%9C%2Fcopyright" name="%E8%91%97%E4%BD%9C%2Fcopyright"></a>
+Yaasan (DesktopStation), Henohenomoheji(TRAINO)<br/>
+Tokyo JAPAN</p>
+<p>本書の著作権は、DesktopStationが有します。MIT Licenseに基づき使用することが可能です。</p>
+<hr>
+<p>Copyright(C)2020- DesktopStation Co.,Ltd, DCC電子工作連合</p>
+<h2 id="104-mit-license">10.4. MIT License</h2>
+<p><a id="markdown-mit-license" name="mit-license"></a></p>
+<p>MIT License</p>
+<p>Copyright (c) 2020 DesktopStation / Yaasan</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+</body>
+</html>
