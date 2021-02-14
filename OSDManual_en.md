@@ -648,7 +648,7 @@ You need to get a LokProgrammer, LokSound, and a decoder tester to get started.P
 
 The following two stores are often used by DCC enthusiasts in Japan.
 
-* <a href="https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html" target="_blank">model burn store lippe</a><br/>https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html
+* <a href="https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html" target="_blank">model bahn shop lippe</a><br/>https://www.modellbahnshop-lippe.com/Digital/Digital+boxes/ESU-53451/gb/modell_4042.html
 * <a href="https://www.tee-usa.com/store/product3714.html" target="_blank">EURO LOK SHOP</a><br/>https://www.tee-usa.com/store/product3714.html
 
 ## 4.2. Preparing for the recording
@@ -853,10 +853,10 @@ We're going to cut out two types, acceleration and deceleration, and we're going
 
 The actual sound program for VVVF in LokProgrammer is shown below.As you can see, it's just a matter of fitting six yellow blocks with six separate sounds for acceleration and six separate sounds for deceleration, and making the sound according to the speed.
 
-Acceleration
+Acceleration<br/>
 <a href="./audacity/Audacity_VVVF14.png" target="_blank"><img border="0" alt="Audacity_VVVF14.png" src="./audacity/Audacity_VVVF14-thumbnail2.png" width="400" height="212"></a>
 
-Deceleration
+Deceleration<br/>
 <a href="./audacity/Audacity_VVVF15.png" target="_blank"><img border="0" alt="Audacity_VVVF15.png" src="./audacity/Audacity_VVVF15-thumbnail2.png" width="400" height="212"></a>
 
 Now, let's cut out the running sound from the acceleration, coasting, and deceleration sounds of the Tokyu 50X0 series.Before cutting out the sound, I need to modify the sound in various ways, but I will assume that the modifications have already been done and that the sound is ideal for acceleration and deceleration.
@@ -1178,7 +1178,7 @@ Many people have broken expensive LokSound decoders in the past, but now there a
 We are distributing an auxiliary board called ExpBoard, which makes it easier to convert Japanese vehicles to DCC.Please make use of it.
 
 |Manufacturer |Product Name |Connector |Scale |ArtNo |URL |
-|:-|:-|:-|:-:-:|:-|:-|
+|:-|:-|:-|:-|:-|:-|
 |TRAINO |ExpBoard EC-Slim Easy | Next18 | N | ECS-E1 |[URL](https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf) |
 |TRAINO |ExpBoard EC-Slim Standard | Next18 | N | ECS-S2 |[URL](https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf) |
 |TRAINO |ExpBoard EC-Slim Economy | Next18 | N | ECS-C6 | [URL](https://desktopstation.net/wiki/lib/exe/fetch.php/ecslim-ver2amanual.pdf) |
@@ -1207,13 +1207,13 @@ In Japan, NEM652 is often installed as standard in KATO's HO motive power, but i
 
 OpenSound Data recommends MTC21 and Next18 as the standard for DCC connectors.The following is a list of typical DCC connectors.
 
-|connector |number of pins |scale |Notes
-|:-|:-|:-|:-|:-|
+|connector |number of pins |scale |Notes|
+|:-|:-|:-|:-|
 |NEM651 | 6 | N | Successor is Next18 |
-|NEM652 | 8 | HO | Successor is PluX or MTC21
-|NEM662 Next18 | 18 | N | Increasingly popular in N gauge
-|NEM660 MTC21 | 21 | HO | Developed by Mercklin, currently in a standards battle with PluX
-|NEM658 PluX22 | 21 | HO | PluX8, 16 seems to be fading out
+|NEM652 | 8 | HO | Successor is PluX or MTC21|
+|NEM662 Next18 | 18 | N | Increasingly popular in N gauge|
+|NEM660 MTC21 | 21 | HO | Developed by Mercklin, currently in a standards battle with PluX|
+|NEM658 PluX22 | 21 | HO | PluX8, 16 seems to be fading out|
 
 > Note that the MTC21 has two different types of function outputs, while using the exact same connector.There are two types of AUX3 and AUX4 outputs: one for Merklin, where AUX3 and AUX4 are power outputs, and one for DCC, where AUX3 and AUX4 are logic outputs.When purchasing a decoder, please check carefully what the output method for AUX3 and AUX4 is before purchasing.There are some decoders that can be switched by changing the settings, but in some cases they are fixed due to hardware limitations.
 
@@ -1225,7 +1225,7 @@ The pin layout of the Next18 connector is shown below.The Next18 connector is ma
 
 <img border="0" src="./dec/Next18.jpg" width="150" align="right">
 
-| |Pin | Pin | | |
+| |Pin | Pin |  |
 |:-|:-|:-|:-|
 |RAIL_A| 9 | 10 |RAIL_A|
 |Head |8 |11 |Motor-|
@@ -1649,12 +1649,12 @@ Also, I didn't want to mess with the light board, so I used a bi-polar board (AY
 
 | Parts | Quantity
 |:-----|:-----|
-|Denteki Kobo Series 115-800 Suka Color Basic 4 Cars (1/80) - 1
-| ESU LokSound5 micro DCC (Next18 version) | 1
-| ExpBoard Next18 for General HO | 3
-| PUI Audio ASE02808MR-LW150-R | 1 | 1
-| DCC-Kan AYA014-2 Bi-polar PCB | 2
-| LaisDcc Next18 Decoder | 3 | LaisDcc Next18 Decoder
+|Denteki Kobo Series 115-800 Suka Color Basic 4 Cars (1/80) |1|
+| ESU LokSound5 micro DCC (Next18 version) | 1|
+| ExpBoard Next18 for General HO | 3|
+| PUI Audio ASE02808MR-LW150-R | 1 |
+| DCC-Kan AYA014-2 Bi-polar PCB | 2|
+| LaisDcc Next18 Decoder | 3 |
 
 Conversion of vehicles to DCC (M cars)
 
