@@ -7,6 +7,9 @@ https://desktopstation.net/sounds/
 
 # 過去のリリースPDF
 
+- https://desktopstation.net/sounds/pdf/OSDManual_r5.pdf (rev.5)
+- https://desktopstation.net/sounds/pdf/OSDManual_r5_en.pdf (rev.5 english)
+- https://desktopstation.net/sounds/pdf/OSDManual_r4.pdf (rev.4)
 - https://desktopstation.net/sounds/pdf/OSDManual_r3.pdf (rev.3)
 
 # 開発に必要なもの
@@ -17,5 +20,5 @@ https://desktopstation.net/sounds/
 
 # 開発
 
-DesktopStation
-DCC電子工作連合
+- DesktopStation
+- DCC電子工作連合
